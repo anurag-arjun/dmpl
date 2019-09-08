@@ -9,12 +9,12 @@ class LandCard extends React.Component {
             <div className="land-card">
                     <img src={cardImg}></img>
                     <div className='cc'>
-                         <p className="p1">Double Parsel</p>
-                         <p className="p2">Aquire 9 days ago</p>
+                         <p className="e1">Double Parsel</p>
+                         <p className="e2">Aquire 9 days ago</p>
                       </div>   
                     <div className="dv"> 
                         <i class="land-icon"></i>
-                        <p>2 LAND</p>
+                        <p className="e3"> 2 LAND</p>
                     </div>
             </div>
         )

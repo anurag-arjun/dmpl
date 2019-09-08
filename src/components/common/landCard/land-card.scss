@@ -9,7 +9,8 @@
     .cc{
         padding: 15px;
         margin-bottom: 10px;
-        .p1{
+        .e1{
+                font-size: 1rem;
                 margin-right: 8px;
                 margin: 5px;
                 -o-text-overflow: ellipsis;
@@ -17,18 +18,17 @@
                 color: whitesmoke;
                 overflow: hidden;
                 white-space: nowrap;
-                font-family: var(--font-family-matic);
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        .p2{
+        .e2{
+                 font-size: 0.85rem;
                  margin: 5px;
                  color: grey;
-                 margin-right: 6px;
                 -o-text-overflow: ellipsis;
                 text-overflow: ellipsis;
                 color: gray;
-                overflow: hidden;
                 white-space: nowrap;
-                font-family: var(--font-family-matic);
+                font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
     }
     .dv{
@@ -38,11 +38,16 @@
                 display: inline-block;
                 width: 15px;
                 height: 15px;
-                margin-left: 100px;
+                margin-left: 120px;
                 background-color: var(--color-accent-shadow);
                 border: 1px solid #f04;
                 -webkit-box-shadow: 0 0 10px 1px #f04;
                 box-shadow: 0 0 10px 1px #f04;
+            }
+            .e3{
+                margin-left: 10px;
+                margin-bottom: 10px;
+                font-size: 0.9rem;
             }
         
     }

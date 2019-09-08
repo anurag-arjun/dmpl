@@ -105,4 +105,23 @@
   font-family: "Roboto Thin Italic"; 
   src: url("../assets/fonts/roboto/Roboto-ThinItalic.ttf"); 
 }
+@font-face{
+  font-family: 'Segoe UI';
+  src: url("../assets/fonts/segoe/Segoe UI.woff");
+}
+
+@font-face{
+  font-family: 'Segoe UI Bold';
+  src: url("../assets/fonts/segoe/Segoe UI Bold.woff");
+}
+
+@font-face{
+  font-family: 'Segoe UI Bold Italic';
+  src: url("../assets/fonts/segoe/Segoe UI Bold Italic.woff");
+}
+
+@font-face{
+  font-family: 'Segoe UI Italic';
+  src: url("../assets/fonts/segoe/Segoe UI Italic.woff");
+}
 
