@@ -1,3 +1,51 @@
-.land-card {
-    background: red;
+
+.land-card{
+    display:block;
+    width: 229px;;
+    height: 400%;
+    background-color:rgba(0,0,0,.87);
+    border: 1px solid black;
+    border-radius: 5px;
+    .cc{
+        padding: 15px;
+        margin-bottom: 10px;
+        .p1{
+                margin-right: 8px;
+                margin: 5px;
+                -o-text-overflow: ellipsis;
+                text-overflow: ellipsis;
+                color: whitesmoke;
+                overflow: hidden;
+                white-space: nowrap;
+                font-family: var(--font-family-matic);
+        }
+        .p2{
+                 margin: 5px;
+                 color: grey;
+                 margin-right: 6px;
+                -o-text-overflow: ellipsis;
+                text-overflow: ellipsis;
+                color: gray;
+                overflow: hidden;
+                white-space: nowrap;
+                font-family: var(--font-family-matic);
+        }
+    }
+    .dv{
+            color: #f04;
+            display:flex;
+            .land-icon {
+                display: inline-block;
+                width: 15px;
+                height: 15px;
+                margin-left: 100px;
+                background-color: var(--color-accent-shadow);
+                border: 1px solid #f04;
+                -webkit-box-shadow: 0 0 10px 1px #f04;
+                box-shadow: 0 0 10px 1px #f04;
+            }
+        
+    }
+
+
 }

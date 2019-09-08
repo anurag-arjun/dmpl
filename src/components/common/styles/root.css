@@ -6,9 +6,11 @@
 
 :root{
     /* colors */
+    --font-family-matic : '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
     --color-primary: #212121;
     --color-accent: #f70001;
     --color-accent-shadow:  #ff898a;
+    --color-light-red: #ff9990;
     --color-okay: rgb(0,221,117);
     --color-green: rgb(00 ,128, 64);
     --color-red: #ff5056;
@@ -34,6 +36,7 @@
 
     /*background colors*/
     --color-body-background: #2a2a2a;
+    --color-light-red: #ff9990;
 
     /*text*/
     --primary-font-family: 'Roboto';
