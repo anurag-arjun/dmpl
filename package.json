@@ -22,7 +22,6 @@
   "author": "shubham-shinde",
   "license": "ISC",
   "homepage": "https://bitbucket.org/shubham-shinde/maticfrontend#readme",
-
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
     "@fortawesome/fontawesome": "^1.1.8",
