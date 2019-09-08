@@ -5,9 +5,10 @@ import './Header.scss';
 class Header extends React.Component {
 	render() {
 		return (
-			<Header-page>
+			<div className="Header-main">
 				<NavBar />
-			</Header-page>
+				<div className="header-image"></div>
+			</div>
 		);
 	}
 }

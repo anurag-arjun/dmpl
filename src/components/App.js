@@ -2,7 +2,7 @@
 import './common/styles/reset.css';
 import './common/styles/fonts.css';
 import './common/styles/root.css';
-
+import './common/styles/variables.scss';
 import React from 'react';
 import PropTypes from 'prop-types';
 import Routes from './routes';

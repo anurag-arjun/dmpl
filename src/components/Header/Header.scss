@@ -1,4 +1,33 @@
-.Header-page {
-  height: 5rem;
-  width: 100%;
+// #Header-page {
+//   height: 5rem;
+//   width: 100%;
+//   display: flex;
+// }
+// .Header-main {
+//   background-image: url(../common/assets/images/wave-background.png);
+//   //background-image: url(/static/media/homepage.23b10a0a.png);
+//   background-position: 50%;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   opacity: .3;
+//   display:flex;
+//   height:20rem;
+//   -webkit-box-shadow: -20px -20px 41px 2px inset;
+//   box-shadow: inset -20px -20px 41px 2px;
+// }
+
+
+.Header-main{
+  background-image: url(../common/assets/images/wave-background.png);
+  height: 25rem;
+  //background: linear-gradient(#18141a04,#18141a04);'
+  background-color:rgba(20, 20, 20, 0.726);
+
+    //position: absolute;
+    height: calc(100vh - 440px);
+    top: calc(0px - 94px);
+    left: 0;
+    right: 0;
+    min-height: 200px;
+
 }

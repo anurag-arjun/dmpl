@@ -5,8 +5,8 @@ import './Navbar.scss';
 class NavBar extends React.Component {
 	render() {
 		return (
-			<nav>
-				<img src={logo} alt="logo" />
+			<nav className="Navigation">
+				<img src={logo} alt="logo" className="Navigation-logo" />
 			</nav>
 		);
 	}

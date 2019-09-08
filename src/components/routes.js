@@ -5,6 +5,7 @@ import {Switch, Route} from 'react-router-dom';
 //Components import
 import LandingPage from './Landing/landing-page';
 import Header from '../components/Header/Header.js';
+import Footer from '../components/Footer/Footer.js';
 
 class Routes extends Component {
 	render() {
@@ -14,6 +15,7 @@ class Routes extends Component {
 				<Switch location={this.props.location}>
 					<Route exact path="/" component={LandingPage} />
 				</Switch>
+				<Footer />
 			</div>
 		);
 	}
