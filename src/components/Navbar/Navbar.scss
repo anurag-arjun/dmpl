@@ -13,6 +13,8 @@
   &-logo {
     height: 56px;
     width: 56px;
+    opacity: 1 !important;
+    background-color:transparent !important;
     //margin:22px 10px;
 
     &::selection {

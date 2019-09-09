@@ -1,8 +1,10 @@
 /* eslint-disable import/no-named-as-default */
-import './common/styles/reset.css';
-import './common/styles/fonts.css';
-import './common/styles/root.css';
-import './common/styles/variables.scss';
+// import './common/styles/reset.css';
+// import './common/styles/fonts.css';
+// import './common/styles/root.css';
+//import './common/styles/variables.scss';
+import './common/styles/main.scss';
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import Routes from './routes';
