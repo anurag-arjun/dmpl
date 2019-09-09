@@ -4,6 +4,7 @@ const initialState = {
       name: 'Plaza',
       months: 'kommo rani',
       num: '1',
+      plaza: 'plazaGreen',
     },
     {
       name: 'kammo',

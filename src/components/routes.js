@@ -6,6 +6,7 @@ import {Switch, Route} from 'react-router-dom';
 import LandingPage from './Landing/landing-page';
 import Header from '../components/Header/Header.js';
 import Footer from '../components/Footer/Footer.js';
+import signIn from '../components/signIn/signIn.js';
 
 class Routes extends Component {
 	render() {
@@ -14,6 +15,7 @@ class Routes extends Component {
 				<Header />
 				<Switch location={this.props.location}>
 					<Route exact path="/" component={LandingPage} />
+					<Route exact path="/signin" component={signIn} />
 				</Switch>
 				<Footer />
 			</div>
