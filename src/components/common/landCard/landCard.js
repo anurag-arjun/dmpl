@@ -5,16 +5,17 @@ import cardImg from '../assets/images/map1.png';
 
 class LandCard extends React.Component {
   render() {
+    const {name, des, num} = this.props;
     return (
       <div className="land-card">
         <img src={cardImg}></img>
         <div className="cc">
-          <p className="e1">Double Parsel</p>
-          <p className="e2">Aquire 9 days ago</p>
+          <p className="e1">{name}</p>
+          <p className="e2">{des}</p>
         </div>
         <div className="dv">
           <i className="land-icon"></i>
-          <p className="e3"> 2 LAND</p>
+          <p className="e3"> {num} LAND</p>
         </div>
       </div>
     );
