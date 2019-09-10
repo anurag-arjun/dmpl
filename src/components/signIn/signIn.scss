@@ -1,5 +1,7 @@
+@import '../common/styles/main';
+
 body{
-    background: #18141a;
+    background: $background;
 }
 
 .frame{
@@ -8,9 +10,9 @@ body{
     font-family: Lato;
 }
 #head{
-    padding: 15px; 
+    padding: 15px;
     font-size: 28px;
-    color: #ffffff;
+    color: $text;
 }
 #para{
     padding-top: 15px;
@@ -21,12 +23,13 @@ body{
     margin-inline-end: 0px;
     font-size: 16px;
     line-height: 1.4285em;
-    color: #676370;
+    color: $gray;
     margin: 0 0 1em;
     line-height: 1.4285em;
     padding-bottom: 25px;
 }
 .tagg{
-    color:#ff0044;
+    color:$primary;
     cursor: pointer;
 }
+
