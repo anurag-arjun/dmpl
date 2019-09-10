@@ -7,15 +7,21 @@ import LandingPage from './Landing/landing-page';
 import Header from '../components/Header/Header.js';
 import Footer from '../components/Footer/Footer.js';
 import signIn from '../components/signIn/signIn.js';
+import colorKey from '../components/colorKey/colorKey.js';
+import NavBar from '../components/Navbar/Navbar';
+
 
 class Routes extends Component {
 	render() {
 		return (
 			<div style={styles.fill}>
-				<Header />
+				<NavBar />
+
 				<Switch location={this.props.location}>
 					<Route exact path="/" component={LandingPage} />
+					<Route exact path="/" component={Header} />
 					<Route exact path="/signin" component={signIn} />
+					<Route exact path="/colorKey" component={colorKey} />
 				</Switch>
 				<Footer />
 			</div>

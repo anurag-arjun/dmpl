@@ -1,12 +1,11 @@
 import React from 'react';
-import NavBar from '../Navbar/Navbar';
+
 import './Header.scss';
 
 class Header extends React.Component {
   render() {
     return (
       <div className="Header-main">
-        <NavBar />
         <div className="Header-Heading">
           <h1 className="Header-Heading-light">
             Choose your ideal location in Genesis City
