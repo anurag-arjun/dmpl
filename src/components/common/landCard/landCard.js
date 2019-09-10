@@ -1,27 +1,15 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import './land-card.scss';
-import cardImg from '../assets/images/map1.png';
+import cardImg from '../assets/images/map3.png';
 import plazaGreen from '../assets/images/icon-plaza-green.svg';
 import districtBlue from '../assets/images/icon-district-blue.svg';
 import roadGray from '../assets/images/icon-road-gray.svg';
+import placeIcon from '../assets/images/place.svg';
 
 class LandCard extends React.Component {
 	render() {
 		const {name, months, num, x, y, green, blue, gray} = this.props;
-		let img;
-		switch (green) {
-			case plazaGreen:
-				img = plazaGreen;
-				break;
-			case districtBlue:
-				img = districtBlue;
-			case roadGray:
-				img = roadGray;
-			default:
-				img = districtBlue;
-				break;
-		}
 		return (
 			<div className="land-card">
 				<div className="land-card-preview">
@@ -32,9 +20,33 @@ class LandCard extends React.Component {
 					/>
 				</div>
 				<div className="land-card-content">
-					<div className="land-card-content-title">{name}</div>
-					<div className="land-card-content-date">{months} MonthsAgo</div>
-					<div className="land-card-content-info"></div>
+					<div className="land-card-content-text">
+						<div className="land-card-content-title">{name}</div>
+						<div className="land-card-content-date">{months} MonthsAgo</div>
+					</div>
+					<div className="land-card-content-info">
+						<div className="land-card-content-xy">
+							<img
+								src={placeIcon}
+								alt="placeIcon"
+								className="land-card-place-icon"
+							/>
+							<p className="land-card-content-x">{x},</p>
+							<p className="land-card-content-x">{y}</p>
+						</div>
+						{green && (
+							<img src={plazaGreen} className="land-card-content-image green" />
+						)}
+						{blue && (
+							<img
+								src={districtBlue}
+								className="land-card-content-image blue"
+							/>
+						)}
+						{gray && (
+							<img src={roadGray} className="land-card-content-image gray" />
+						)}
+					</div>
 				</div>
 			</div>
 		);

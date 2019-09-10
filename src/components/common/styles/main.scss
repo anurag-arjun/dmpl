@@ -1,12 +1,28 @@
 @import './variables';
 @import './root';
-
 @import './reset';
 
 h1 {
   font-family: Lato,Helvetica Neue,Arial,Helvetica,sans-serif;
 }
 
+h2 {
+  font-family: Lato,Helvetica Neue,Arial,Helvetica,sans-serif;
+}
+
+h3 {
+  font-weight: 500;
+  padding: 0;
+  line-height: 1.1;
+  color: inherit;
+  margin: calc(2rem - .14285714em) 0 1rem;
+  font-size: 1.28571429rem;
+  font-family: Lato,Helvetica Neue,Arial,Helvetica,sans-serif;
+}
+
+body {
+  font-family: Lato,Helvetica Neue,Arial,Helvetica,sans-serif;
+}
 p {
   font-family: Lato,Helvetica Neue,Arial,Helvetica,sans-serif;
 }
@@ -39,4 +55,10 @@ a {
     &:hover {
       box-shadow: 0 8px 30px #9f101d;
     }
+}
+
+body ::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 10px;
+  height: 10px;
 }

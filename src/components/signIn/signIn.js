@@ -1,6 +1,7 @@
 import React from 'react';
 import './signIn.scss';
 import walletImage from '../common/assets/images/wallet1.svg';
+import ConnectWallet from '../connectWallet/connectWallet';
 
 class signIn extends React.Component {
 	render() {
@@ -19,6 +20,7 @@ class signIn extends React.Component {
 						Connect
 					</button>
 				</div>
+				<ConnectWallet />
 			</div>
 		);
 	}
