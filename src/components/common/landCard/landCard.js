@@ -7,36 +7,38 @@ import districtBlue from '../assets/images/icon-district-blue.svg';
 import roadGray from '../assets/images/icon-road-gray.svg';
 
 class LandCard extends React.Component {
-  render() {
-    const {name, des, num, plaza} = this.props;
-    let img;
-    switch (plaza) {
-      case plazaGreen:
-        img = plazaGreen;
-        break;
-      case districtBlue:
-        img = districtBlue;
-      case roadGray:
-        img = roadGray;
-      default:
-        img = plazaGreen;
-        break;
-    }
-    return (
-      <div className="land-card">
-        <img src={cardImg}></img>
-        <div className="cc">
-          <p className="e1">{name}</p>
-          <p className="e2">{des}</p>
-        </div>
-        <div className="dv">
-          <i className="land-icon"></i>
-          <img src={img}></img>
-          <p className="e3"> {num} LAND</p>
-        </div>
-      </div>
-    );
-  }
+	render() {
+		const {name, months, num, x, y, green, blue, gray} = this.props;
+		let img;
+		switch (green) {
+			case plazaGreen:
+				img = plazaGreen;
+				break;
+			case districtBlue:
+				img = districtBlue;
+			case roadGray:
+				img = roadGray;
+			default:
+				img = districtBlue;
+				break;
+		}
+		return (
+			<div className="land-card">
+				<div className="land-card-preview">
+					<img
+						src={cardImg}
+						alt="cardImg"
+						className="land-card-preview-image"
+					/>
+				</div>
+				<div className="land-card-content">
+					<div className="land-card-content-title">{name}</div>
+					<div className="land-card-content-date">{months} MonthsAgo</div>
+					<div className="land-card-content-info"></div>
+				</div>
+			</div>
+		);
+	}
 }
 
 LandCard.propTypes = {};

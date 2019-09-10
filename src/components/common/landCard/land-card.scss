@@ -1,62 +1,11 @@
+@import '../../common/styles/main';
+
 .land-card {
     display: block;
     width: 229px;
-    ;
     height: 400%;
-    background-color: rgba(0, 0, 0, .87);
-    border: 1px solid black;
+    background-color: $card-background;
     border-radius: 5px;
-
-    .cc {
-        padding: 15px;
-        margin-bottom: 10px;
-
-        .e1 {
-            font-size: 1rem;
-            margin-right: 8px;
-            margin: 5px;
-            -o-text-overflow: ellipsis;
-            text-overflow: ellipsis;
-            color: whitesmoke;
-            overflow: hidden;
-            white-space: nowrap;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        .e2 {
-            font-size: 0.85rem;
-            margin: 5px;
-            color: grey;
-            -o-text-overflow: ellipsis;
-            text-overflow: ellipsis;
-            color: gray;
-            white-space: nowrap;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-    }
-
-    .dv {
-        color: #f04;
-        display: flex;
-
-        .land-icon {
-            display: inline-block;
-            width: 15px;
-            height: 15px;
-            margin-left: 120px;
-            background-color: var(--color-accent-shadow);
-            border: 1px solid #f04;
-            -webkit-box-shadow: 0 0 10px 1px #f04;
-            box-shadow: 0 0 10px 1px #f04;
-        }
-
-        .e3 {
-            margin-left: 10px;
-            margin-bottom: 10px;
-            font-size: 0.9rem;
-        }
-
-    }
-
-
+    margin: 5px;
+    color: $text;
 }

@@ -7,28 +7,26 @@ import LandCard from '../common/landCard/landCard';
 const FaSearch = Icons['fa-search'];
 
 class LandingPage extends React.Component {
-  render() {
-    const {maps} = this.props;
-    console.log(maps);
+	render() {
+		const {maps} = this.props;
+		console.log(maps);
 
-    return (
-      <div id="landing-page">
-        Made by shubham icon example
-        <FaSearch />
-        {maps.map((e, i) => (
-          <LandCard {...e} index={i} />
-        ))}
-      </div>
-    );
-  }
+		return (
+			<div className="landing-page">
+				{maps.map((e, i) => (
+					<LandCard {...e} index={i} />
+				))}
+			</div>
+		);
+	}
 }
 
 LandingPage.propTypes = {};
 
 const mapStateToProps = state => {
-  return {
-    maps: state.maps.map,
-  };
+	return {
+		maps: state.maps.map
+	};
 };
 
 export default connect(mapStateToProps)(LandingPage);
