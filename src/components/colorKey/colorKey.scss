@@ -8,8 +8,19 @@
 }
 .colorKey{
     text-align: center;
-  
     margin-left: 23%;
+    @media screen and (max-width: 992px) {
+        .colorKey{
+               text-align: center;
+               margin-left: 10%;
+        }
+       }
+    @media screen and (max-width: 600px) {
+       .colorKey{
+       text-align: center;
+       margin-left: 0%;
+       }
+   }
     .colorKey-box{
         background-color: rgba(0, 0, 0, 0.342);
         text-align: center;
@@ -125,15 +136,3 @@
     }
 }
 
-@media screen and (max-width: 992px) {
-     .colorKey{
-            text-align: center;
-            margin-left: 10%;
-     }
-    }
- @media screen and (max-width: 600px) {
-    .colorKey{
-    text-align: center;
-    margin-left: 0%;
-    }
-}
