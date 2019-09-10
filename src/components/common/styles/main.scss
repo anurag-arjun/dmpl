@@ -1,7 +1,7 @@
-@import './variables.scss';
-@import './root.css';
-@import './fonts.css';
-@import './reset.css';
+@import './variables';
+@import './root';
+
+@import './reset';
 
 h1 {
   font-family: Lato,Helvetica Neue,Arial,Helvetica,sans-serif;
