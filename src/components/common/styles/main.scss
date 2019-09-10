@@ -15,7 +15,7 @@ h3 {
   padding: 0;
   line-height: 1.1;
   color: inherit;
-  margin: calc(2rem - .14285714em) 0 1rem;
+  //margin: calc(2rem - .14285714em) 0 1rem;
   font-size: 1.28571429rem;
   font-family: Lato,Helvetica Neue,Arial,Helvetica,sans-serif;
 }
@@ -29,6 +29,8 @@ p {
 
 a {
   font-family: Lato,Helvetica Neue,Arial,Helvetica,sans-serif;
+  text-decoration: none;
+  color: $red;
 }
 .button-primary {
   background-color: #f04!important;
@@ -61,4 +63,5 @@ body ::-webkit-scrollbar {
   -webkit-appearance: none;
   width: 10px;
   height: 10px;
+  background: $background !important;
 }

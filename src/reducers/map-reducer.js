@@ -93,6 +93,26 @@ const initialState = {
 			green: true,
 			blue: true,
 			gray: true
+		},
+		{
+			name: 'Game',
+			months: '4',
+			num: '1',
+			x: '20',
+			y: '-30',
+			green: true,
+			blue: true,
+			gray: true
+		},
+		{
+			name: 'Abc',
+			months: '4',
+			num: '1',
+			x: '20',
+			y: '-30',
+			green: true,
+			blue: true,
+			gray: true
 		}
 	]
 };

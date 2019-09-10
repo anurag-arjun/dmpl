@@ -2,33 +2,54 @@
 
 
 .landing-page {
-    display:  flex;
-    flex-flow: row nowrap;
-    -ms-flex-align: start;
-    align-items: flex-start;
-    //overflow-x: auto;
-    //width: 68.75rem;
-    //width: 1127px;
-    //margin-left: auto!important;
-    //margin-right: auto!important;
-    //height: 294px;
-    display: block;
-    //max-width: 100%!important;
+  display: flex;
+  flex-flow: row nowrap;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  background-color: $dark-black;
+  //overflow-x: auto;
+  //width: 68.75rem;
+  //width: 1127px;
+  //margin-left: auto!important;
+  //margin-right: auto!important;
+  //height: 294px;
+  display: block;
+  //max-width: 100%!important;
 
-    &-header {
-      color: $text;
-    }
+  &-header {
+    color: $text;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
 
-    &-scroller {
-      display: flex;
-      -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-      justify-content: space-between;
-      //background: rgba(0, 0, 0, 0.342);
-      font-family: Lato;
-      font-size: 14px;
-      margin-top: 15px;
-      width: 1127px;
-      overflow-x:auto;
-    }
+  }
+
+  &-publications {
+    width: 1127px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top:  2rem !important;
+  }
+
+  &-a {
+    text-transform: uppercase;
+    color: $red;
+    font-size: smaller;
+    cursor: pointer;
+  }
+
+  &-scroller {
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    //background: rgba(0, 0, 0, 0.342);
+    font-family: Lato;
+    font-size: 14px;
+    margin-top: 15px;
+    width: 1127px;
+    overflow-x: auto;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
 }

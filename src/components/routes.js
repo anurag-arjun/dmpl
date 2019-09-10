@@ -9,6 +9,7 @@ import Footer from '../components/Footer/Footer.js';
 import signIn from '../components/signIn/signIn.js';
 import colorKey from '../components/colorKey/colorKey.js';
 import NavBar from '../components/Navbar/Navbar';
+import Marketplace from '../components/Marketplace/Marketplace.js';
 
 class Routes extends Component {
 	render() {
@@ -19,6 +20,7 @@ class Routes extends Component {
 					<Route exact path="/" component={LandingPage} />
 					<Route exact path="/signin" component={signIn} />
 					<Route exact path="/colorKey" component={colorKey} />
+					<Route exact path="/marketplace" component={Marketplace} />
 				</Switch>
 				<Footer />
 			</div>
