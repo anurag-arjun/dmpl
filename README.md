@@ -1,8 +1,51 @@
-# MaticFrontend
+# MaticFrontend ![Logo](https://market.decentraland.org/static/media/logo.a2f3cefb.svg)
+
+- Install the dependencies by doing `npm install.`
+- enter this command in cmd to create these files.
+- `touch .prettierrc .eslintrc .stylelintrc .editorconfig settings.yaml`
+
+## _What to do when bug happens?_
+
+- Copy the whole log by any means.
+- sent it to the slack channel.
+- Wait for someone to fix that error.
+
+## Why that error happened? General fixes.
+
+1.  Dependencies are messing up.
+2.  Remove any dependency from global modules' folder that is already in your
+    local modules folder.
+3.  Delete your node_modules folder.
+4.  Delete the files below from your parent directory if they exist.
+5.  Create them again and put the same content inside them.
+6.  Install the dependencies again.
+7.  Run the server.
+8.  If there is any error again and you are unable to solve it, then you are not
+    good at using google.
+
+## Settings file for server config
+
+> settings.yaml
+
+    #development specific settings
+
+    development:
+
+    PORT:  3001
+
+    SERVER_URL:  http://10.1.4.145
+
+    SERVER_PORT:  9001
+
+    CLINT_URL:  localhost
+
+    TOKEN_NAME:  'hack-maniac-devs'
+
+    DEBUG:  false
 
 ## Prettier Config file
 
-.prettierrc
+> .prettierrc
 
       {
 
@@ -24,7 +67,7 @@
 
     "requirePragma": false,
 
-    "insertPragma": false,
+    "insertPragma": false,.editorconfig
 
     "proseWrap": "always"
 
@@ -32,7 +75,7 @@
 
 ## EsLint config file, updated and fixed
 
-.eslintrc
+> .eslintrc
 
         {
 
@@ -90,7 +133,7 @@
 
 ## Style Lint config file for prettier to use on css and other files
 
-.stylelintrc
+> .stylelintrc
 
     {
 
@@ -132,7 +175,7 @@
 
 ## Editor Config file
 
-.editorconfig
+> .editorconfig
 
     # EditorConfig is awesome: http://EditorConfig.org
 
