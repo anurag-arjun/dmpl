@@ -1,6 +1,7 @@
+@import "..//..//components/common/styles/main.scss";
 .colorheading
 {
-    color: #ffffff;
+    color:var(--color-dull-white);
     font-family: Lato;
     margin-right: 30%;
     font-size:28px;
@@ -9,15 +10,23 @@
 .colorKey{
     text-align: center;
     margin-left: 23%;
+    
     @media screen and (max-width: 992px) {
         .colorKey{
                text-align: center;
                margin-left: 10%;
         }
        }
+
+    @media screen and (max-width: 1337px) {
+        .colorKey{
+               text-align: center;
+               margin-left: 23%;
+        }
+    }
     @media screen and (max-width: 600px) {
        .colorKey{
-       text-align: center;
+
        margin-left: 0%;
        }
    }

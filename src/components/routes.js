@@ -9,6 +9,7 @@ import Footer from '../components/Footer/Footer.js';
 import signIn from '../components/signIn/signIn.js';
 import colorKey from '../components/colorKey/colorKey.js';
 import NavBar from '../components/Navbar/Navbar';
+import WhyMatic from '../components/WhyMatic/WhyMatic'
 
 
 class Routes extends Component {
@@ -22,6 +23,7 @@ class Routes extends Component {
 					<Route exact path="/" component={Header} />
 					<Route exact path="/signin" component={signIn} />
 					<Route exact path="/colorKey" component={colorKey} />
+					<Route exact path= "/whymatic" component={WhyMatic}/>
 				</Switch>
 				<Footer />
 			</div>

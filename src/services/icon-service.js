@@ -76,5 +76,6 @@ module.exports = {
     "fa-bars":require("react-icons/lib/fa/bars"),
     "fa-try":require("react-icons/lib/fa/try"),
     "fa-skip":require("react-icons/lib/fa/fast-forward"),
-    "fa-paper-plane":require("react-icons/lib/fa/paper-plane")    
+    "fa-paper-plane":require("react-icons/lib/fa/paper-plane"),
+    "md-start-circle":require("react-icons/lib/md/stars")    
 }
