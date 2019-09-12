@@ -1,30 +1,61 @@
 @import '../common/styles/main';
 
 .Navigation {
-  display: flex;
-  -ms-flex-flow: row nowrap;
-  flex-flow: row nowrap;
-  -ms-flex-align: center;
-  align-items: center;
-  height: 94px;
-  -ms-flex-pack: center;
-  justify-content: left;
-  padding: 0 25px;
-  background-color: $nav-black;
+	display: flex;
+	-ms-flex-flow: row nowrap;
+	flex-flow: row nowrap;
+	-ms-flex-align: center;
+	align-items: center;
+	height: 94px;
+	-ms-flex-pack: center;
+	justify-content: space-between;
+	padding: 0 25px;
+	background-color: $nav-black;
 
-  &-logo {
-    height: 56px;
-    width: 56px;
-    opacity: 1 !important;
-    background-color:transparent !important;
-    //margin:22px 10px;
+	&-logo {
+		height: 56px;
+		width: 56px;
+		opacity: 1 !important;
+		background-color: transparent !important;
+		//align-items: left;
+		//margin:22px 10px;
 
-    &::selection {
-      background-color:
-        #fff;
-      color:
-        rgba(0, 0, 0, .87);
-    }
-  }
+		&::selection {
+			background-color: #fff;
+			color: rgba(0, 0, 0, 0.87);
+		}
+	}
+
+	& a.enabled {
+		color: $text !important;
+		background-color: $red;
+		border-radius: 20px;
+	}
 }
 
+a.Navigation-item {
+	align-self: center;
+	padding: 0.78571429em 0.92857143em;
+	margin: 0 0.35714286em;
+	-webkit-transition: color 0.1s ease;
+	-o-transition: color 0.1s ease;
+	transition: color 0.1s ease;
+	border-radius: 20px;
+	text-transform: uppercase;
+	font-family: $font-family;
+	font-size: 13px;
+	padding: 9px;
+	font-weight: 100;
+	color: $gray !important;
+	margin: 0 10px !important;
+	//align-items: center;
+
+	&:hover {
+		background-color: $red;
+		color: $text !important;
+		-webkit-transition: color 0.1s ease;
+		-o-transition: color 0.1s ease;
+		transition: color 0.1s ease;
+		border-radius: 20px;
+	}
+}

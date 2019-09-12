@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import Dropdown from 'react-dropdown';
+import NavBar from '../Navbar/Navbar';
 //import 'react-dropdown/style.css';
 
 class Marketplace extends React.Component {
@@ -14,15 +15,17 @@ class Marketplace extends React.Component {
     const options = ['one', 'two', 'three'];
     const { mapsReversed } = this.props;
     return (
-      <div className="marketplace-container">
-        <Tabs>
-          <div className="marketplace-container-menu">
-            <div className="menu-container">
-              <TabList className="menu-container-item">
-                <Tab className="menu-item">Parcels</Tab>
-                <Tab className="menu-item">Estates</Tab>
-              </TabList>
-              {/* <div className="menu-list">
+      <div>
+        <NavBar Marketplace="true" />
+        <div className="marketplace-container">
+          <Tabs>
+            <div className="marketplace-container-menu">
+              <div className="menu-container">
+                <TabList className="menu-container-item">
+                  <Tab className="menu-item">Parcels</Tab>
+                  <Tab className="menu-item">Estates</Tab>
+                </TabList>
+                {/* <div className="menu-list">
                 <input type="text" list="lang" placeholder="English"></input>
                 <datalist id="lang">
                   <option value="English"></option>
@@ -31,34 +34,35 @@ class Marketplace extends React.Component {
                   <option value="Spanish"></option>
                 </datalist>
               </div> */}
-              <Dropdown
-                options={options}
-                onChange={this._onSelect}
-                //value={defaultOption}
-                placeholder="Select an option"
-              />
+                <Dropdown
+                  options={options}
+                  onChange={this._onSelect}
+                  //value={defaultOption}
+                  placeholder="Select an option"
+                />
+              </div>
             </div>
-          </div>
 
-          <TabPanel>
-            <div className="marketplace-container-cards-collection">
-              <div className="marketplace-container-cards">
-                {maps.map((e, i) => (
-                  <LandCard big={true} {...e} index={i} />
-                ))}
+            <TabPanel>
+              <div className="marketplace-container-cards-collection">
+                <div className="marketplace-container-cards">
+                  {maps.map((e, i) => (
+                    <LandCard big={true} {...e} index={i} />
+                  ))}
+                </div>
               </div>
-            </div>
-          </TabPanel>
-          <TabPanel>
-            <div className="marketplace-container-cards-collection">
-              <div className="marketplace-container-cards">
-                {mapsReversed.map((e, i) => (
-                  <LandCard big={true} {...e} index={i} />
-                ))}
+            </TabPanel>
+            <TabPanel>
+              <div className="marketplace-container-cards-collection">
+                <div className="marketplace-container-cards">
+                  {mapsReversed.map((e, i) => (
+                    <LandCard big={true} {...e} index={i} />
+                  ))}
+                </div>
               </div>
-            </div>
-          </TabPanel>
-        </Tabs>
+            </TabPanel>
+          </Tabs>
+        </div>
       </div>
     );
   }

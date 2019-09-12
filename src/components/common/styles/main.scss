@@ -1,5 +1,5 @@
 @import './variables';
-@import './root';
+//@import './root';
 @import './reset';
 
 h1 {
@@ -31,7 +31,7 @@ p {
 a {
 	font-family: Lato, Helvetica Neue, Arial, Helvetica, sans-serif;
 	text-decoration: none;
-	color: $red;
+	//color: $red;
 }
 
 .button-primary {

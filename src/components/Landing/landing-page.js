@@ -6,6 +6,7 @@ import Icons from '../../services/icon-service';
 import LandCard from '../common/landCard/landCard';
 const FaSearch = Icons['fa-search'];
 import Header from '../Header/Header.js';
+import NavBar from '../Navbar/Navbar';
 
 class LandingPage extends React.Component {
   render() {
@@ -14,6 +15,7 @@ class LandingPage extends React.Component {
 
     return (
       <div className="landing-page">
+        <NavBar />
         <Header />
         <div className="landing-page-publications">
           <div className="landing-page-header">
