@@ -72,9 +72,10 @@ Marketplace.propTypes = {};
 
 const mapStateToProps = (state) => {
   const top12 = state.maps.map.slice(0, 12);
+  const last12 = state.maps.map.slice(5, 17);
   return {
     maps: top12,
-    mapsReversed: top12.reverse(),
+    mapsReversed: last12.reverse(),
   };
 };
 

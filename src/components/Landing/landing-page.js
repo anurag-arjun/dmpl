@@ -26,7 +26,7 @@ class LandingPage extends React.Component {
           </div>
           <div className="landing-page-scroller">
             {maps.map((e, i) => (
-              <LandCard {...e} index={i} />
+              <LandCard {...e} index={i} normal={true} />
             ))}
           </div>
         </div>

@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './land-card.scss';
 import cardImg from '../assets/images/map3.png';
+import cardImgBig from '../assets/images/map-big.png';
+
 import plazaGreen from '../assets/images/icon-plaza-green.svg';
 import districtBlue from '../assets/images/icon-district-blue.svg';
 import roadGray from '../assets/images/icon-road-gray.svg';
@@ -21,16 +23,26 @@ class LandCard extends React.Component {
       mana,
       manaSymbol,
       big,
+      normal,
     } = this.props;
 
     return (
       <div className={big ? 'land-card big' : 'land-card'}>
         <div className="land-card-preview">
-          <img
-            src={cardImg}
-            alt="cardImg"
-            className="land-card-preview-image"
-          />
+          {normal && (
+            <img
+              src={cardImg}
+              alt="cardImg"
+              className="land-card-preview-image"
+            />
+          )}
+          {big && (
+            <img
+              src={cardImgBig}
+              alt="cardImgBig"
+              className="land-card-preview-image"
+            />
+          )}
         </div>
         <div className="land-card-content">
           <div className="land-card-content-text">
