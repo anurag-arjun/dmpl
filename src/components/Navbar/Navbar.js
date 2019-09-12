@@ -6,7 +6,10 @@ class NavBar extends React.Component {
 	render() {
 		return (
 			<nav className="Navigation">
-				<img src={logo} alt="logo" className="Navigation-logo" />
+				<a href="/">
+					{' '}
+					<img src={logo} alt="logo" className="Navigation-logo" />
+				</a>
 			</nav>
 		);
 	}

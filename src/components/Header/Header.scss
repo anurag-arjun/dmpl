@@ -2,8 +2,15 @@
 
 
 .Header-main {
-  background-image: url(../common/assets/images/wave-background.png);
-  height: calc(100vh - 440px);
+  background-image:
+linear-gradient(to bottom, rgba(0, 0, 0, 0.082), rgba(0, 0, 0, 0.25)),
+url('../common/assets/images/wave-background.png');
+  // background-image: linear-gradient(rgba(0, 0, 0, 0.082),rgba(0, 0, 0, 0.25)),url(../common/assets/images/wave-background.png);
+  //background: rgba(0, 0, 0, 0.082);
+
+  //background: $gradient;
+    height: calc(100vh - 500px);
+    min-height: 128px;
   top: calc(0px - 94px);
   left: 0;
   right: 0;

@@ -26,7 +26,7 @@ class WhyMatic extends React.Component {
                         </div>
 
                         <div>
-                        <span><StartIcons size={60}className="col-1-icon"/></span>
+                        <span><StartIcons size={60} className="col-1-icon"/></span>
                            <div>
                               <h2>Fees</h2>
                               <p>Negligible gas fees</p>
@@ -34,7 +34,7 @@ class WhyMatic extends React.Component {
                         </div>
 
                         <div>
-                            <span><StartIcons size={60}className="col-1-icon"/></span>
+                            <span><StartIcons size={60} className="col-1-icon"/></span>
                             <div>
                                <h2>Bulk Deposits</h2>
                                <p>Deposit multiple assests in one-go</p>

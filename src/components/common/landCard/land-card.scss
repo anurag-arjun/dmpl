@@ -1,11 +1,88 @@
 @import '../../common/styles/main';
 
 .land-card {
-    display: block;
-    width: 229px;
-    height: 400%;
-    background-color: $card-background;
-    border-radius: 5px;
-    margin: 5px;
-    color: $text;
+  display: block;
+  width: 229px !important;
+  height: 400%;
+  background-color: $card-background;
+  border-radius: .28571429rem !important;
+  margin: 5px;
+  color: $text;
+  //overflow: hidden;
+
+  &-preview {
+    display: inline-block;
+    cursor: pointer;
+    width: 224px;
+    height: 132px;
+  }
+
+  &-content {
+    position: relative;
+    padding: 1em;
+    cursor: pointer;
+
+    &-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-date {
+      margin-bottom: 15px;
+      color: $gray;
+    }
+
+    &-title {
+      font-size: 15px;
+      margin-bottom: 5px;
+      color: $text;
+      overflow: hidden;
+      display: -ms-flexbox;
+      display: flex;
+    }
+
+    &-info {
+      display: flex;
+      flex-flow: row;
+    }
+
+    &-xy {
+      display: flex;
+      border: 1px solid $text;
+      padding: 3px;
+      border-radius: 4px;
+      margin-right: 10px;
+      align-items: center;
+      position: relative;
+      padding: 2px 7px;
+      font-size: 12px;
+      font-weight: 400;
+
+      & img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    &-image {
+      width: 24px;
+      height: 24px;
+      background-size: 50%;
+      border-radius: 4px;
+      padding: 4px;
+      margin-right: 5px;
+    }
+  }
+}
+
+.green {
+  background-color: $dark-green;
+}
+
+.blue {
+  background-color: #5054d4;
+}
+
+.gray {
+  background-color: $gray;
 }

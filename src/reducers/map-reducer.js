@@ -6,9 +6,8 @@ const initialState = {
 			num: '1',
 			x: '20',
 			y: '-30',
-			green: 'plazaGreen',
-			blue: 'districtBlue',
-			gray: 'roadGray'
+			green: true,
+			blue: true
 		},
 		{
 			name: 'Plaza',
@@ -16,9 +15,9 @@ const initialState = {
 			num: '1',
 			x: '20',
 			y: '-30',
-			green: 'plazaGreen',
-			blue: 'districtBlue',
-			gray: 'roadGray'
+			green: true,
+			blue: true,
+			gray: true
 		},
 		{
 			name: 'Plaza',
@@ -26,9 +25,8 @@ const initialState = {
 			num: '1',
 			x: '20',
 			y: '-30',
-			green: 'plazaGreen',
-			blue: 'districtBlue',
-			gray: 'roadGray'
+			green: true,
+			gray: true
 		},
 		{
 			name: 'Plaza',
@@ -36,9 +34,85 @@ const initialState = {
 			num: '1',
 			x: '20',
 			y: '-30',
-			green: 'plazaGreen',
-			blue: 'districtBlue',
-			gray: 'roadGray'
+			gray: true
+		},
+		{
+			name: 'Plaza',
+			months: '4',
+			num: '1',
+			x: '20',
+			y: '-30',
+			green: true
+		},
+		{
+			name: 'Plaza',
+			months: '4',
+			num: '1',
+			x: '20',
+			y: '-30',
+			green: true,
+			blue: true,
+			gray: true
+		},
+		{
+			name: 'Plaza',
+			months: '4',
+			num: '1',
+			x: '20',
+			y: '-30',
+			green: true,
+			blue: true,
+			gray: true
+		},
+		{
+			name: 'Plaza',
+			months: '4',
+			num: '1',
+			x: '20',
+			y: '-30',
+			green: true,
+			blue: true,
+			gray: true
+		},
+		{
+			name: 'Plaza',
+			months: '4',
+			num: '1',
+			x: '20',
+			y: '-30',
+			green: true,
+			blue: true,
+			gray: true
+		},
+		{
+			name: 'Plaza',
+			months: '4',
+			num: '1',
+			x: '20',
+			y: '-30',
+			green: true,
+			blue: true,
+			gray: true
+		},
+		{
+			name: 'Game',
+			months: '4',
+			num: '1',
+			x: '20',
+			y: '-30',
+			green: true,
+			blue: true,
+			gray: true
+		},
+		{
+			name: 'Abc',
+			months: '4',
+			num: '1',
+			x: '20',
+			y: '-30',
+			green: true,
+			blue: true,
+			gray: true
 		}
 	]
 };

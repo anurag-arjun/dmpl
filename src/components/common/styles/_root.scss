@@ -15,7 +15,7 @@
     --color-green: rgb(00 ,128, 64);
     --color-red: #ff5056;
     --color-red-shadow: #ffbabc;
-    --color-red-half-transparent:rgba(254,46,89, .4); 
+    --color-red-half-transparent:rgba(254,46,89, .4);
     --color-blue: #00bfe3;
     --color-blue-dark: #0071bc;
     --color-bronze: #CD7F32;
@@ -35,7 +35,7 @@
     --color-vanilla:rgb(223,176,122);
 
     /*background colors*/
-    --color-body-background: #2a2a2a;
+    --color-body-background: #18131a;
     --color-light-red: #ff9990;
 
     /*text*/
@@ -97,7 +97,7 @@
     height: 2px;
 }
 ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px grey; 
+    box-shadow: inset 0 0 5px grey;
     background: var(--color-text-secondary);
 }
 /* Handle */

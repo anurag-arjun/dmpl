@@ -10,20 +10,19 @@ import signIn from '../components/signIn/signIn.js';
 import colorKey from '../components/colorKey/colorKey.js';
 import NavBar from '../components/Navbar/Navbar';
 import WhyMatic from '../components/WhyMatic/WhyMatic'
-
+import Marketplace from '../components/Marketplace/Marketplace.js';
 
 class Routes extends Component {
 	render() {
 		return (
 			<div style={styles.fill}>
 				<NavBar />
-
 				<Switch location={this.props.location}>
 					<Route exact path="/" component={LandingPage} />
-					<Route exact path="/" component={Header} />
 					<Route exact path="/signin" component={signIn} />
 					<Route exact path="/colorKey" component={colorKey} />
 					<Route exact path= "/whymatic" component={WhyMatic}/>
+					<Route exact path="/marketplace" component={Marketplace} />
 				</Switch>
 				<Footer />
 			</div>
