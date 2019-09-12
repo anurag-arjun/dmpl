@@ -41,6 +41,10 @@
 	justify-content: space-between;
 	margin-left: auto !important;
 	margin-right: auto !important;
+
+	&-item {
+		display: flex;
+	}
 }
 
 .menu-item {
@@ -74,4 +78,53 @@
 	-webkit-transition: color 0.1s ease;
 	-o-transition: color 0.1s ease;
 	transition: color 0.1s ease;
+}
+
+.marketplace-tab {
+	display: flex;
+}
+
+.react-tabs__tab--selected {
+	border-color: $red;
+	color: $red !important;
+	cursor: pointer;
+	border-bottom-color: $red;
+	border-bottom-style: solid;
+	border-radius: 0;
+	-ms-flex-item-align: end;
+	align-self: flex-end;
+	margin: 0 0 -2px;
+	padding: 0.85714286em 1.14285714em;
+	border-bottom-width: 2px;
+	-webkit-transition: color 0.1s ease;
+	-o-transition: color 0.1s ease;
+	transition: color 0.5s ease;
+	outline: none;
+}
+
+.react-tabs__tab--disabled {
+	color: $text !important;
+	font-weight: 700;
+	border-bottom-style: solid;
+	border-radius: 0;
+	border-bottom-color: transparent;
+	-ms-flex-item-align: end;
+	align-self: flex-end;
+	margin: 0 0 -2px;
+	padding: 0.85714286em 1.14285714em;
+	border-bottom-width: 2px;
+	-webkit-transition: color 0.1s ease;
+	-o-transition: color 0.1s ease;
+	transition: color 0.5s ease;
+	outline: none;
+}
+
+.react-tabs__tab-panel {
+	display: none;
+	transition: all 0.5s ease;
+}
+
+.react-tabs__tab-panel--selected {
+	display: block;
+	transition: all 0.5s ease;
 }
