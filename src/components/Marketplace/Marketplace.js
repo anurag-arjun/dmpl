@@ -7,7 +7,6 @@ import { connect } from 'react-redux';
 class Marketplace extends React.Component {
   render() {
     const { maps } = this.props;
-
     return (
       <div className="marketplace-container">
         <div className="marketplace-container-menu">
