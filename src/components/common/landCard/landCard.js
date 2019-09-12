@@ -20,10 +20,11 @@ class LandCard extends React.Component {
       gray,
       mana,
       manaSymbol,
+      big,
     } = this.props;
 
     return (
-      <div className="land-card">
+      <div className={big ? 'land-card big' : 'land-card'}>
         <div className="land-card-preview">
           <img
             src={cardImg}
@@ -35,7 +36,7 @@ class LandCard extends React.Component {
           <div className="land-card-content-text">
             <div className="land-card-content-heading">
               <div className="land-card-content-title">{name}</div>
-              {manaSymbol && (
+              {big && manaSymbol && (
                 <div className="land-card-content-mana">⏣ &nbsp; {mana}</div>
               )}
             </div>
