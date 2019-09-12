@@ -1,0 +1,53 @@
+.wallet{
+    border: 1px solid white;
+    margin-left:10rem;
+    margin-right: 10rem;
+    padding-top: 2rem;
+    display: flex;
+    .wallet-img{
+        border: 1px solid transparent;
+        padding-left: 2rem;
+        border-radius: 1rem;
+       
+    }
+    .wallet-content{
+        padding-left:4rem;
+        .wallet-content-row1{
+            span{
+                p{
+                    color: #ffffff;
+                    font: 550;
+                    font-size: 16px;
+                    margin-bottom: 0.5rem;
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                }
+            }
+            p{
+             color:#666;
+             font-size: 16px;
+             font-weight: 550;
+             padding-bottom:0.5rem; 
+             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            }
+            .row1-btn{
+                display: flex;
+                .row1-btn-btn{
+                    button{
+                        margin-left:1.6rem;
+                    }
+                }
+                    div{
+                        display: flex;
+                        p{
+                            color:#00d2ff;
+                            padding-top:2.7rem;
+                            margin-left:.5rem;
+                        }
+                        
+                    }
+            }
+            
+        }
+    }
+
+}

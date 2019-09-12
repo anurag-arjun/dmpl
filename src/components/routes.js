@@ -11,6 +11,7 @@ import colorKey from '../components/colorKey/colorKey.js';
 import NavBar from '../components/Navbar/Navbar';
 import WhyMatic from '../components/WhyMatic/WhyMatic'
 import Marketplace from '../components/Marketplace/Marketplace.js';
+import Wallet from '../components/Wallet/Wallet.js';
 
 class Routes extends Component {
 	render() {
@@ -23,6 +24,7 @@ class Routes extends Component {
 					<Route exact path="/colorKey" component={colorKey} />
 					<Route exact path= "/whymatic" component={WhyMatic}/>
 					<Route exact path="/marketplace" component={Marketplace} />
+					<Route exact path="/wallet" component={Wallet}/>
 				</Switch>
 				<Footer />
 			</div>
