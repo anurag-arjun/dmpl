@@ -21,71 +21,78 @@ class Wallet extends React.Component {
                             <span className="row1-btn">
                                  <div><img src={balance}></img><p>1000 MANA</p></div>
                                  <div className="row1-btn-btn">
-                                 <button>Buy More</button>
-                                 <button>Transfer</button>
-                                 <button><img src={blue_dark}></img> <p>ADD FUND TO MATIC</p></button>
+                                 <button1 className="button1">Buy More</button1>
+                                 <button>TRANSFER</button>
+                                 <button><img src={blue_dark}></img> <span>ADD FUND TO MATIC</span></button>
                                  </div>
                             </span>
                         </div>
                         <div className="wallet-content-row2">
-                            <span>AUTHORIZATION</span>
-                            <div className='wallet-content-row2-buy'>
-                                <span>For buying</span>
-                                <div>
-                                    <span>
-                                        <input type="checkbox"></input>
-                                        <p>ERC721 using MANA</p>
-                                    </span>
-                                    <p>Authorize the <span>marketplace</span> to operate MANA on your behalf</p>
+                            <p className="headingP">AUTHORIZATION</p>
+                            <div className="row2-divider">
+                                <div className='wallet-content-row2-buy'>
+                                    <span className="buysell">For buying</span>
+                                    <div className="row2-buy">
+                                        <span className="row2-buy-sec">
+                                            <input type="checkbox"></input>
+                                            <p className="outerP">ERC721 using MANA</p>
+                                        </span>
+                                        <p className="innerP">Authorize the <span>marketplace</span> to operate MANA on your behalf</p>
+                                    </div>
+                                    <div className="row2-buy">
+                                        <span className="row2-buy-sec">
+                                            <input type="checkbox"></input>
+                                            <p className="outerP">ERC721 using MANA</p>
+                                        </span>
+                                        <p className="innerP">Authorize the <span>marketplace</span> to operate MANA on your behalf</p>
+                                    </div>
+                                    <div className="row2-buy">
+                                        <span className="row2-buy-sec">
+                                            <input type="checkbox"></input>
+                                            <p className="outerP">ERC721 using MANA</p>
+                                        </span>
+                                        <p className="innerP">Authorize the <span>marketplace</span> to operate MANA on your behalf</p>
+                                    </div>
+                                    <div className="row2-buy">
+                                        <span className="row2-buy-sec">
+                                            <input type="checkbox"></input>
+                                            <p className="outerP">ERC721 using MANA</p>
+                                        </span>
+                                        <p className="innerP">Authorize the <span>marketplace</span> to operate MANA on your behalf</p>
+                                    </div>
+                                    <br></br>
+                                    <br></br>
+                                    <span className="buysell">For Matic</span>
+                                    <div className="row2-buy">
+                                        <span className="row2-buy-sec">
+                                            <input type="checkbox"></input>
+                                            <p className="outerP">ERC721 using MANA</p>
+                                        </span>
+                                        <p className="outerP">Authorize the <span>marketplace</span> to operate MANA on your behalf</p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <span>
-                                        <input type="checkbox"></input>
-                                        <p>ERC721 using MANA</p>
-                                    </span>
-                                    <p>Authorize the <span>marketplace</span> to operate MANA on your behalf</p>
-                                </div>
-                                <div>
-                                    <span>
-                                        <input type="checkbox"></input>
-                                        <p>ERC721 using MANA</p>
-                                    </span>
-                                    <p>Authorize the <span>marketplace</span> to operate MANA on your behalf</p>
-                                </div>
-                                <div>
-                                    <span>
-                                        <input type="checkbox"></input>
-                                        <p>ERC721 using MANA</p>
-                                    </span>
-                                    <p>Authorize the <span>marketplace</span> to operate MANA on your behalf</p>
-                                </div>
-                                <div>
-                                    <span>
-                                        <input type="checkbox"></input>
-                                        <p>ERC721 using MANA</p>
-                                    </span>
-                                    <p>Authorize the <span>marketplace</span> to operate MANA on your behalf</p>
-                                </div>
+                                <div className="wallet-content-row2-buy">
+                                <span className="buysell">For selling</span>
+                                <div className="row2-buy">
+                                        <span className="row2-buy-sec">
+                                            <input type="checkbox"></input>
+                                            <p className="outerP">ERC721 using MANA</p>
+                                        </span>
+                                        <p className="innerP">Authorize the <span>marketplace</span> to operate MANA on your behalf</p>
+                                    </div>
+                                    <div className="row2-buy">
+                                        <span className="row2-buy-sec">
+                                            <input type="checkbox"></input>
+                                            <p className="outerP">ERC721 using MANA</p>
+                                        </span>
+                                        <p className="innerP">Authorize the <span>marketplace</span> to operate MANA on your behalf</p>
+                                    </div>
 
                             </div>
-                            <div className="wallet-content-row2-sell">
-                                <span>For selling</span>
-                                <div>
-                                    <span>
-                                        <input type="checkbox"></input>
-                                        <p>ERC721 using MANA</p>
-                                    </span>
-                                    <p>Authorize the <span>marketplace</span> to operate MANA on your behalf</p>
-                                </div>
-                                <div>
-                                    <span>
-                                        <input type="checkbox"></input>
-                                        <p>ERC721 using MANA</p>
-                                    </span>
-                                    <p>Authorize the <span>marketplace</span> to operate MANA on your behalf</p>
-                                </div>
 
                             </div>
+                            
+                            
 
                         </div>
                     </div>
