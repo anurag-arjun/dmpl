@@ -113,11 +113,20 @@ body ::-webkit-scrollbar {
 	outline: none;
 	padding: 8px 52px 8px 10px;
 	transition: all 0.2s ease;
+	width: 194px;
+	//height: 40px;
+	vertical-align: middle;
+	//align-content: center;
 }
 
 .Dropdown-control:hover {
 	box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
 }
+
+// .Dropdown-placeholder {
+// 	height: 40px;
+// 	line-height: 40px;
+// }
 
 .Dropdown-arrow {
 	border-color: #999 transparent transparent;

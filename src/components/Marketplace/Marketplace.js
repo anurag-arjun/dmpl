@@ -11,8 +11,8 @@ import NavBar from '../Navbar/Navbar';
 class Marketplace extends React.Component {
   render() {
     const { maps } = this.props;
-    //const defaultOption = options[0];
-    const options = ['one', 'two', 'three'];
+    //const defaultOption = options['Cheapest'];
+    const options = ['Cheapest', 'Newest', 'Closest to Expire'];
     const { mapsReversed } = this.props;
     return (
       <div>
@@ -38,7 +38,7 @@ class Marketplace extends React.Component {
                   options={options}
                   onChange={this._onSelect}
                   //value={defaultOption}
-                  placeholder="Select an option"
+                  placeholder="Cheapest"
                 />
               </div>
             </div>

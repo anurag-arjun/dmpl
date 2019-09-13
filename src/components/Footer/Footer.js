@@ -5,47 +5,50 @@ const FacebookIcon = icons['fa-facebook-square'];
 const TwitterIcon = icons['fa-twitter-square'];
 const GithubIcon = icons['fa-github-square'];
 const RedditIcon = icons['fa-reddit-square'];
+import Dropdown from 'react-dropdown';
 
 class Footer extends React.Component {
-	render() {
-		return (
-			<footer id="footer">
-				<div className="col1">
-					<div className="row1">
-						<span>Blog</span>
-						<span>Website</span>
-						<span>FAQ</span>
-						<span>Privacy Policy</span>
-						<span>Terms And Conditions</span>
-						<span>Code of Ethics</span>
-					</div>
-					<div className="row2">
-						<div className="row-icon">
-							<TwitterIcon />
-						</div>
-						<div className="row-icon">
-							<FacebookIcon />
-						</div>
-						<div className="row-icon">
-							<GithubIcon />
-						</div>
-						<div className="row-icon">
-							<RedditIcon />
-						</div>
-					</div>
-				</div>
-				<div className="col2">
-					<span>© 2019 Decentraland.All rights reserved.</span>
-					<input type="text" list="lang" placeholder="English"></input>
-					<datalist id="lang">
-						<option value="English"></option>
-						<option value="French"></option>
-						<option value="Japanese"></option>
-						<option value="Spanish"></option>
-					</datalist>
-				</div>
-			</footer>
-		);
-	}
+  render() {
+    const options = ['English', 'French', 'German', 'Italian'];
+    return (
+      <footer id="footer" className="footer">
+        <div className="footer-left">
+          <div className="footer-left-links">
+            <span>Blog</span>
+            <span>Website</span>
+            <span>FAQ</span>
+            <span>Privacy Policy</span>
+            <span>Terms And Conditions</span>
+            <span>Code of Ethics</span>
+          </div>
+          <div className="footer-left-icons">
+            <div className="footer-left-icons-icon">
+              <TwitterIcon />
+            </div>
+            <div className="footer-left-icons-icon">
+              <FacebookIcon />
+            </div>
+            <div className="footer-left-icons-icon">
+              <GithubIcon />
+            </div>
+            <div className="footer-left-icons-icon">
+              <RedditIcon />
+            </div>
+          </div>
+        </div>
+        <div className="footer-right">
+          <span className="footer-right-text">
+            © 2019 Decentraland.All rights reserved.
+          </span>
+          <Dropdown
+            options={options}
+            onChange={this._onSelect}
+            //value={defaultOption}
+            placeholder="Cheapest"
+          />
+        </div>
+      </footer>
+    );
+  }
 }
 export default Footer;
