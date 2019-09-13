@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 import './land-card.scss';
 import cardImg from '../assets/images/map3.png';
 import cardImgBig from '../assets/images/map-big.png';
-
+import icons from '../../../services/icon-service.js';
 import plazaGreen from '../assets/images/icon-plaza-green.svg';
 import districtBlue from '../assets/images/icon-district-blue.svg';
 import roadGray from '../assets/images/icon-road-gray.svg';
 import placeIcon from '../assets/images/place.svg';
+
+const MapMarker = icons['fa-map-marker'];
 
 class LandCard extends React.Component {
   render() {
@@ -56,11 +58,12 @@ class LandCard extends React.Component {
           </div>
           <div className="land-card-content-info">
             <div className="land-card-content-xy">
-              <img
+              {/* <img
                 src={placeIcon}
                 alt="placeIcon"
                 className="land-card-place-icon"
-              />
+              /> */}
+              <MapMarker />
               <p className="land-card-content-x">{x},</p>
               <p className="land-card-content-x">{y}</p>
             </div>
