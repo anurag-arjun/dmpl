@@ -57,6 +57,40 @@
 		}
 	}
 }
+.Dropdown-menu{
+	border-radius: 1rem !important;
+	background-color: #272329 !important;
+	border: 1px solid #000 !important;
+	color:#ffffff !important;
+	width: 150px !important;
+	right:0.05rem !important;
+	padding: 1px !important;
+	margin: 1px !important;
+	min-width:12rem !important;
+}
+.Dropdown-option{
+	color: #000 !important;
+	
+}
+.is-selected{
+	border-radius: 0.2rem !important;
+	color: #ffffff !important;
+	padding: 1px;
+	background-color: #272329 !important;
+	
+}
+.is-selected:hover{
+	border-radius: 1rem !important;
+	color:#ffffff !important;
+	background-color: #666 !important;
+}
+.Dropdown-option:hover {
+	background-color: #666 !important;
+	color: #ffffff;
+	border-radius: 0.2rem;
+}
+
+
 // flex-flow: column nowrap;
 // -ms-flex-pack: space-evenly;
 // justify-content: space-evenly;
