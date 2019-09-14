@@ -1,0 +1,84 @@
+.activity{
+    padding-left: 5rem;
+    padding-right: 66px;
+    height:100%;
+    color: #ffffff;
+    .activity-content{
+        .activity-content-1{
+            padding-left: 100px;
+            padding-top: 0;
+            padding-bottom:1rem;
+            background: #171419;
+            display: flex;
+            justify-content: space-between;
+            .content-line{
+                display: flex; 
+                span{
+                    color:#666;
+                }   
+                       
+                .content-line-para{
+                    display: flex;
+                    .para{
+                        padding-top:35px;
+                        padding-left:1.5rem;
+                        span{
+                            color: #ff0044;
+                        }
+                    }
+                    img{
+                        height: 97px;
+                        left: 10.49%;
+                        right: 85.42%;
+                        top: calc(50% - 97px/2 - 180px);
+                        font-family: STIXGeneral;
+                        font-size: 64px;
+                        line-height: 97px;
+                        color: #00D2FF;
+                    }
+                }
+                .content-line-time{
+                    padding-left:1rem;
+                    padding-top:35px;
+
+                }
+            }
+            .status{
+                display: flex;
+                p{
+                    
+                    padding-top: 35px;
+                    color:#666;
+                   
+                }
+                img{
+                    padding-top:2rem;
+                    padding-left:1rem;
+                    width:28px;
+                    height:28px;
+                }
+            }     
+        }
+    }
+    .activity-head{
+        display:flex;
+        justify-content: space-between;
+        margin-bottom: 5rem;
+        padding-left:6rem;
+        margin-top:3rem;
+       
+
+        .history{
+            color:#ff0044;
+            font-size: 14px;
+        }
+        .heading{
+            color: #ffffff;
+            font-size: 32px;
+            padding-right:2rem;
+        }
+        
+    }
+
+   
+}
