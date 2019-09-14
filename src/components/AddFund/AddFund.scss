@@ -1,0 +1,55 @@
+
+.main{
+    .addfund{
+        position: absolute;
+        left: 28%;
+        top: 25%;
+        width: 710px;
+        height:446px;
+        padding-left: 52px;
+        padding-bottom: 50px;
+        padding-right:44px;
+        padding-top:44px;
+        background: #18141A;
+        border-radius: 10px;
+        border: 1px solid black;
+        &-heading{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 34px;
+            line-height: 40px;
+            /* identical to box height */
+    
+    
+            color: #FFFFFF;
+        }
+    }
+    
+}
+
+@media screen and (max-width: 992px) {
+    .main{
+        .addfund{
+            position: relative;
+            left: 0 !important;
+            width: 360px;
+            height: 446px;
+
+        }
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    .main{
+        .addfund{
+            position: relative;
+            left: 22%;
+            margin-top:10%;
+            width: 710px;
+            height:446px;
+            margin-bottom: 3rem;
+
+        }
+    }
+}

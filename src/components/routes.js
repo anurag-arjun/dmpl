@@ -13,6 +13,7 @@ import WhyMatic from '../components/WhyMatic/WhyMatic';
 import Marketplace from '../components/Marketplace/Marketplace.js';
 import Wallet from '../components/Wallet/Wallet.js';
 import Activity from '../components/Activity/Activity.js'
+import AddFund from '../components/AddFund/AddFund.js'
 class Routes extends Component {
   render() {
     return (
@@ -26,6 +27,7 @@ class Routes extends Component {
           <Route exact path="/marketplace" component={Marketplace} />
           <Route exact path="/wallet" component={Wallet} />
           <Route exact path="/activity" component={Activity}/>
+          <Route exact path="/addfund" component={AddFund}/>
         </Switch>
         <Footer />
       </div>
