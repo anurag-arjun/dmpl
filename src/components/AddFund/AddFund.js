@@ -8,7 +8,9 @@ class AddFund extends React.Component {
         return ( <div className="main">
             <div className="addfund">
                 <h1 className="addfund-heading">Add fund to matic</h1>
-                <p className="addfund-balance">Your current balance is <span></span> in Ethereum mainnet</p>
+                <div className="addfund-balance">
+                    <p className="addfund-balance-1">Your current balance is <span><img src={blue_dark} ></img> <p>1000</p> </span> in Ethereum mainnet</p>
+                </div>
                 <p className="addfund-amt">Amount</p>
                 <div className="addfund-amtval">
                     <div className="addfund-amtval-div">
@@ -17,18 +19,18 @@ class AddFund extends React.Component {
                     </div>
                     <div className="addfund-amtval-max"><p>MAX</p></div>
                 </div>
-                <hr></hr>
+                <div className="addfund-hr"></div>
                 <p className="addfund-gas">Gas Option</p>
                 <div className="addfund-btn">
-                    <button className="btn-button">
+                    <div className="btn-button">
                         <p>Fast <span>.</span> 0.001 ETH</p>
-                    </button>
-                    <button className="btn-button">
+                    </div>
+                    <div className="btn-button">
                         <p>Medium <span>.</span> 0.001 ETH</p>
-                    </button>
-                    <button className="btn-button">
+                    </div>
+                    <div className="btn-button">
                         <p>Slow <span>.</span> 0.001 ETH</p>
-                    </button>
+                    </div>
                 </div>
                 <div className="addfund-sub">
                     <button className="sub-cancel">CANCEL</button>

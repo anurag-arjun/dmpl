@@ -20,10 +20,181 @@
             font-size: 34px;
             line-height: 40px;
             /* identical to box height */
-    
-    
             color: #FFFFFF;
         }
+        &-balance{
+            &-1{
+                display: flex;
+                span{
+                    display:flex;
+                    font-family: Roboto;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 0;
+                    text-transform: uppercase;
+                    opacity: 1 !important;
+                    color: #00D2FF;
+                    img{
+                        margin-top: -.5rem;
+                        margin-left:.3rem;
+                    }
+                    p{
+                        margin-left:.3rem;
+                        margin-right:.3rem;
+                    }
+                }
+                padding-top: 1rem;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 16px;
+                line-height: 0;
+                /* identical to box height */
+                
+                
+                color: #666;
+                
+                mix-blend-mode: normal;
+                opacity: 1;
+                
+            }
+        }
+        &-amt, &-gas{
+            padding-top: 1rem;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 0;
+            /* identical to box height */
+
+
+            color: #666;
+
+            mix-blend-mode: normal;
+            opacity: 1;
+        }
+        &-amt{
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+        &-amtval{
+            display: flex;
+            justify-content: space-between;
+            &-div{
+                display: flex;
+                p{
+                    padding-left: .5rem;
+                    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 16px;
+                    line-height: 19px;
+                    /* identical to box height */
+
+
+                    color: #FFFFFF;
+
+                    mix-blend-mode: normal;
+                    opacity: 0.8;
+                }
+            }
+            &-max{
+                font-family: Lato;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 13px;
+                line-height: 16px;
+                /* identical to box height */
+
+                text-transform: uppercase;
+
+                color: #FF0044;
+            }
+
+        }
+        &-hr{
+            margin-top:1.2rem;
+            border: 1px solid #262328;
+        }
+        &-btn{
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+            display: flex;
+            margin-left:-17px;
+            .btn-button{
+                background: #262328;
+                border: 1px solid #262328;
+                box-sizing: border-box;
+                border-radius: 10px;
+                margin-left:1rem;
+                width:auto;
+                height: 40px;
+                cursor: pointer;
+                p{
+                    font-family: Lato;
+                    padding:1rem;
+                    padding-top:.7rem;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 13px;
+                    line-height: 16px;
+                    text-transform: uppercase;                 
+                    color: #FFFFFF;
+                    opacity: 0.4;
+
+                }
+                p:hover{
+                    opacity: 1;
+                }
+            }
+        }
+        &-sub{
+            cursor: pointer;
+            .sub-cancel{
+                cursor: pointer;
+                background: #181319;
+                border: 1px solid #FF0044;
+                box-sizing: border-box;
+                border-radius: 10px;
+                width:82px;
+                height:44px;
+                font-family: Lato;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 13px;
+                line-height: 16px;
+                /* identical to box height */
+
+                text-transform: uppercase;
+
+                color: #FF0044;
+
+            }
+            .sub-submit{
+                cursor: pointer;
+                background: #EB334B;
+                border: 1px solid #EB334B;
+                box-sizing: border-box;
+                border-radius: 10px;
+                font-family: Lato;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 13px;
+                line-height: 16px;
+                width:81px;
+                margin-left: 1rem;
+                height: 44px;
+                /* identical to box height */
+
+                text-transform: uppercase;
+
+                color: #FFFFFF;
+
+            }
+        }
+
     }
     
 }
