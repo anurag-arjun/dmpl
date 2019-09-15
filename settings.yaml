@@ -1,5 +1,14 @@
 #development specific settings
 
+production:
+  PORT: 3001
+  SERVER_URL: http://10.1.4.145
+  SERVER_PORT: 9001
+  CLINT_URL: localhost
+  TOKEN_NAME: "hack-maniac-devs"
+  DEBUG: false
+
+
 development:
   PORT: 3001
   SERVER_URL: http://10.1.4.145
