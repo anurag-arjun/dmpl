@@ -18,25 +18,27 @@ class Routes extends Component {
   render() {
     return (
       <div style={styles.fill}>
-        {/* <NavBar /> */}
-        <Switch location={this.props.location}>
-          <Route exact path="/" component={LandingPage} />
-          <Route exact path="/signin" component={signIn} />
-          <Route exact path="/colorKey" component={colorKey} />
-          <Route exact path="/whymatic" component={WhyMatic} />
-          <Route exact path="/marketplace" component={Marketplace} />
-          <Route exact path="/wallet" component={Wallet} />
-          <Route exact path="/activity" component={Activity}/>
-          <Route exact path="/addfund" component={AddFund}/>
-        </Switch>
-        <Footer />
+        <div style={{position: 'relative', minHeight: '100vh', paddingBottom: '80px'}}>
+          <Switch location={this.props.location}>
+            <Route exact path="/" component={LandingPage} />
+            <Route exact path="/signin" component={signIn} />
+            <Route exact path="/colorKey" component={colorKey} />
+            <Route exact path="/whymatic" component={WhyMatic} />
+            <Route exact path="/marketplace" component={Marketplace} />
+            <Route exact path="/wallet" component={Wallet} />
+            <Route exact path="/activity" component={Activity}/>
+            <Route exact path="/addfund" component={AddFund}/>
+          </Switch>
+          <Footer />
+        </div>
       </div>
     );
   }
 }
 const styles = {};
 styles.fill = {
-  position: 'absolute',
+  position: 'fixed',
+  overflowY: 'auto',
   left: 0,
   right: 0,
   top: 0,
