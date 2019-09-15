@@ -11,6 +11,7 @@
 	justify-content: space-between;
 	padding: 0 25px;
 	background-color: $nav-black;
+	font-weight: bold;
 
 	&-logo {
 		height: 56px;
@@ -30,6 +31,7 @@
 		color: $text !important;
 		background-color: $red;
 		border-radius: 20px;
+		font-weight: 400;
 	}
 }
 

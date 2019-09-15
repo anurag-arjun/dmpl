@@ -2,19 +2,19 @@
 // which supports hot reloading and synchronized testing.
 
 // Require Browsersync along with webpack and middleware for it
-import browserSync from 'browser-sync';
+import browserSync from 'browser-sync'
 // Required for react-router browserHistory
 // see https://github.com/BrowserSync/browser-sync/issues/204#issuecomment-102623643
-import historyApiFallback from 'connect-history-api-fallback';
-import webpack from 'webpack';
-import webpackDevMiddleware from 'webpack-dev-middleware';
-import webpackHotMiddleware from 'webpack-hot-middleware';
-import config from '../webpack.config.dev';
-import getEnv from "../sessionVariables";
+import historyApiFallback from 'connect-history-api-fallback'
+import webpack from 'webpack'
+import webpackDevMiddleware from 'webpack-dev-middleware'
+import webpackHotMiddleware from 'webpack-hot-middleware'
+import config from '../webpack.config.dev'
+import getEnv from '../sessionVariables'
 
-const { PORT } = getEnv(config.mode);
+const { PORT } = getEnv(config.mode)
 
-const bundler = webpack(config);
+const bundler = webpack(config)
 
 // Run Browsersync and use middleware for Hot Module Replacement
 browserSync({
@@ -43,7 +43,7 @@ browserSync({
           timings: false,
           chunks: false,
           chunkModules: false
-        },
+        }
 
         // for other settings see
         // https://webpack.js.org/guides/development/#using-webpack-dev-middleware
@@ -53,12 +53,12 @@ browserSync({
       webpackHotMiddleware(bundler)
     ]
   },
-    // turn off click, forms and scroll sync
-    ghostMode: false, 
+  // turn off click, forms and scroll sync
+  ghostMode: false,
 
   // no need to watch '*.js' here, webpack will take care of it for us,
   // including full page reloads if HMR won't work
   files: [
     'src/*.html'
   ]
-});
+})
