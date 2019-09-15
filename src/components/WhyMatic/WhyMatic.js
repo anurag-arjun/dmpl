@@ -36,16 +36,25 @@ class WhyMatic extends React.Component {
                   </div>
                 </div>
 
-                <div>
-                  <span>
-                    <StartIcons size={60} className="col-1-icon" />
-                  </span>
-                  <div>
-                    <h2>Bulk Deposits</h2>
-                    <p>Deposit multiple assests in one-go</p>
-                  </div>
-                </div>
-              </div>
+                        <div>
+                            <span><StartIcons size={60} className="col-1-icon"/></span>
+                            <div>
+                               <h2>Bulk Deposits</h2>
+                               <p>Deposit multiple assests in one-go</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div className="why-row-col-2">
+                        <h2>How it works ?</h2>
+                        
+                        <div>
+                            <div>
+                                <div><span>1</span></div>
+                                <p>Move to Matic</p>
+                            </div>
+                            <div class="vl"></div>
+                        </div>
 
               <div className="why-row-col-2">
                 <h2>How it works ?</h2>
