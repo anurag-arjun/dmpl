@@ -33,7 +33,44 @@
 		margin-right: auto !important;
 		margin-bottom: 2rem !important;
 	}
+	@media screen and(max-width:992px){
+		&-pagination{
+			padding-left: 414px !important;
+		}
+	}
+	@media screen and(max-width:1366px){
+		&-pagination{
+			padding-left: 543px !important;
+		}
+	}
+	@media screen and(max-width:1440px){
+		&-pagination{
+			padding-left: 558px !important;
+		}
+	}
+	&-pagination{
+		text-align: center;
+		display:flex;
+		padding-left: 823px;
+		@media screen and(max-width:992px){
+			&-pagination{
+				padding-left: 250px !important;
+			}
+		}
+
+		div{
+			width:42px;
+			height:30px;
+			color:#ffffff;
+			cursor: pointer;
+		}
+		div:hover{
+			border-bottom: 1px solid #ff0044;
+			color:#ff0044;
+		}
+	}
 }
+
 
 .menu-container {
 	display: flex;

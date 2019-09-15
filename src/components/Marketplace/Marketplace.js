@@ -61,6 +61,15 @@ class Marketplace extends React.Component {
                 </div>
               </div>
             </TabPanel>
+            <div className="marketplace-container-pagination">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>...</div>
+                <div>72</div>
+            </div>
           </Tabs>
         </div>
       </div>
