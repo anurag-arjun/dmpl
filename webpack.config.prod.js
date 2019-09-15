@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import webpack from 'webpack'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import WebpackMd5Hash from 'webpack-md5-hash'
@@ -7,6 +8,19 @@ import getEnv from './sessionVariables'
 import TerserPlugin from 'terser-webpack-plugin'
 import ImageMin from 'imagemin-webpack-plugin'
 const ImagePlug = ImageMin
+=======
+import webpack from "webpack";
+import ExtractTextPlugin from "extract-text-webpack-plugin";
+import WebpackMd5Hash from "webpack-md5-hash";
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import path from "path";
+import getEnv from "./sessionVariables";
+import TerserPlugin from "terser-webpack-plugin"; 
+import ImageMin from "imagemin-webpack-plugin"; 
+import WorkboxPlugin from 'workbox-webpack-plugin';
+import CopyPlugin from 'copy-webpack-plugin';
+const ImagePlug  = ImageMin; 
+>>>>>>> fd0c96a72410c0f35ac9dac33991c3271ad10668
 
 const mode = 'production'
 
@@ -44,6 +58,7 @@ export default {
     splitChunks: {
       chunks: 'all'
     },
+<<<<<<< HEAD
     minimizer: [
       new TerserPlugin({
         sourceMap: true, // Must be set to true if using source-maps in production
@@ -94,6 +109,86 @@ export default {
         test: /\.worker\.js$/,
         loader: 'worker-loader'
       },
+=======
+    devtool: "source-map",
+    entry: {
+        index: path.resolve(__dirname, "src/index")
+    },
+    target: "web",
+    output: {
+        path: path.resolve(__dirname, "dist"),
+        publicPath: "/",
+        filename: "[name].[chunkhash].js"
+    },
+    optimization: {
+        splitChunks: {
+            chunks: "all"
+        }, 
+        minimizer: [
+            new TerserPlugin({
+                sourceMap: true, // Must be set to true if using source-maps in production
+                terserOptions: {
+                    compress: {
+                        drop_console: true,
+                    },
+                },
+            }),
+        ],
+    },
+    plugins: [
+        new WebpackMd5Hash(),
+        new webpack.DefinePlugin(GLOBALS),
+        new ExtractTextPlugin("[name].[md5:contentHash:hex:20].css"),
+        new ImagePlug({
+            disable: process.env.NODE_ENV !== "production", 
+            pngquant: {
+            quality: "95-100"
+            }
+        }), 
+        new HtmlWebpackPlugin({
+            filename: path.resolve(__dirname, "./dist/index.html"),
+            template: path.resolve(__dirname, "./src/client/index.ejs"),
+            minify: {
+                removeComments: true,
+                collapseWhitespace: true,
+                removeRedundantAttributes: true,
+                useShortDoctype: true,
+                removeEmptyAttributes: true,
+                removeStyleLinkTypeAttributes: true,
+                keepClosingSlash: true,
+                minifyJS: true,
+                minifyCSS: true,
+                minifyURLs: true 
+            },
+            inject: true
+        }),
+        new CopyPlugin([
+          { from: './src/client/favicon.ico'},
+          { from: './src/client/images', to: 'images'},
+          { from: './src/client/manifest.json'},
+        ]),
+        new WorkboxPlugin.InjectManifest({
+            // globDirectory: './public/dist/',
+            // globPatterns: ['**\/*.{html,js,css}'],
+            swSrc: './src/client/sw.js',
+            swDest: 'service-worker.js',
+            // clientsClaim: true,
+            // skipWaiting: true,
+            // navigateFallback: '/**'
+        })
+    ],
+    module: {
+        rules: [
+            {
+                test: /\.jsx?$/,
+                exclude: /node_modules/,
+                use: ['babel-loader']
+            },
+            {
+                test:/\.worker\.js$/ ,
+                loader: 'worker-loader',
+            },
+>>>>>>> fd0c96a72410c0f35ac9dac33991c3271ad10668
 
       {
         test: /\.eot(\?v=\d+.\d+.\d+)?$/,
