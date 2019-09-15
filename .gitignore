@@ -6,7 +6,6 @@ yarn.lock
 .DS_Store
 public/
 package-lock.json
-settings.yaml
 npm-debug.log
 *.swp
 *.swo
