@@ -1,8 +1,18 @@
+@media screen and (max-width:992px){
+	.wallet{
+		flex-direction: column;
+		justify-content: center;
+	}
+	.row1-btn{
+		flex-direction: column;
+	}
+}
 .wallet {
-	margin-left: 10rem;
-	margin-right: 10rem;
-	padding-top: 2rem;
+	justify-content: center;
+	padding-top:3rem;
+	margin-bottom: 3rem;
 	display: flex;
+	background-color: rgb(29, 28, 28);
 	//margin-bottom: 80px;
 
 	&-img {
@@ -33,11 +43,14 @@
 				font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 			}
 
-			&-btn {
+			.row1-btn {
 				display: flex;
 
-				&-btn {
+				.row1-btn-btn {
 					& .button1 {
+						a,a:hover{
+							color:#ff0044;
+						}
 						margin-left: 1.6rem;
 						padding-left: 1rem;
 						padding-right: 1rem;
@@ -47,10 +60,15 @@
 						font-weight: 400;
 						color: #ff0044 !important;
 						background-color: transparent;
+						outline: none;
 					}
 
 					& button {
+						a, a:hover{
+							color:#ff0044;
+						}
 						margin-left: 1.6rem;
+						outline: none;
 						padding-left: 1.5rem;
 						padding-right: 1.5rem;
 						display: flex;

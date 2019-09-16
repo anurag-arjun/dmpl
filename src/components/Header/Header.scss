@@ -31,7 +31,11 @@ url('../common/assets/images/wave-background.png');
     color: $primary;
   }
 }
-
+.Header-button{
+  a,a:hover{
+    color:inherit;
+  }
+}
 .Header-Heading {
   display: flex;
   flex-direction: column;
