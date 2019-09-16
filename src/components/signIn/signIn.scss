@@ -1,4 +1,4 @@
-@import '../common/styles/main';
+@import '../common/styles/variables';
 
 // body {
 // 	background: $background;
@@ -8,7 +8,7 @@
 	//margin-bottom: 80px;
 	background-color: $background;
 	//padding-bottom: 80px;
-	height: calc(100% - var(--footer-height));
+	height: calc(90.5vh - #{$footer-height});
 }
 
 .frame {
