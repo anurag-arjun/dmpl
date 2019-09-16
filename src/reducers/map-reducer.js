@@ -12,7 +12,7 @@ const initialState = {
       mana: '20,000'
     },
     {
-      name: 'Plaza',
+      name: 'Plazza',
       months: '4',
       num: '1',
       x: '20',
