@@ -50,7 +50,9 @@ class WhyMatic extends React.Component {
                                 <div>
                                     <div>
                                         <div>
-                                            <span>1</span>
+                                            <div>
+                                                <span>1</span>
+                                            </div>
                                             <div className="line"></div>
                                         </div>
                                         <p>Move to Matic</p>
