@@ -51,11 +51,6 @@
 		text-align: center;
 		display:flex;
 		padding-left: 823px;
-		@media screen and(max-width:992px){
-			&-pagination{
-				padding-left: 250px !important;
-			}
-		}
 
 		div{
 			width:42px;
