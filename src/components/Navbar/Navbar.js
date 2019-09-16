@@ -34,7 +34,6 @@ NavBar.propTypes = {};
 
 const mapStateToProps = (state) => {
   const market = state.router.location.pathname === '/marketplace';
-
   return {
     market,
   };

@@ -63,7 +63,7 @@ class Marketplace extends React.Component {
             </TabPanel>
             <div className="marketplace-container-button">
               <div className="marketplace-container-pagination">
-                <a className="item">1</a>
+                <a className="item active">1</a>
                 <a className="item ">2</a>
                 <a className="item ">4</a>
                 <a className="item ">3</a>

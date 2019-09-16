@@ -20,7 +20,7 @@ class signIn extends React.Component {
             Connect
           </button>
         </div>
-        <ConnectWallet />
+        {/* <ConnectWallet /> */}
       </div>
     );
   }

@@ -5,7 +5,10 @@
 // }
 
 .sign-in {
-	margin-bottom: 80px;
+	//margin-bottom: 80px;
+	background-color: $background;
+	//padding-bottom: 80px;
+	height: calc(100% - var(--footer-height));
 }
 
 .frame {
