@@ -29,7 +29,7 @@ class Wallet extends React.Component {
                   <p>1000 MANA</p>
                 </div>
                 <div className='row1-btn-btn'>
-                  <button1 className='button1'>Buy More</button1>
+                  <div className='button1'>Buy More</div>
                   <button>TRANSFER</button>
                   <button>
                     <img src={blue_dark} /> <span>ADD FUND TO MATIC</span>

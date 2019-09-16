@@ -17,7 +17,7 @@ class WhyMatic extends React.Component {
                                 <h2>Advantage over Mainnet</h2>
                                 <div>
                                     <span>
-                                        <StartIcons size={60} className="col-1-icon" />
+                                        <StartIcons size={40} className="col-1-icon" />
                                     </span>
                                     <div>
                                         <h2>Faster transactions</h2>
@@ -27,7 +27,7 @@ class WhyMatic extends React.Component {
 
                                 <div>
                                     <span>
-                                        <StartIcons size={60} className="col-1-icon" />
+                                        <StartIcons size={40} className="col-1-icon" />
                                     </span>
                                     <div>
                                         <h2>Fees</h2>
@@ -36,7 +36,7 @@ class WhyMatic extends React.Component {
                                 </div>
 
                                 <div>
-                                    <span><StartIcons size={60} className="col-1-icon" /></span>
+                                    <span><StartIcons size={40} className="col-1-icon" /></span>
                                     <div>
                                         <h2>Bulk Deposits</h2>
                                         <p>Deposit multiple assests in one-go</p>
@@ -49,43 +49,35 @@ class WhyMatic extends React.Component {
 
                                 <div>
                                     <div>
-                                        <div><span>1</span></div>
+                                        <div>
+                                            <span>1</span>
+                                            <div className="line"></div>
+                                        </div>
                                         <p>Move to Matic</p>
                                     </div>
-                                    <div class="vl"></div>
                                 </div>
 
-                                <div className="why-row-col-2">
-                                    <h2>How it works ?</h2>
-
-                                    <div>
+                                <div>
                                         <div>
-                                            <div> 1</div>
-                                            <p>Move to Matic</p>
-                                        </div>
-                                        <div class="vl"></div>
-                                    </div>
-
-                                    <div>
-                                        <div>
-                                            <div>2</div>
+                                            <div>
+                                                <span>2</span>
+                                            </div>
                                             <p>Sell and Trade on Matic</p>
                                         </div>
-                                        <div class="vl"></div>
+                                       
                                     </div>
-
                                     <div>
                                         <div>
-                                            <div>3</div>
+                                            <div><span>3</span></div>
                                             <p>Move Back to Mainnet</p>
                                         </div>
                                     </div>
-                                </div>
                             </div>
-                            <div className="why-row-2">
-                                <button className="why-row-2-btn"> NEXT </button>
-                            </div>
+                          
                         </div>
+                        <div className="why-row-2">
+                                <button className="why-row-2-btn"> <a href="#"> NEXT</a> </button>
+                            </div>
                     </div>
                 </div>
             </div>
