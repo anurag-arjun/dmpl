@@ -11,7 +11,7 @@ class Header extends React.Component {
             Choose your ideal location in Genesis City
           </h1>
           <p className='Header-Heading-dark'>Decentralized market for LAND</p>
-          <button className='Header-button button-primary'>GET STARTED</button>
+          <button className='Header-button button-primary'><a href="#">GET STARTED</a></button>
           <a
             href='https://youtu.be/uyuaN1OdOh4'
             className='Header-Heading-link'
