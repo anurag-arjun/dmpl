@@ -10,7 +10,7 @@ class WhyMatic extends React.Component {
                 <div className="appendix-1">
                 <div className="why-matic">
                     <h1>Why Matic ?</h1>
-                    <span>LEARN MORE</span>
+                    <span><a href="#">LEARN MORE</a></span>
                 </div>
                 <div className="why-row">
 
