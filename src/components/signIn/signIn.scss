@@ -1,35 +1,41 @@
 @import '../common/styles/main';
 
-body{
-    background: $background;
+// body {
+// 	background: $background;
+// }
+
+.sign-in {
+	margin-bottom: 80px;
 }
 
-.frame{
-    padding-top: 15px;
-    text-align: center;
-    font-family: Lato;
-}
-#head{
-    padding: 15px;
-    font-size: 28px;
-    color: $text;
-}
-#para{
-    padding-top: 15px;
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    font-size: 16px;
-    line-height: 1.4285em;
-    color: $gray;
-    margin: 0 0 1em;
-    line-height: 1.4285em;
-    padding-bottom: 25px;
-}
-.tagg{
-    color:$primary;
-    cursor: pointer;
+.frame {
+	padding-top: 15px;
+	text-align: center;
+	font-family: Lato;
 }
 
+#head {
+	padding: 15px;
+	font-size: 28px;
+	color: $text;
+}
+
+#para {
+	padding-top: 15px;
+	display: block;
+	margin-block-start: 1em;
+	margin-block-end: 1em;
+	margin-inline-start: 0px;
+	margin-inline-end: 0px;
+	font-size: 16px;
+	line-height: 1.4285em;
+	color: $gray;
+	margin: 0 0 1em;
+	line-height: 1.4285em;
+	padding-bottom: 25px;
+}
+
+.tagg {
+	color: $primary;
+	cursor: pointer;
+}
