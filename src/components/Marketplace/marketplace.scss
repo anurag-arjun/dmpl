@@ -32,39 +32,46 @@
 		margin-right: auto !important;
 		margin-bottom: 2rem !important;
 	}
-	@media screen and(max-width:992px){
-		&-pagination{
-			padding-left: 414px !important;
-		}
-	}
-	@media screen and(max-width:1366px){
-		&-pagination{
-			padding-left: 543px !important;
-		}
-	}
-	@media screen and(max-width:1440px){
-		&-pagination{
-			padding-left: 558px !important;
-		}
-	}
-	&-pagination{
-		text-align: center;
-		display:flex;
-		padding-left: 823px;
 
-		div{
-			width:42px;
-			height:30px;
-			color:#ffffff;
-			cursor: pointer;
-		}
-		div:hover{
-			border-bottom: 1px solid #ff0044;
-			color:#ff0044;
-		}
+	&-button {
+		display: flex;
+		margin-top: 50px;
+		margin-bottom: 50px;
+		position: relative;
+		justify-content: center;
+	}
+
+	&-pagination {
+		display: inline-block;
+		margin-left: 0;
+		margin-right: 0;
+		text-align: center;
+		border-bottom: 2px solid rgba(34, 36, 38, 0.15);
 	}
 }
 
+@media only screen and (min-width: 1200px) {
+	.marketplace-container-button {
+		width: 1127px;
+		margin-left: auto !important;
+		margin-right: auto !important;
+	}
+}
+
+.item {
+	color: #fff;
+	border-bottom-color: transparent;
+	border-bottom-style: solid;
+	border-radius: 0;
+	-ms-flex-item-align: end;
+	align-self: flex-end;
+	margin: 0 0 -2px;
+	padding: 0.85714286em 1.14285714em;
+	border-bottom-width: 2px;
+	-webkit-transition: color 0.1s ease;
+	-o-transition: color 0.1s ease;
+	transition: color 0.1s ease;
+}
 
 .menu-container {
 	display: flex;

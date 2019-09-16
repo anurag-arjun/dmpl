@@ -1,33 +1,43 @@
-import React from 'react'
-import logo from '../common/assets/images/nav-logo.svg'
-import './Navbar.scss'
+import React from 'react';
+import logo from '../common/assets/images/nav-logo.svg';
+import './Navbar.scss';
+import { connect } from 'react-redux';
 
 class NavBar extends React.Component {
-  render () {
-    const { Marketplace, Atlas } = this.props
+  render() {
+    const { market } = this.props;
     return (
-      <nav className='Navigation'>
-        <a href='/'>
+      <nav className="Navigation">
+        <a href="/">
           {' '}
-          <img src={logo} alt='logo' className='Navigation-logo' />
+          <img src={logo} alt="logo" className="Navigation-logo" />
         </a>
-        {/* MENU */}
-        {/* {Marketplace && <a href="/">ABc</a>} */}
-
-        <div className='Navigation-menu'>
-          <a href='/atlas' class='Navigation-item'>
+        <div className="Navigation-menu">
+          {/* <a href="/atlas" className="Navigation-item">
             Atlas
-          </a>
-          <a href='/marketplace' class='Navigation-item enabled'>
-            Marketplace
-          </a>
+          </a> */}
+          {market && (
+            <a href="/marketplace" className="Navigation-item enabled">
+              Marketplace
+            </a>
+          )}
         </div>
-        <a href='/marketplace' class='Navigation-item'>
+        <a href="/signin" className="Navigation-item">
           SignIn
         </a>
       </nav>
-    )
+    );
   }
 }
 
-export default NavBar
+NavBar.propTypes = {};
+
+const mapStateToProps = (state) => {
+  const market = state.router.location.pathname === '/marketplace';
+
+  return {
+    market,
+  };
+};
+
+export default connect(mapStateToProps)(NavBar);
