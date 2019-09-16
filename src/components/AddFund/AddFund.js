@@ -14,9 +14,9 @@ class AddFund extends React.Component {
         <div className='addfund-amtval'>
           <div className='addfund-amtval-div'>
             <img className='amtval-div-img' src={blue_dark} />
-            <p className='amt-div-p'>500</p>
+            <p className='amt-div-p'><input type="text" Value="500"></input></p>
           </div>
-          <div className='addfund-amtval-max'><p>MAX</p></div>
+          <div className='addfund-amtval-max'><a href="#">MAX</a></div>
         </div>
         <div className='addfund-hr' />
         <p className='addfund-gas'>Gas Option</p>
@@ -32,8 +32,8 @@ class AddFund extends React.Component {
           </div>
         </div>
         <div className='addfund-sub'>
-          <button className='sub-cancel'>CANCEL</button>
-          <button className='sub-submit'>SUBMIT</button>
+          <a href="#" className='sub-cancel'>CANCEL</a>
+          <a href="#" className='sub-submit'>SUBMIT</a>
         </div>
       </div>
             </div>)

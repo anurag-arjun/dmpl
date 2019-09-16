@@ -84,7 +84,17 @@
             justify-content: space-between;
             &-div{
                 display: flex;
+                
                 p{
+                    input, input:hover{
+                        background-color:transparent;
+                        color:#00D2FF;
+                        border: none;
+                        border:transparent;
+                        outline: none;
+                        width:550px;
+                        box-shadow: none
+                    }
                     padding-left: .5rem;
                     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
                     font-style: normal;
@@ -101,16 +111,22 @@
                 }
             }
             &-max{
-                font-family: Lato;
-                font-style: normal;
-                font-weight: normal;
-                font-size: 13px;
-                line-height: 16px;
-                /* identical to box height */
+                a, a:hover{
+                    font-family: Lato;
+                    font-style: normal;
+                    cursor: pointer;
 
-                text-transform: uppercase;
+                    font-weight: normal;
+                    font-size: 13px;
+                    line-height: 16px;
+                    /* identical to box height */
 
-                color: #FF0044;
+                    text-transform: uppercase;
+
+                    color: #FF0044;
+
+                }
+                
             }
 
         }
@@ -158,8 +174,9 @@
                 border: 1px solid #FF0044;
                 box-sizing: border-box;
                 border-radius: 10px;
-                width:82px;
-                height:44px;
+                width:82px !important;
+                height:44px !important;
+                padding:13px;
                 font-family: Lato;
                 font-style: normal;
                 font-weight: normal;
@@ -178,6 +195,7 @@
                 border: 1px solid #EB334B;
                 box-sizing: border-box;
                 border-radius: 10px;
+                padding:13px;
                 font-family: Lato;
                 font-style: normal;
                 font-weight: normal;
