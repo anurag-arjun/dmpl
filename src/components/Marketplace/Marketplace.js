@@ -1,29 +1,29 @@
-import React from 'react';
-import './marketplace.scss';
-import LandCard from '../common/landCard/landCard';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import Dropdown from 'react-dropdown';
-import NavBar from '../Navbar/Navbar';
-//import 'react-dropdown/style.css';
+import React from 'react'
+import './marketplace.scss'
+import LandCard from '../common/landCard/landCard'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
+import Dropdown from 'react-dropdown'
+import NavBar from '../Navbar/Navbar'
+// import 'react-dropdown/style.css';
 
 class Marketplace extends React.Component {
-  render() {
-    const { maps } = this.props;
-    //const defaultOption = options['Cheapest'];
-    const options = ['Cheapest', 'Newest', 'Closest to Expire'];
-    const { mapsReversed } = this.props;
+  render () {
+    const { maps } = this.props
+    // const defaultOption = options['Cheapest'];
+    const options = ['Cheapest', 'Newest', 'Closest to Expire']
+    const { mapsReversed } = this.props
     return (
       <div>
-        <NavBar Marketplace="true" />
-        <div className="marketplace-container">
+        <NavBar Marketplace='true' />
+        <div className='marketplace-container'>
           <Tabs>
-            <div className="marketplace-container-menu">
-              <div className="menu-container">
-                <TabList className="menu-container-item">
-                  <Tab className="menu-item">Parcels</Tab>
-                  <Tab className="menu-item">Estates</Tab>
+            <div className='marketplace-container-menu'>
+              <div className='menu-container'>
+                <TabList className='menu-container-item'>
+                  <Tab className='menu-item'>Parcels</Tab>
+                  <Tab className='menu-item'>Estates</Tab>
                 </TabList>
                 {/* <div className="menu-list">
                 <input type="text" list="lang" placeholder="English"></input>
@@ -37,55 +37,55 @@ class Marketplace extends React.Component {
                 <Dropdown
                   options={options}
                   onChange={this._onSelect}
-                  //value={defaultOption}
-                  placeholder="Cheapest"
+                  // value={defaultOption}
+                  placeholder='Cheapest'
                 />
               </div>
             </div>
 
             <TabPanel>
-              <div className="marketplace-container-cards-collection">
-                <div className="marketplace-container-cards">
+              <div className='marketplace-container-cards-collection'>
+                <div className='marketplace-container-cards'>
                   {maps.map((e, i) => (
-                    <LandCard big={true} {...e} index={i} />
+                    <LandCard big {...e} index={i} />
                   ))}
                 </div>
               </div>
             </TabPanel>
             <TabPanel>
-              <div className="marketplace-container-cards-collection">
-                <div className="marketplace-container-cards">
+              <div className='marketplace-container-cards-collection'>
+                <div className='marketplace-container-cards'>
                   {mapsReversed.map((e, i) => (
-                    <LandCard big={true} {...e} index={i} />
+                    <LandCard big {...e} index={i} />
                   ))}
                 </div>
               </div>
             </TabPanel>
-            <div className="marketplace-container-pagination">
-                <div>1</div>
-                <div>2</div>
-                <div>3</div>
-                <div>4</div>
-                <div>5</div>
-                <div>...</div>
-                <div>72</div>
+            <div className='marketplace-container-pagination'>
+              <div>1</div>
+              <div>2</div>
+              <div>3</div>
+              <div>4</div>
+              <div>5</div>
+              <div>...</div>
+              <div>72</div>
             </div>
           </Tabs>
         </div>
       </div>
-    );
+    )
   }
 }
 
-Marketplace.propTypes = {};
+Marketplace.propTypes = {}
 
 const mapStateToProps = (state) => {
-  const top12 = state.maps.map.slice(0, 12);
-  const last12 = state.maps.map.slice(5, 17);
+  const top12 = state.maps.map.slice(0, 12)
+  const last12 = state.maps.map.slice(5, 17)
   return {
     maps: top12,
-    mapsReversed: last12.reverse(),
-  };
-};
+    mapsReversed: last12.reverse()
+  }
+}
 
-export default connect(mapStateToProps)(Marketplace);
+export default connect(mapStateToProps)(Marketplace)

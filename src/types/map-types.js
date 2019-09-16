@@ -1,3 +1,3 @@
-const nsp = 'MAPTYPES/';
+const nsp = 'MAPTYPES/'
 
-export const RESET = `${nsp}RESET`;
+export const RESET = `${nsp}RESET`

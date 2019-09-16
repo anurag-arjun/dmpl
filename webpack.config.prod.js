@@ -6,6 +6,8 @@ import path from "path";
 import getEnv from "./sessionVariables";
 import TerserPlugin from "terser-webpack-plugin"; 
 import ImageMin from "imagemin-webpack-plugin"; 
+import WorkboxPlugin from 'workbox-webpack-plugin';
+import CopyPlugin from 'copy-webpack-plugin';
 const ImagePlug  = ImageMin; 
 
 const mode =  "production";
@@ -36,7 +38,7 @@ export default {
     },
     target: "web",
     output: {
-        path: path.resolve(__dirname, "public/dist"),
+        path: path.resolve(__dirname, "dist"),
         publicPath: "/",
         filename: "[name].[chunkhash].js"
     },
@@ -66,8 +68,8 @@ export default {
             }
         }), 
         new HtmlWebpackPlugin({
-            filename: path.resolve(__dirname, "./public/views/index.html"),
-            template: path.resolve(__dirname, "./src/index.ejs"),
+            filename: path.resolve(__dirname, "./dist/index.html"),
+            template: path.resolve(__dirname, "./src/client/index.ejs"),
             minify: {
                 removeComments: true,
                 collapseWhitespace: true,
@@ -81,6 +83,20 @@ export default {
                 minifyURLs: true 
             },
             inject: true
+        }),
+        new CopyPlugin([
+          { from: './src/client/favicon.ico'},
+          { from: './src/client/images', to: 'images'},
+          { from: './src/client/manifest.json'},
+        ]),
+        new WorkboxPlugin.InjectManifest({
+            // globDirectory: './public/dist/',
+            // globPatterns: ['**\/*.{html,js,css}'],
+            swSrc: './src/client/sw.js',
+            swDest: 'service-worker.js',
+            // clientsClaim: true,
+            // skipWaiting: true,
+            // navigateFallback: '/**'
         })
     ],
     module: {
