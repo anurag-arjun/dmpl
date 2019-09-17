@@ -1,5 +1,23 @@
 @import '../common/styles/variables';
 
+@media screen and (max-width:992px){
+	.footer{
+		display: flex;
+		position: relative;
+		justify-content: center;
+		.footer-left{
+			display: none !important;
+		}
+		.footer-right{
+			position: relative;
+			width: auto;
+			justify-content: center;
+		}
+	}
+	.all-rights-reserved{
+		display: none !important;
+	}
+}
 .footer {
 	// position: absolute;
 	// bottom: 0;
@@ -7,11 +25,11 @@
 	// justify-content: space-between;
 	// background-color: $black;
 	// width: 100%;
-	// font-size: 14px;
-	// height: 80px;
+	 font-size: 14px;
+	height: 80px;
 	// font-weight: bold;
 	width: 100%;
-	padding: 2rem;
+	padding: 1rem;
 	box-sizing: border-box;
 	background-color: $black;
 	color: white;

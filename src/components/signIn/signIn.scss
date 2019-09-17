@@ -4,11 +4,12 @@
 // 	background: $background;
 // }
 
+
 .sign-in {
 	//margin-bottom: 80px;
 	background-color: $background;
 	//padding-bottom: 80px;
-	height: calc(90.5vh - #{$footer-height});
+	height:auto;
 }
 
 .frame {
