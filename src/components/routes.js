@@ -23,18 +23,20 @@ class Routes extends Component {
             position: 'relative',
             minHeight: '100vh',
           }}>
-          <NavBar />
-          <Switch location={this.props.location}>
-            <Route exact path="/" component={LandingPage} />
-            <Route exact path="/signin" component={signIn} />
-            <Route exact path="/colorKey" component={colorKey} />
-            <Route exact path="/whymatic" component={WhyMatic} />
-            <Route exact path="/marketplace" component={Marketplace} />
-            <Route exact path="/wallet" component={Wallet} />
-            <Route exact path="/activity" component={Activity} />
-            <Route exact path="/addfund" component={AddFund} />
-          </Switch>
-          <Footer />
+            <div style={{paddingBottom: '80px'}}>
+              <NavBar />
+              <Switch location={this.props.location}>
+                <Route exact path="/" component={LandingPage} />
+                <Route exact path="/signin" component={signIn} />
+                <Route exact path="/colorKey" component={colorKey} />
+                <Route exact path="/whymatic" component={WhyMatic} />
+                <Route exact path="/marketplace" component={Marketplace} />
+                <Route exact path="/wallet" component={Wallet} />
+                <Route exact path="/activity" component={Activity} />
+                <Route exact path="/addfund" component={AddFund} />
+              </Switch>
+              <Footer />
+            </div>
         </div>
       </div>
     );
