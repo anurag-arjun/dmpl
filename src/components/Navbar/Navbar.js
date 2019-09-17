@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 class NavBar extends React.Component {
   render() {
     const { market } = this.props;
+    const isSignIn = true;
     return (
       <nav className="Navigation">
         <a href="/">
@@ -22,9 +23,14 @@ class NavBar extends React.Component {
             </a>
           )}
         </div>
-        <a href="/signin" className="Navigation-item">
-          SignIn
-        </a>
+        { !isSignIn 
+          ? <a href="/signin" className="Navigation-item">
+            SignIn
+          </a>
+          : <div className="signedIn">
+              <span>do something</span>
+          </div>
+        }
       </nav>
     );
   }
