@@ -88,6 +88,7 @@ export default {
           { from: './src/client/favicon.ico'},
           { from: './src/client/images', to: 'images'},
           { from: './src/client/manifest.json'},
+          { from: './src/client/_redirects'}
         ]),
         new WorkboxPlugin.InjectManifest({
             // globDirectory: './public/dist/',
