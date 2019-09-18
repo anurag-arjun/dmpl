@@ -82,5 +82,7 @@ module.exports = {
   'fa-github-square': require('react-icons/lib/fa/github-square'),
   'fa-reddit-square': require('react-icons/lib/fa/reddit-square'),
   'md-start-circle': require('react-icons/lib/md/stars'),
-  'fa-map-marker': require('react-icons/lib/fa/map-marker')
-}
+  'fa-map-marker': require('react-icons/lib/fa/map-marker'),
+  'fa-bars': require('react-icons/lib/fa/bars'),
+  'fa-bell': require('react-icons/lib/fa/bell'),
+};

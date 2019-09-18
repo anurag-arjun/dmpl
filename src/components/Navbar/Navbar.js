@@ -1,7 +1,13 @@
 import React from 'react';
 import logo from '../common/assets/images/nav-logo.svg';
+import icons from '../../services/icon-service';
 import './Navbar.scss';
 import { connect } from 'react-redux';
+import MaticIcon from '../common/assets/images/blue_dark.svg';
+import ProfileIcon from '../common/assets/images/square.png';
+
+const FaBars = icons['fa-bars'];
+const FaBell = icons['fa-bell'];
 
 class NavBar extends React.Component {
   render() {
@@ -23,14 +29,26 @@ class NavBar extends React.Component {
             </a>
           )}
         </div>
-        { !isSignIn 
-          ? <a href="/signin" className="Navigation-item">
+        {!isSignIn ? (
+          <a href="/signin" className="Navigation-item">
             SignIn
           </a>
-          : <div className="signedIn">
-              <span>do something</span>
+        ) : (
+          <div className="signedIn">
+            <img src={MaticIcon} alt="MaticIcon" className="signedIn-icon" />
+            <a href="/" className="signedIn-link">
+              SWITCH TO MATIC
+            </a>
+            <FaBell className="signedIn-bell" />
+            <p className="signedIn-p">⏣ &nbsp; 500</p>
+            <img
+              src={ProfileIcon}
+              alt="ProfileIcon"
+              className="signedIn-profile"
+              style={{ width: '40px', height: 'auto' }}
+            />
           </div>
-        }
+        )}
       </nav>
     );
   }

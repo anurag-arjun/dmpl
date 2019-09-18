@@ -14,7 +14,7 @@ import Marketplace from '../components/Marketplace/Marketplace.js';
 import Wallet from '../components/Wallet/Wallet.js';
 import Activity from '../components/Activity/Activity.js';
 import AddFund from '../components/AddFund/AddFund.js';
-import connectWallet from '../components/connectWallet/connectWallet.js'
+import connectWallet from '../components/connectWallet/connectWallet.js';
 class Routes extends Component {
   render() {
     return (
@@ -24,21 +24,21 @@ class Routes extends Component {
             position: 'relative',
             minHeight: '100vh',
           }}>
-            <div style={{paddingBottom: '80px'}}>
-              <NavBar />
-              <Switch location={this.props.location}>
-                <Route exact path="/" component={LandingPage} />
-                <Route exact path="/signin" component={signIn} />
-                <Route exact path="/colorKey" component={colorKey} />
-                <Route exact path="/whymatic" component={WhyMatic} />
-                <Route exact path="/marketplace" component={Marketplace} />
-                <Route exact path="/wallet" component={Wallet} />
-                <Route exact path="/activity" component={Activity} />
-                <Route exact path="/addfund" component={AddFund} />
-                <Route exact path ="/connectwallet" component={connectWallet} />
-              </Switch>
-              <Footer />
-            </div>
+          <div style={{ paddingBottom: '80px' }}>
+            <NavBar />
+            <Switch location={this.props.location}>
+              <Route exact path="/" component={LandingPage} />
+              <Route exact path="/signin" component={signIn} />
+              <Route exact path="/colorKey" component={colorKey} />
+              <Route exact path="/whymatic" component={WhyMatic} />
+              <Route exact path="/marketplace" component={Marketplace} />
+              <Route exact path="/wallet" component={Wallet} />
+              <Route exact path="/activity" component={Activity} />
+              <Route exact path="/addfund" component={AddFund} />
+              <Route exact path="/connectwallet" component={connectWallet} />
+            </Switch>
+            <Footer />
+          </div>
         </div>
       </div>
     );

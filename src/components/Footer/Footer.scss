@@ -1,22 +1,26 @@
 @import '../common/styles/variables';
 
-@media screen and (max-width:992px){
-	.footer{
+@media screen and (max-width: 992px) {
+	.footer {
 		display: flex;
 		justify-content: center;
-		.footer-left{
+
+		.footer-left {
 			display: none !important;
 		}
-		.footer-right{
+
+		.footer-right {
 			position: relative;
 			width: auto;
 			justify-content: center;
 		}
 	}
-	.all-rights-reserved{
+
+	.all-rights-reserved {
 		display: none !important;
 	}
 }
+
 .footer {
 	position: absolute;
 	bottom: 0;
