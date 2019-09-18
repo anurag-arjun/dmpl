@@ -15,6 +15,7 @@ import Wallet from '../components/Wallet/Wallet.js';
 import Activity from '../components/Activity/Activity.js';
 import AddFund from '../components/AddFund/AddFund.js';
 import connectWallet from '../components/connectWallet/connectWallet.js';
+import MaticNetwork from '../components/MaticNetwork/MaticNetwork.js';
 class Routes extends Component {
   render() {
     return (
@@ -36,6 +37,7 @@ class Routes extends Component {
               <Route exact path="/activity" component={Activity} />
               <Route exact path="/addfund" component={AddFund} />
               <Route exact path="/connectwallet" component={connectWallet} />
+              <Route exact path="/maticnetwork" component={MaticNetwork} />
             </Switch>
             <Footer />
           </div>
