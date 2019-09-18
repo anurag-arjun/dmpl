@@ -1,11 +1,15 @@
-
 .connect {
 	display: flex;	
 	justify-content: center;
+	font-family: Roboto Thin;
+	
 
 	&-wallet{
+		border:1px solid black;
+		padding: 2rem;
+		border-radius: 2rem;
 		width: 880px;
-		height: 754px;
+		height: 574px;
 		text-align: center;
 		.wallet-edge{
 
@@ -29,7 +33,7 @@
 		}
 		.wallet-text{
 			h1{
-				font-family: Roboto;
+				font-family: 'Roboto-regular';
 				font-style: normal;
 				font-weight: bold;
 				font-size: 34px;
@@ -41,7 +45,7 @@
 				color: #FFFFFF;
 			}
 			p{
-				font-family: Roboto;
+				font-family: 'Roboto-regular';
 				font-style: normal;
 				font-weight: normal;
 				font-size: 18px;
@@ -52,7 +56,7 @@
 			}
 		}
 		span{
-			font-family: Roboto;
+			font-family: 'Roboto-regular';
 			font-style: normal;
 			font-weight: bold;
 			font-size: 13px;
@@ -60,46 +64,52 @@
 			padding-bottom: 1rem;
 			color: #FFFFFF;
 		}
-		.wallet-btn{
-			margin-top:1rem;
-			display: flex;
-			justify-content: space-between;
-			div{
-				background: #18141A;
-				border: 1px solid #FF0044;
-				box-sizing: border-box;
-				border-radius: 10px;
-				width:230px;
-				height:79px;
-				display: flex;
-				justify-content: center;
-				a{
-					img{
-						width:45.8px;
-						height:auto;
-					}
-					.portis-svg{
-						width: 28px !important; 
-						height: auto;
-					}
-					display: flex;
-					p, p:hover{
-						color:#FFFFFF;
-						outline: none;
-						font-family: Roboto;
-						font-style: normal;
-						font-weight: bold;
-						margin-top:1.8rem;
-						margin-left:1rem;
-						font-size: 18px;
-						line-height: 21px;
-						/* identical to box height */
-											
-											
-						color: #FFFFFF;
-					}
-				}
 
+		.wallet-btn-parrent{
+			justify-content: center;
+			display: flex;
+			.wallet-btn{
+				margin-top:1rem;
+				width:85%;
+				display: flex;
+				justify-content: space-between;
+				div{
+					background: #18141A;
+					border: 1px solid #FF0044;
+					box-sizing: border-box;
+					border-radius: 10px;
+					width:230px;
+					height:79px;
+					display: flex;
+					justify-content: center;
+					a{
+						img{
+							width:45.8px;
+							height:auto;
+						}
+						.portis-svg{
+							width: 28px !important; 
+							height: auto;
+						}
+						display: flex;
+						p, p:hover{
+							color:#FFFFFF;
+							outline: none;
+							font-family: 'Roboto-regular';
+							font-style: normal;
+							font-weight: bold;
+							margin-top:1.8rem;
+							margin-left:1rem;
+							font-size: 18px;
+							line-height: 21px;
+							/* identical to box height */
+												
+												
+							color: #FFFFFF;
+						}
+					}
+	
+				}
 			}
 		}
 	}

@@ -21,6 +21,7 @@ class ConnectWallet extends React.Component {
             <p>First of all, you need a safe placero keep your land. Choose to <br></br> connect wallet by following connection</p>
           </div>
           <span>CONNECT WITH</span>
+          <div className="wallet-btn-parrent">
           <div className="wallet-btn">
             <div>
               <a href ="#"><img src={metamask}></img><p>Meta Mask</p></a>
@@ -31,6 +32,7 @@ class ConnectWallet extends React.Component {
             <div>
               <a href ="#"><img className="portis-svg" src={portis}></img><p>Portis</p></a>
             </div>
+          </div>
           </div>
         </div>
       </div>
