@@ -38,7 +38,7 @@ class Footer extends React.Component {
         </div>
         <div className='footer-right'>
           <span className='footer-right-text'>
-            © 2019 Decentraland.All rights reserved.
+            © 2019 Decentraland.<span className="all-rights-reserved">All rights reserved.</span>
           </span>
           <Dropdown
             options={options}
