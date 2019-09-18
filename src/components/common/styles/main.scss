@@ -2,8 +2,9 @@
 //@import './root';
 @import './reset';
 
-body{
+body {
 	background-color: $background;
+	color: $text;
 }
 
 h1 {
