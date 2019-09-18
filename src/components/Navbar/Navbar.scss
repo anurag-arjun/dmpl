@@ -1,5 +1,8 @@
 @import '../common/styles/main';
 
+$topnav: TopNav-Responsive;
+$nav: TopNav;
+
 .Navigation {
 	display: flex;
 	-ms-flex-flow: row nowrap;
@@ -62,6 +65,8 @@ a.Navigation-item {
 	}
 }
 
+//navbar signin state icons
+
 .signedIn {
 	display: flex;
 	align-items: center;
@@ -83,6 +88,10 @@ a.Navigation-item {
 		padding-right: 1rem;
 	}
 
+	&-profile {
+		border-radius: 0.5rem;
+	}
+
 	&-bell {
 		color: $gray;
 		padding-right: 1.7rem;
@@ -90,5 +99,40 @@ a.Navigation-item {
 
 	& a {
 		color: $gray !important;
+	}
+}
+
+//Navbar Responsive Part
+
+.TopNav {
+	display: none;
+}
+
+@media (max-width: 920px) {
+	.Navigation-logo {
+		display: none;
+	}
+}
+
+@media (max-width: 750px) {
+	.Navigation {
+		a.enabled {
+			display: transparent;
+			display: flex;
+		}
+
+		a {
+			display: none;
+		}
+
+		.FaBars {
+			display: flex;
+		}
+	}
+
+	.Navigation.Responsive {
+		.FaBars {
+			display: none;
+		}
 	}
 }
