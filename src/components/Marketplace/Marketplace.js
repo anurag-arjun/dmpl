@@ -3,12 +3,18 @@ import './marketplace.scss';
 import LandCard from '../common/landCard/landCard';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as actions from '../../actions/initActions';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import Dropdown from 'react-dropdown';
 import NavBar from '../Navbar/Navbar';
 // import 'react-dropdown/style.css';
 
 class Marketplace extends React.Component {
+  componentWillMount = () => {
+    this.props.actions.initCards();
+  };
+
   render() {
     const { cards } = this.props;
     // const defaultOption = options['Cheapest'];
@@ -90,4 +96,11 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(Marketplace);
+const mapDispatchToProps = (dispatch) => ({
+  actions: bindActionCreators(actions, dispatch),
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Marketplace);
