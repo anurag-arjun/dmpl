@@ -40,12 +40,14 @@ class Footer extends React.Component {
           <span className='footer-right-text'>
             © 2019 Decentraland.<span className="all-rights-reserved">All rights reserved.</span>
           </span>
-          <Dropdown
-            options={options}
-            onChange={this._onSelect}
-            // value={defaultOption}
-            placeholder='Cheapest'
-          />
+          <div class="dropup">
+            <button class="dropbtn" >English</button>
+            <div class="dropup-content">
+              <a href="#">French</a>
+              <a href="#">Spanish</a>
+              <a href="#">Japanese</a>
+            </div>
+          </div>
         </div>
       </footer>
     )
