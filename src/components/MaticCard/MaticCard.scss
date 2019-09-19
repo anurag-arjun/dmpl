@@ -1,0 +1,172 @@
+.card{
+    .card-img-block{
+        justify-content: center;
+        display:flex;
+        
+        .card-img{
+             img{
+                height:500px;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+    .card-details{
+        .card-details-line1{
+            margin-left:5rem;
+            margin-bottom:5rem; 
+           
+            display:flex;
+            flex-direction: column;
+            .para-grey{
+                p{
+                    color:#666;
+                    font-family: "Roboto-regular"
+                }
+            }
+            div{
+                margin-bottom:.3rem;
+                display:flex;
+                justify-content: space-between;
+                .own-by{
+                    div{
+                        margin-right:10rem;
+                        span{
+                            p{
+                                color:#fff !important;
+                                font-size: 15px !important;
+                                font-family:"Roboto-regular";
+                                margin-top:.2rem;
+                                margin-right: .5rem;
+                            }
+                            
+                        }
+                    }
+                
+                }
+
+                div{
+                    .para1{
+                        color:#fff;
+                        font-size: 24px;
+                        font-family:"Roboto-bold";
+                        margin-top:.1rem;
+                        margin-right: .5rem;
+                        font-weight: 500;
+                    }
+                    img{
+                        width:30px;
+                        height:30px;
+                        background-color: transparent;
+                    }
+                    p{
+                        color:#f04;
+                        font-size: 18px;
+                        font-weight: 500;
+                        margin-top:.2rem;
+                        font-family: Lato;
+                    }
+                   
+                }
+               
+              
+            }
+        }
+        
+    }
+    .card-details-line2{
+        
+    .line2{
+        display: flex;
+        margin-left: 5rem;
+        margin-top: 1rem;
+        margin-left:5rem;
+        justify-content: space-between;
+        .line2-price{
+            div{
+                margin-top:1rem;
+                img{ 
+                    margin-right:.5rem;    
+                }
+                span{
+                    color:#00d2ff;
+                }
+            }
+        }
+        .line2-time{
+            p{
+                margin-top:1rem;
+            }
+            .para-grey{
+                color:#666 !important;
+            }
+        }
+        
+        .line-2-btn{
+            margin-top:1rem;
+            margin-right:10rem;
+            .btn-bid{
+                    cursor: pointer;
+                    background: #181319;
+                    border: 1px solid #FF0044;
+                    color:#f04;
+                    box-sizing: border-box;
+                    border-radius: 10px;
+                    width:auto !important;
+                    height:44px !important;
+                    padding:10px;
+                    padding-left:15px;
+                    padding-right: 15px; 
+                    margin-right: 1rem;
+                    font-family: Lato;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 18px;
+                    line-height: 16px;
+                    /* identical to box height */
+    
+                    text-transform: uppercase;
+            }
+            .btn-buy{
+                cursor: pointer;
+                    background: #FF0044;
+                    border: 1px solid #F04;
+                    color: #Fff;
+                    box-sizing: border-box;
+                    border-radius: 10px;
+                    width:auto !important;
+                    height:44px !important;
+                    padding:10px;
+                    padding-left:15px;
+                    padding-right: 15px; 
+                    margin-right: 1rem;
+                    font-family: Lato;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 18px;
+                    line-height: 16px;
+                    /* identical to box height */
+                    text-transform: uppercase;
+
+            }
+        }
+    }
+}
+.card-details-line3{
+    display:flex;
+    margin-top:3rem;
+    span{
+        border:3px solid #666;
+        border-radius: 10%;
+        img{
+            background: #Fff;
+            width:30px;            
+            
+        }
+    }
+    p{
+        margin-left: 3rem;
+        cursor: pointer;
+    }
+    
+}
+}
