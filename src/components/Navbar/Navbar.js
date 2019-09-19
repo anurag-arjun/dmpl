@@ -1,10 +1,10 @@
 import React from 'react';
 import logo from '../common/assets/images/nav-logo.svg';
 import icons from '../../services/icon-service';
-import './Navbar.scss';
 import { connect } from 'react-redux';
 import MaticIcon from '../common/assets/images/blue_dark.svg';
 import ProfileIcon from '../common/assets/images/square.png';
+import './Navbar.scss';
 
 //React Icons Start
 
@@ -29,7 +29,7 @@ class NavBar extends React.Component {
   };
 
   render() {
-    const { market } = this.props;
+    const { market, atlas, sign } = this.props;
 
     const isSignIn = true;
     return (
@@ -45,9 +45,11 @@ class NavBar extends React.Component {
               style={{ color: '#fff' }}
             />
             <div className="sidebar-menu">
-              <a href="/atlas" className="sidebar-item">
-                Atlas
-              </a>
+              {atlas && (
+                <a href="/atlas" className="sidebar-item">
+                  Atlas
+                </a>
+              )}
               {market && (
                 <a href="/marketplace" className="sidebar-item enabled">
                   Marketplace
@@ -61,9 +63,11 @@ class NavBar extends React.Component {
             <img src={logo} alt="logo" className="Navigation-logo" />
           </a>
           <div className="Navigation-menu">
-            <a href="/atlas" className="Navigation-item">
-              Atlas
-            </a>
+            {atlas && (
+              <a href="/atlas" className="sidebar-item">
+                Atlas
+              </a>
+            )}
             {market && (
               <a href="/marketplace" className="Navigation-item enabled">
                 Marketplace
@@ -101,8 +105,10 @@ NavBar.propTypes = {};
 
 const mapStateToProps = (state) => {
   const market = state.router.location.pathname === '/marketplace';
+  const atlas = state.router.location.pathname === '/atlas';
   return {
     market,
+    atlas,
   };
 };
 

@@ -85,5 +85,4 @@ module.exports = {
   'fa-map-marker': require('react-icons/lib/fa/map-marker'),
   'fa-bars': require('react-icons/lib/fa/bars'),
   'fa-bell': require('react-icons/lib/fa/bell'),
-  'fa-close': require('react-icons/lib/fa/close'),
 };

@@ -16,6 +16,7 @@ $nav: TopNav;
 	background-color: $nav-black;
 	font-weight: bold;
 	transition: all 0.5s;
+	z-index: 10;
 
 	&-logo {
 		height: 56px;
@@ -132,10 +133,6 @@ a.Navigation-item {
 		.FaBars {
 			display: flex;
 		}
-	}
-
-	.signedIn {
-		display: none;
 	}
 
 	.Navigation-menu {
