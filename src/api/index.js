@@ -1,7 +1,5 @@
 import * as config from '../consts/app-config'
 import configs from './fetch-configs'
-import errHandler from '../errorHandlers'
-import * as errTypes from '../errorHandlers/errTypes'
 
 export const get = (path, token) => {
   const promise = new Promise((resolve, reject) => {
@@ -9,13 +7,13 @@ export const get = (path, token) => {
     const fetchConfigs = configs('get', null, false, token)
     fetch(serverPath, fetchConfigs).then((response) => {
       if (!response.ok) {
-        if (response.status == 404) {
-          errHandler({ type: errTypes.PAGE_NOT_FOUND })
-        }
-      } else {
+      } 
+      else {
         return response.json()
       }
     }).then((data) => {
+      console.log(data, 'api data');
+      
       return resolve(data)
     }).catch((err) => {
       return reject(err)

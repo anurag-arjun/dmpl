@@ -23,7 +23,7 @@ const fetchConfig = (method, load, isMultipart, token) => {
 
   const config = {
     method: method,
-    credentials: 'include',
+    // credentials: 'include',
     headers: headers
   }
   if (method === 'post' || method === 'put' || method === 'delete') {

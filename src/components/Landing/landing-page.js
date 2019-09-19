@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux'
+import * as actions from '../../actions/initActions'
 import './landing-page.scss';
 import Icons from '../../services/icon-service';
 import LandCard from '../common/landCard/landCard';
@@ -9,9 +11,12 @@ import NavBar from '../Navbar/Navbar';
 const FaSearch = Icons['fa-search'];
 
 class LandingPage extends React.Component {
+  componentWillMount = () => {
+    this.props.actions.initCards();
+  }
   render() {
-    const { maps } = this.props;
-    console.log(maps);
+    const { cards } = this.props;
+    console.log(cards);
 
     return (
       <div className="landing-page">
@@ -25,7 +30,7 @@ class LandingPage extends React.Component {
             </a>
           </div>
           <div className="landing-page-scroller">
-            {maps.map((e, i) => (
+            {cards.map((e, i) => (
               <LandCard {...e} index={i} normal />
             ))}
           </div>
@@ -38,10 +43,14 @@ class LandingPage extends React.Component {
 LandingPage.propTypes = {};
 
 const mapStateToProps = (state) => {
-  const top10 = state.maps.map.slice(0, 10);
+  const top10 = state.cards.cards.slice(0, 10);
   return {
-    maps: top10,
+    cards: top10,
   };
 };
 
-export default connect(mapStateToProps)(LandingPage);
+const mapDispatchToProps = (dispatch) => ({
+  actions: bindActionCreators(actions, dispatch)
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(LandingPage);

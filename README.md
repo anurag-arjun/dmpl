@@ -23,26 +23,6 @@
 8.  If there is any error again and you are unable to solve it, then you are not
     good at using google.
 
-## Settings file for server config
-
-> settings.yaml
-
-    #development specific settings
-
-    development:
-
-    PORT:  3001
-
-    SERVER_URL:  http://10.1.4.145
-
-    SERVER_PORT:  9001
-
-    CLINT_URL:  localhost
-
-    TOKEN_NAME:  'hack-maniac-devs'
-
-    DEBUG:  false
-
 ## Prettier Config file
 
 > .prettierrc

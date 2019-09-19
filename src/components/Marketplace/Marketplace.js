@@ -10,10 +10,10 @@ import NavBar from '../Navbar/Navbar';
 
 class Marketplace extends React.Component {
   render() {
-    const { maps } = this.props;
+    const { cards } = this.props;
     // const defaultOption = options['Cheapest'];
     const options = ['Cheapest', 'Newest', 'Closest to Expire'];
-    const { mapsReversed } = this.props;
+    const { cardsReversed } = this.props;
     return (
       <div>
         {/* <NavBar Marketplace="true" /> */}
@@ -46,7 +46,7 @@ class Marketplace extends React.Component {
             <TabPanel>
               <div className="marketplace-container-cards-collection">
                 <div className="marketplace-container-cards">
-                  {maps.map((e, i) => (
+                  {cards.map((e, i) => (
                     <LandCard big {...e} index={i} />
                   ))}
                 </div>
@@ -55,7 +55,7 @@ class Marketplace extends React.Component {
             <TabPanel>
               <div className="marketplace-container-cards-collection">
                 <div className="marketplace-container-cards">
-                  {mapsReversed.map((e, i) => (
+                  {cardsReversed.map((e, i) => (
                     <LandCard big {...e} index={i} />
                   ))}
                 </div>
@@ -82,11 +82,11 @@ class Marketplace extends React.Component {
 Marketplace.propTypes = {};
 
 const mapStateToProps = (state) => {
-  const top12 = state.maps.map.slice(0, 12);
-  const last12 = state.maps.map.slice(5, 17);
+  const top12 = state.cards.cards.slice(0, 12);
+  const last12 = state.cards.cards.slice(5, 17);
   return {
-    maps: top12,
-    mapsReversed: last12.reverse(),
+    cards: top12,
+    cardsReversed: last12.reverse(),
   };
 };
 
