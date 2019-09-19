@@ -15,6 +15,7 @@ $nav: TopNav;
 	padding: 0 25px;
 	background-color: $nav-black;
 	font-weight: bold;
+	transition: all 0.5s;
 
 	&-logo {
 		height: 56px;
@@ -104,7 +105,11 @@ a.Navigation-item {
 
 //Navbar Responsive Part
 
-.TopNav {
+.sidebar {
+	display: none;
+}
+
+.FaBars {
 	display: none;
 }
 
@@ -116,23 +121,149 @@ a.Navigation-item {
 
 @media (max-width: 750px) {
 	.Navigation {
-		a.enabled {
-			display: transparent;
-			display: flex;
-		}
+		overflow: hidden;
+		transition: transform 1s !important;
 
-		a {
-			display: none;
+		a.enabled {
+			background-color: transparent;
+			display: flex;
 		}
 
 		.FaBars {
 			display: flex;
+		}
+	}
+
+	.signedIn {
+		display: none;
+	}
+
+	.Navigation-menu {
+		a {
+			display: none;
 		}
 	}
 
 	.Navigation.Responsive {
 		.FaBars {
+			position: absolute;
+		}
+
+		.Navigation-menu {
 			display: none;
+		}
+
+		.sidebar {
+			display: flex;
+			-ms-flex-direction: column;
+			flex-direction: column;
+			background: $gradient;
+			transform: translateZ(0);
+			transition: all 0.5s ease;
+			z-index: 2000 !important;
+			width: 350px;
+			justify-content: initial;
+			box-shadow: 0 0 1500px 30px #000 !important;
+			visibility: visible !important;
+
+			//position
+			right: auto;
+			left: 0;
+			position: fixed;
+			top: 0;
+			height: 100% !important;
+			max-height: 100%;
+			border-radius: 0 !important;
+			margin: 0 !important;
+			overflow-y: auto !important;
+			font-size: 1rem;
+			line-height: 1.5rem;
+
+			&-menu {
+				display: block;
+				background: 0 0;
+				border-top: none;
+				border-right: none;
+				flex-direction: column;
+				justify-content: space-evenly;
+				height: auto;
+				transition: none;
+				text-transform: uppercase;
+				font-family: var(--font-family);
+				font-size: 13px;
+				padding: 9px;
+				font-weight: 100;
+				color: $gray;
+				margin: 0 10px !important;
+			}
+
+			a {
+				color: $text;
+				border: 1px solid rgba(34, 36, 38, 0.15);
+				font-size: 1rem;
+			}
+
+			&-icon {
+				z-index: 30;
+				color: $gray !important;
+				margin: 10px 10px 30px 0 !important;
+				cursor: pointer;
+				transform: scale(2);
+				width: 190%;
+
+				&::hover {
+					color: $text;
+				}
+			}
+
+			&-item,
+			a {
+				color: $gray;
+				font-weight: 400;
+				//font-size: 1rem;
+				font-size: 2em !important;
+				text-transform: none !important;
+				background-color: transparent !important;
+				position: relative;
+				vertical-align: middle;
+				line-height: 1;
+				text-decoration: none;
+				-webkit-tap-highlight-color: transparent;
+				-ms-flex: 0 0 auto;
+				flex: 0 0 auto;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+
+				&a::hover {
+					color: $text;
+				}
+			}
+
+			&-item.enabled {
+				color: $text;
+				font-weight: bolder;
+			}
 		}
 	}
 }
+
+// display: flex;
+// position: absolute;
+// flex-direction: column;
+// background-color: $gradient;
+
+// transform: translate(-25px, -25px);
+// width: 15rem;
+// color: $text;
+// z-index: 200 !important;
+// right: auto;
+// left: 0;
+// transform: translateZ(0);
+// transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+// width: 350px;
+// box-shadow: 0 0 1500px 30px #000 !important;
+// //height: 100% !important;
+// max-height: 100%;
+// //width: 320px;

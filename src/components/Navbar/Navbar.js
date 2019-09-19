@@ -10,7 +10,7 @@ import ProfileIcon from '../common/assets/images/square.png';
 
 const FaBars = icons['fa-bars'];
 const FaBell = icons['fa-bell'];
-
+const FaWindowClose = icons['fa-close'];
 //Icons End
 
 class NavBar extends React.Component {
@@ -38,6 +38,23 @@ class NavBar extends React.Component {
           className={
             this.state.topNav ? 'Navigation' : 'Navigation Responsive'
           }>
+          <div className="sidebar">
+            <FaWindowClose
+              onClick={this.navBarClickHandler}
+              className="sidebar-icon"
+              style={{ color: '#fff' }}
+            />
+            <div className="sidebar-menu">
+              <a href="/atlas" className="sidebar-item">
+                Atlas
+              </a>
+              {market && (
+                <a href="/marketplace" className="sidebar-item enabled">
+                  Marketplace
+                </a>
+              )}
+            </div>
+          </div>
           <FaBars className="FaBars" onClick={this.navBarClickHandler} />
           <a href="/">
             {' '}
@@ -53,6 +70,7 @@ class NavBar extends React.Component {
               </a>
             )}
           </div>
+
           {!isSignIn ? (
             <a href="/signin" className="Navigation-item">
               SignIn
