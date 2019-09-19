@@ -58,15 +58,16 @@
 
 		&-xy {
 			display: flex;
-			border: 1px solid $text;
+			border: 1px solid $gray;
 			padding: 3px;
 			border-radius: 4px;
 			margin-right: 10px;
 			align-items: center;
 			position: relative;
 			padding: 2px 7px;
-			font-size: 14px;
+			//font-size: 14px;
 			font-weight: 400;
+			font-size: 12px;
 
 			& img {
 				width: 24px;
