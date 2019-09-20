@@ -17,6 +17,7 @@ $nav: TopNav;
 	font-weight: bold;
 	transition: all 0.5s;
 	z-index: 10;
+	position: relative;
 
 	&-logo {
 		height: 56px;
@@ -37,6 +38,13 @@ $nav: TopNav;
 		background-color: $red;
 		border-radius: 20px;
 		font-weight: 400;
+	}
+
+	&-menu {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 	}
 }
 
@@ -214,7 +222,7 @@ a.Navigation-item {
 				height: auto;
 				transition: none;
 				text-transform: uppercase;
-				font-family: var(--font-family);
+				font-family: $font-family;
 				font-size: 13px;
 				padding: 9px;
 				font-weight: 100;

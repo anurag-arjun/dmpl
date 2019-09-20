@@ -30,7 +30,7 @@ class NavBar extends React.Component {
   };
 
   render() {
-    const { market, atlas, sign } = this.props;
+    const { market, Address, sign } = this.props;
 
     const isSignIn = true;
     return (
@@ -46,9 +46,9 @@ class NavBar extends React.Component {
               style={{ color: '#fff' }}
             />
             <div className="sidebar-menu">
-              {atlas && (
-                <a href="/atlas" className="sidebar-item">
-                  Atlas
+              {Address && (
+                <a href="/Address" className="sidebar-item">
+                  Address
                 </a>
               )}
               {market && (
@@ -63,14 +63,22 @@ class NavBar extends React.Component {
             <img src={logo} alt="logo" className="Navigation-logo" />
           </a>
           <div className="Navigation-menu">
-            {atlas && (
-              <a href="/atlas" className="sidebar-item">
-                Atlas
-              </a>
-            )}
-            {market && (
+            {market ? (
               <a href="/marketplace" className="Navigation-item enabled">
                 Marketplace
+              </a>
+            ) : (
+              <a href="/marketplace" className="Navigation-item">
+                Marketplace
+              </a>
+            )}
+            {Address ? (
+              <a href="/Address" className="Navigation-item enabled">
+                Address
+              </a>
+            ) : (
+              <a href="/Address" className="Navigation-item ">
+                Address
               </a>
             )}
           </div>
@@ -116,10 +124,10 @@ NavBar.propTypes = {};
 
 const mapStateToProps = (state) => {
   const market = state.router.location.pathname === '/marketplace';
-  const atlas = state.router.location.pathname === '/atlas';
+  const Address = state.router.location.pathname === '/address';
   return {
     market,
-    atlas,
+    Address,
   };
 };
 
