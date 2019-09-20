@@ -30,8 +30,8 @@ class Wallet extends React.Component {
                 </div>
                 <div className='row1-btn-btn'>
                   <div className='button1'><a href="#">Buy More</a></div>
-                  <button><a href="#">TRANSFER</a></button>
-                  <button>
+                  <button className="button2"><a href="#"><div>TRANSFER</div></a></button>
+                  <button className="button3">
                     <img src={blue_dark} /> <span><a href="#">ADD FUND TO MATIC</a></span>
                   </button>
                 </div>
