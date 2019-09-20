@@ -41,7 +41,7 @@ class Footer extends React.Component {
             © 2019 Decentraland.<span className="all-rights-reserved">All rights reserved.</span>
           </span>
           <div class="dropup">
-            <button class="dropbtn" >English</button>
+            <button class="dropbtn" >English   ▲</button>
             <div class="dropup-content">
               <a href="#">French</a>
               <a href="#">Spanish</a>

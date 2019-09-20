@@ -12,6 +12,7 @@
 		display: flex;
 		justify-content: space-between;
 		width: 100%;
+
 	}
 
 	&-cards {
@@ -20,6 +21,7 @@
 		margin: -0.875em -0.5em;
 		font-size: 1rem;
 		border-radius: 0.28571429rem;
+		justify-content:space-evenly;
 	}
 
 	&-cards-collection {
@@ -27,10 +29,11 @@
 		margin-top: 50px;
 		min-height: 200px;
 		padding: 1px;
-		width: 1127px;
+		max-width: 1200px;
 		margin-left: auto !important;
 		margin-right: auto !important;
 		margin-bottom: 2rem !important;
+		
 	}
 
 	&-button {
@@ -75,7 +78,8 @@
 
 .menu-container {
 	display: flex;
-	width: 1127px;
+	max-width: 1200px;
+	width: 100%;
 	justify-content: space-between;
 	margin-left: auto !important;
 	margin-right: auto !important;
