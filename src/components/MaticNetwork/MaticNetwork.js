@@ -8,6 +8,7 @@ class MaticNetwork extends React.Component {
   render() {
     return (
       <div>
+        <div className="overlay-box">
         <div className="maticnetwork">
           <h1 maticnetwork-heading>Add Matic Network to Metamask</h1>
           <div className="container">
@@ -38,6 +39,8 @@ class MaticNetwork extends React.Component {
             </div>
           </div>
         </div>
+        </div>
+       
       </div>
     );
   }
