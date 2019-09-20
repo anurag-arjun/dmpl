@@ -30,7 +30,9 @@ class NavBar extends React.Component {
   };
 
   render() {
-    const { market, atlas, sign } = this.props;
+    const { market, atlas, isLanding } = this.props;
+
+    if(isLanding) return <div></div>
 
     const isSignIn = true;
     return (
@@ -112,9 +114,11 @@ NavBar.propTypes = {};
 const mapStateToProps = (state) => {
   const market = state.router.location.pathname === '/marketplace';
   const atlas = state.router.location.pathname === '/atlas';
+  const isLanding = state.router.location.pathname === '/'; 
   return {
     market,
     atlas,
+    isLanding
   };
 };
 

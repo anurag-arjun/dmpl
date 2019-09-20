@@ -21,7 +21,6 @@ class LandingPage extends React.Component {
 
     return (
       <div className="landing-page">
-        {/* <NavBar /> */}
         <Header />
         <div className="landing-page-publications">
           <div className="landing-page-header">
