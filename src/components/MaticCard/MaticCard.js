@@ -1,6 +1,8 @@
 import React from 'react';
 import "./MaticCard.scss";
 import img from "../common/assets/images/img.png"
+import Icons from '../../services/icon-service';
+const Map = Icons['fa-map-marker'];
 import wallet from '../common/assets/images/square.png'
 import balance from '../common/assets/images/balance-icon.svg'
 import location from "../common/assets/images/location.svg"
@@ -15,13 +17,13 @@ class MaticCard extends React.Component {
                             <img src={img}></img>
                         </div>
                     </div>
-                <div className="card-details">
+                <div className="card-details"> 
                     <div className="card-details-line1">
                         
                        <div>
                            <div>
                            <div><p className="para1">Private road Connection</p></div>
-                            <div className="para-img"><img src={location}></img><p>-73, -112</p></div>
+                            <div className="para-img"><span className="map"><Map size="30px"/></span><p>-73, -112</p></div>
                            </div>
                            
                             
@@ -57,12 +59,28 @@ class MaticCard extends React.Component {
                    
                 </div>
                 <div className="card-details-line3">
-                    <span><img src={chat}></img></span>
-                    <p>Trasnsaction History</p>
+                    <div className="trans-p"><p>Trasnsaction History</p></div>
+                    <div className="tran-parrent">
+                    <div className="tran-container">
+                        <div className="price">
+                            <span>PRICE</span>
+                            <p>⏣ 2,000</p>
+                        </div>
+                        <div className="when">
+                            <span>WHEN</span>
+                            <p>over one year</p>
+                        </div>
+                        <div className="from" >
+                            <span>FROM</span>
+                            <p>Auction</p>
+                        </div>
+                        <div className="to">
+                            <span>TO</span>
+                            <div><img src={wallet}></img> <p>0xa0e7d....969c4a2</p></div>
+                        </div>
+                    </div>
+                    </div>
                 </div>
-                
-            
-
         </div> );
     }
 }
