@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '../common/assets/images/nav-logo.svg';
 import icons from '../../services/icon-service';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import MaticIcon from '../common/assets/images/blue_dark.svg';
 import ProfileIcon from '../common/assets/images/square.png';
@@ -59,8 +59,7 @@ class NavBar extends React.Component {
             </div>
           </div>
           <FaBars className="FaBars" onClick={this.navBarClickHandler} />
-          <a href="/">
-            {' '}
+          <a href="/" className="Navigation-logo-link">
             <img src={logo} alt="logo" className="Navigation-logo" />
           </a>
           <div className="Navigation-menu">
@@ -82,16 +81,22 @@ class NavBar extends React.Component {
             </a>
           ) : (
             <div className="signedIn">
-              <img src={MaticIcon} alt="MaticIcon" className="signedIn-icon" />
-              <a href="/" className="signedIn-link">
-                SWITCH TO MATIC
-              </a>
-              <span>
-                <FaBell className="signedIn-bell" />
-              </span>
-              
+              <div className="signedIn-extra">
+                <img
+                  src={MaticIcon}
+                  alt="MaticIcon"
+                  className="signedIn-icon"
+                />
+                <a href="/" className="signedIn-link">
+                  SWITCH TO MATIC
+                </a>
+                <span>
+                  <FaBell className="signedIn-bell" />
+                </span>
+              </div>
+
               <p className="signedIn-p">⏣ &nbsp; 500</p>
-              <Link to='/wallet'>
+              <Link to="/wallet">
                 <img
                   src={ProfileIcon}
                   alt="ProfileIcon"
