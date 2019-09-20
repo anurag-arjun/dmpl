@@ -85,7 +85,10 @@ class NavBar extends React.Component {
               <a href="/" className="signedIn-link">
                 SWITCH TO MATIC
               </a>
-              <FaBell className="signedIn-bell" />
+              <span>
+                <FaBell className="signedIn-bell" />
+              </span>
+              
               <p className="signedIn-p">⏣ &nbsp; 500</p>
               <img
                 src={ProfileIcon}

@@ -35,6 +35,9 @@
 		color: $red;
 		font-size: smaller;
 		cursor: pointer;
+		span{
+			margin-left: .1rem;
+		}
 	}
 
 	&-scroller {

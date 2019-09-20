@@ -9,6 +9,7 @@ import LandCard from '../common/landCard/landCard';
 import Header from '../Header/Header.js';
 import NavBar from '../Navbar/Navbar';
 const FaSearch = Icons['fa-search'];
+const FaChevron =Icons['fa-chevron-right'];
 
 class LandingPage extends React.Component {
   componentWillMount = () => {
@@ -26,7 +27,8 @@ class LandingPage extends React.Component {
           <div className="landing-page-header">
             <h3 className="landing-page-p">Newest LAND</h3>
             <a href="/marketplace" className="landing-page-a">
-              VIEW MORE
+              VIEW MORE 
+              <span><FaChevron/></span>
             </a>
           </div>
           <div className="landing-page-scroller">
