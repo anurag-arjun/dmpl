@@ -6,7 +6,7 @@ const Map = Icons['fa-map-marker'];
 import wallet from '../common/assets/images/square.png'
 import balance from '../common/assets/images/balance-icon.svg'
 import location from "../common/assets/images/location.svg"
-import chat from "../common/assets/images/chat.svg"
+import road from "../common/assets/images/road.svg"
 
 class MaticCard extends React.Component {
 
@@ -57,6 +57,42 @@ class MaticCard extends React.Component {
                         </div>
                     </div>
                    
+                </div>
+                <div className="highlight">
+                <h1>Highlights</h1>
+                    <div className="high">
+                        
+                        <div className="block">
+                            <img src={road}></img>
+                            <span className="text">
+                                <p className="text-1">Road</p>
+                                <p className="text-2">Adjacent</p>
+                            </span>
+                        </div>
+                        <div className="block">
+                            <img src={road}></img>
+                            <span className="text">
+                                <p className="text-1">Road</p>
+                                <p className="text-2">Adjacent</p>
+                            </span>
+                        </div>
+                        <div className="block">
+                            <img src={road}></img>
+                            <span className="text">
+                                <p className="text-1">Road</p>
+                                <p className="text-2">Adjacent</p>
+                            </span>
+                        </div>
+                        <div className="block">
+                            <img src={road}></img>
+                            <span className="text">
+                                <p className="text-1">Road</p>
+                                <p className="text-2">Adjacent</p>
+                            </span>
+                        </div>
+                        
+                    </div>
+
                 </div>
                 <div className="card-details-line3">
                     <div className="trans-p"><p>Trasnsaction History</p></div>
