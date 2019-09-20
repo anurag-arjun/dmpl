@@ -35,11 +35,11 @@
 	padding: 1rem;
 	box-sizing: border-box;
 	background-color: $black;
-	color: white;
+	color: #8f919a;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	font-family: 'Montserrat', sans-serif;
+	font-family:  Lato,Helvetica Neue,Arial,Helvetica,sans-serif;
 	height: $footer-height;
 
 	&-left {
@@ -69,6 +69,8 @@
 
 			&-icon {
 				margin-right: 24px;
+				color:#8f919a;
+				margin-top: 1rem;
 				
 			}
 		}
