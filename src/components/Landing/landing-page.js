@@ -20,7 +20,6 @@ class LandingPage extends React.Component {
     const { cards } = this.props;
     return (
       <div className="landing-page">
-        {/* <NavBar /> */}
         <Header />
         <div className="landing-page-publications">
           <div className="landing-page-header">
