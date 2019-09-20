@@ -13,10 +13,12 @@ import WhyMatic from '../components/WhyMatic/WhyMatic';
 import Marketplace from '../components/Marketplace/Marketplace.js';
 import Wallet from '../components/Wallet/Wallet.js';
 import Activity from '../components/Activity/Activity.js';
-import MaticCard from "../components/MaticCard/MaticCard.js"
+import MaticCard from '../components/MaticCard/MaticCard.js';
 import AddFund from '../components/AddFund/AddFund.js';
 import connectWallet from '../components/connectWallet/connectWallet.js';
 import MaticNetwork from '../components/MaticNetwork/MaticNetwork.js';
+import Address from '../components/Address/Address.js';
+
 class Routes extends Component {
   render() {
     return (
@@ -37,9 +39,10 @@ class Routes extends Component {
               <Route exact path="/wallet" component={Wallet} />
               <Route exact path="/activity" component={Activity} />
               <Route exact path="/addfund" component={AddFund} />
-              <Route exact path='/maticcard' component={MaticCard}/>
+              <Route exact path="/maticcard" component={MaticCard} />
               <Route exact path="/connectwallet" component={connectWallet} />
               <Route exact path="/maticnetwork" component={MaticNetwork} />
+              <Route exact path="/address" component={Address} />
             </Switch>
             <Footer />
           </div>
