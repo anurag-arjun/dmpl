@@ -75,25 +75,28 @@ a.Navigation-item {
 	justify-content: center;
 	font-size: 13px;
 	line-height: 16px;
-	span{
+
+	span {
 		margin-right: 1.7rem;
-		width:30px;
+		width: 30px;
 		height: 30px;
 		text-align: center;
 		border-radius: 50%;
+
 		.signedIn-bell {
 			color: $gray;
 			cursor: pointer;
-			padding-top:.5rem; 
+			padding-top: 0.5rem;
 		}
 	}
-	span:hover{
-		background-color:#f04;
+
+	span:hover {
+		background-color: #f04;
 		color: #fff !important;
 		// border:1px solid transparent;
 		.signedIn-bell {
 			color: #fff;
-			padding-top:.5rem; 
+			padding-top: 0.5rem;
 		}
 	}
 
@@ -114,9 +117,6 @@ a.Navigation-item {
 	&-profile {
 		border-radius: 0.5rem;
 	}
-
-	
-	
 
 	& a {
 		color: $gray !important;
@@ -143,6 +143,15 @@ a.Navigation-item {
 	.Navigation {
 		overflow: hidden;
 		transition: transform 1s !important;
+
+		&-div {
+			display: flex;
+			vertical-align: middle;
+
+			svg {
+				padding-top: 0.5rem;
+			}
+		}
 
 		a.enabled {
 			background-color: transparent;
@@ -262,6 +271,14 @@ a.Navigation-item {
 				font-weight: bolder;
 			}
 		}
+	}
+
+	.signedIn-extra {
+		display: none;
+	}
+
+	.Navigation-logo-link {
+		display: none;
 	}
 }
 
