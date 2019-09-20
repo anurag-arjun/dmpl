@@ -20,8 +20,8 @@ class MaticCard extends React.Component {
                 <div className="card-details"> 
                     <div className="card-details-line1">
                         
-                       <div>
-                           <div>
+                       <div className="line-1-div">
+                           <div >
                            <div><p className="para1">Private road Connection</p></div>
                             <div className="para-img"><span className="map"><Map size="30px"/></span><p>-73, -112</p></div>
                            </div>
@@ -36,7 +36,7 @@ class MaticCard extends React.Component {
                             </div>
                         </div>
                         <div className="para-grey">
-                          <p>Most Valuable parcel for this price on market </p>
+                          <p className="para-grey">Most Valuable parcel for this price on market </p>
                         </div>
                     </div>
                     
@@ -52,8 +52,8 @@ class MaticCard extends React.Component {
                             <p className="para-grey">Expire in 29 Days</p>
                         </div>
                         <div className='line-2-btn'>
-                            <a className="btn-bid" href="#">BID</a>
-                            <a className="btn-buy" href="#">BUY</a>
+                            <div className="btn-bid"><a  href="#">BID</a></div>
+                            <div className="btn-buy"><a  href="#">BUY</a></div>
                         </div>
                     </div>
                    
@@ -76,7 +76,7 @@ class MaticCard extends React.Component {
                         </div>
                         <div className="to">
                             <span>TO</span>
-                            <div><img src={wallet}></img> <p>0xa0e7d....969c4a2</p></div>
+                            <div><img src={wallet}></img><p>0xa0e7d....969c4a2</p></div>
                         </div>
                     </div>
                     </div>
