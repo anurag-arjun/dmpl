@@ -81,11 +81,20 @@ a.Navigation-item {
 		height: 30px;
 		text-align: center;
 		border-radius: 50%;
+		.signedIn-bell {
+			color: $gray;
+			cursor: pointer;
+			padding-top:.5rem; 
+		}
 	}
 	span:hover{
 		background-color:#f04;
 		color: #fff !important;
-		border:1px solid transparent;
+		// border:1px solid transparent;
+		.signedIn-bell {
+			color: #fff;
+			padding-top:.5rem; 
+		}
 	}
 
 	&-icon {
@@ -106,15 +115,6 @@ a.Navigation-item {
 		border-radius: 0.5rem;
 	}
 
-	&-bell {
-		color: $gray;
-		cursor: pointer;
-		padding-top:.5rem; 
-	}
-	&-bell:hover {
-		color: #fff;
-		padding-top:.5rem; 
-	}
 	
 	
 

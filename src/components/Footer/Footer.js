@@ -23,16 +23,16 @@ class Footer extends React.Component {
           </div>
           <div className='footer-left-icons'>
             <div className='footer-left-icons-icon'>
-              <TwitterIcon />
+              <TwitterIcon  size="20px"/>
             </div>
             <div className='footer-left-icons-icon'>
-              <FacebookIcon />
+              <FacebookIcon size="20px"/>
             </div>
             <div className='footer-left-icons-icon'>
-              <GithubIcon />
+              <GithubIcon size="20px" />
             </div>
             <div className='footer-left-icons-icon'>
-              <RedditIcon />
+              <RedditIcon size="20px" />
             </div>
           </div>
         </div>
