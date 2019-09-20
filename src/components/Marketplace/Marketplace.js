@@ -7,8 +7,7 @@ import { bindActionCreators } from 'redux';
 import * as actions from '../../actions/initActions';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import Dropdown from 'react-dropdown';
-import NavBar from '../Navbar/Navbar';
-// import 'react-dropdown/style.css';
+import Loader from '../common/assets/images/Loader.svg';
 
 class Marketplace extends React.Component {
   componentWillMount = () => {
@@ -52,18 +51,27 @@ class Marketplace extends React.Component {
             <TabPanel>
               <div className="marketplace-container-cards-collection">
                 <div className="marketplace-container-cards">
-                  {cards.map((e, i) => (
-                    <LandCard big {...e} index={i} />
-                  ))}
+                  {this.props.isFetching ? (
+                    <img src={Loader} alt="Loading" className="Loader" />
+                  ) : (
+                    cards.map((e, i) => <LandCard {...e} index={i} normal />)
+                  )}
                 </div>
               </div>
             </TabPanel>
             <TabPanel>
               <div className="marketplace-container-cards-collection">
                 <div className="marketplace-container-cards">
-                  {cardsReversed.map((e, i) => (
+                  {this.props.isFetching ? (
+                    <img src={Loader} alt="Loading" className="Loader" />
+                  ) : (
+                    cardsReversed.map((e, i) => (
+                      <LandCard {...e} index={i} normal />
+                    ))
+                  )}
+                  {/* {cardsReversed.map((e, i) => (
                     <LandCard big {...e} index={i} />
-                  ))}
+                  ))} */}
                 </div>
               </div>
             </TabPanel>
@@ -90,8 +98,10 @@ Marketplace.propTypes = {};
 const mapStateToProps = (state) => {
   const top12 = state.cards.cards.slice(0, 12);
   const last12 = state.cards.cards.slice(5, 17);
+  const isFetching = state.cards.isFetching;
   return {
     cards: top12,
+    isFetching,
     cardsReversed: last12.reverse(),
   };
 };

@@ -37,6 +37,7 @@
     "immutable-treeutils": "^1.2.0",
     "lodash.throttle": "^4.1.1",
     "moment": "^2.24.0",
+    "nodemon": "^1.19.2",
     "prop-types": "^15.6.1",
     "react": "^16.3.1",
     "react-dom": "^16.3.1",

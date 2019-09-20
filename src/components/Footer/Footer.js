@@ -3,9 +3,9 @@ import './Footer.scss'
 import icons from '../../services/icon-service'
 import Dropdown from 'react-dropdown'
 const FacebookIcon = icons['fa-facebook-square']
-const TwitterIcon = icons['fa-twitter-square']
-const GithubIcon = icons['fa-github-square']
-const RedditIcon = icons['fa-reddit-square']
+const TwitterIcon = icons['fa-twitter']
+const GithubIcon = icons['fa-github']
+const RedditIcon = icons['fa-reddit']
 
 class Footer extends React.Component {
   render () {
@@ -26,13 +26,13 @@ class Footer extends React.Component {
               <TwitterIcon  size="20px"/>
             </div>
             <div className='footer-left-icons-icon'>
-              <FacebookIcon size="20px"/>
-            </div>
-            <div className='footer-left-icons-icon'>
               <GithubIcon size="20px" />
             </div>
             <div className='footer-left-icons-icon'>
               <RedditIcon size="20px" />
+            </div>
+            <div className='footer-left-icons-icon'>
+              <FacebookIcon size="20px"/>
             </div>
           </div>
         </div>
@@ -41,7 +41,7 @@ class Footer extends React.Component {
             © 2019 Decentraland.<span className="all-rights-reserved">All rights reserved.</span>
           </span>
           <div class="dropup">
-            <button class="dropbtn" >English</button>
+            <button class="dropbtn" >English   ▲</button>
             <div class="dropup-content">
               <a href="#">French</a>
               <a href="#">Spanish</a>
