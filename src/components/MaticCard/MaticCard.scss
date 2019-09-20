@@ -13,7 +13,7 @@
     .card-details{
         .card-details-line1{
             margin-left:5rem;
-            margin-bottom:5rem; 
+            margin-bottom:3rem; 
            
             display:flex;
             flex-direction: column;
@@ -29,7 +29,7 @@
                 justify-content: space-between;
                 .own-by{
                     div{
-                        margin-right:10rem;
+                        margin-right:5rem;
                         span{
                             p{
                                 color:#fff !important;
@@ -102,6 +102,7 @@
         .line2-time{
             p{
                 margin-top:1rem;
+                margin-bottom: 1rem;
             }
             .para-grey{
                 color:#666 !important;
@@ -110,8 +111,12 @@
         
         .line-2-btn{
             margin-top:1rem;
-            margin-right:10rem;
+            margin-right:5rem;
+            display: flex;
             .btn-bid{
+                a{
+                    color:#f04;
+                }
                     cursor: pointer;
                     background: #181319;
                     border: 1px solid #FF0044;
@@ -134,6 +139,9 @@
                     text-transform: uppercase;
             }
             .btn-buy{
+                a{
+                    color: #Fff;
+                }
                 cursor: pointer;
                     background: #FF0044;
                     border: 1px solid #F04;
@@ -157,6 +165,42 @@
         }
     }
 }
+.highlight{
+    h1{
+        color: #Fff;
+        font-size: 1.2rem;
+        margin-left:5rem;
+        margin-bottom: 1rem;
+        margin-top: 2rem;
+
+    }
+    .high{
+        display: flex;
+        margin-left:5rem;
+       
+
+        div{
+            display:flex;
+            margin-right: 2rem;
+            margin-bottom: 2rem;
+            
+            img{
+                width:50px;
+                background-color: #fff;
+                border-radius: .3rem;
+            }
+            span{
+                margin: .5rem;
+                .text-2{
+                    padding-top: .4rem;
+                    color: #666;
+                }
+            }
+        }
+        
+        
+    }
+}
 .card-details-line3{
     margin-top:3rem;
     .trans-p{
@@ -176,7 +220,7 @@
             margin-bottom: 2rem;
             padding:1rem;
             border-radius: .5rem;
-            margin-right: 10rem;
+            margin-right: 5rem;
             justify-content: space-between;
             border: 1px solid transparent;
             .price{
@@ -232,10 +276,73 @@
 }
 
 @media screen and (max-width: 720px){
-    .tran-container{
-        flex-direction: column;
+    .card-details-line1{
+        margin-left: 1rem !important;
+        margin-right:1rem !important;
         div{
-            margin:1rem;
+            justify-content: start !important;
+        }
+        .line-1-div{
+            .para-img{
+                width:auto;
+            }
+            display: flex;
+            flex-direction: column;
+
+        }
+        .own-by{
+            p{
+                color: #666;
+            }
+           
+        }
+        .para1{
+            display: none;
+        }
+        .para-grey{
+            display: none;
+        }
+    }
+    .card-details-line2{
+        .line2{
+            flex-direction: column;
+            margin-left: 1rem !important;
+            margin-right: 1rem !important;
+            .line-2-btn{
+                margin-right: 0rem !important;
+                flex-direction: column;
+                .btn-bid{
+                    text-align: center;
+                    margin-right: 0 !important;
+                    margin-bottom: 1rem;
+                }     
+                .btn-buy{
+                    text-align: center;
+                }   
+            }
+        }
+    }
+    .highlight{
+        h1{
+            margin-left:1rem !important;
+        }
+        .high{
+            margin-left: 1rem !important; 
+            flex-flow: column;
+        }
+    }
+    .trans-p{
+            margin-left: 1rem !important;
+    }
+    .tran-container{
+        
+        margin-left:1rem !important;
+        margin-right:1rem !important;
+        .to{
+            display:none;
+        }
+        .from{
+            display :none;
         }
     }
 }

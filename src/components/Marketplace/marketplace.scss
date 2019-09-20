@@ -1,6 +1,5 @@
 @import '../common/styles/main';
 
-
 .marketplace-container {
 	display: flex;
 	min-height: calc(100% - var(--footer-height));
@@ -167,4 +166,53 @@
 .react-tabs__tab-panel--selected {
 	display: block;
 	transition: all 0.5s ease;
+}
+
+@media only screen and (max-width: 767px) {
+	.marketplace-container {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.menu-container {
+		display: flex;
+		flex-direction: column !important;
+		width: 767px !important;
+		margin-left: 1em !important;
+		margin-right: 1em !important;
+		//display: block;
+		max-width: 100% !important;
+
+		&-item {
+			display: flex;
+			flex-direction: column;
+			align-content: flex-start;
+		}
+	}
+
+	.menu-item {
+		align-self: flex-start !important;
+	}
+
+	.Dropdown-control {
+		width: 100%;
+	}
+
+	.react-tabs__tab--selected {
+		border: none !important;
+	}
+
+	.marketplace-container-cards {
+		display: flex;
+		flex-direction: column;
+		width: fit-content;
+
+		&-collection {
+			width: fit-content;
+		}
+	}
+
+	.land-card.big {
+		margin-right: 0 !important;
+	}
 }
