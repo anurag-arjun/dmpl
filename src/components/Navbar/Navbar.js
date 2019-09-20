@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from '../common/assets/images/nav-logo.svg';
 import icons from '../../services/icon-service';
+import {Link} from 'react-router-dom';
 import { connect } from 'react-redux';
 import MaticIcon from '../common/assets/images/blue_dark.svg';
 import ProfileIcon from '../common/assets/images/square.png';
@@ -90,12 +91,14 @@ class NavBar extends React.Component {
               </span>
               
               <p className="signedIn-p">⏣ &nbsp; 500</p>
-              <img
-                src={ProfileIcon}
-                alt="ProfileIcon"
-                className="signedIn-profile"
-                style={{ width: '40px', height: 'auto' }}
-              />
+              <Link to='/wallet'>
+                <img
+                  src={ProfileIcon}
+                  alt="ProfileIcon"
+                  className="signedIn-profile"
+                  style={{ width: '40px', height: 'auto' }}
+                />
+              </Link>
             </div>
           )}
         </nav>{' '}

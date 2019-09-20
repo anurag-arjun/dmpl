@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import {Link } from 'react-router-dom';
 import './land-card.scss'
 import cardImg from '../assets/images/map3.png'
 import cardImgBig from '../assets/images/map-big.png'
@@ -29,7 +30,7 @@ class LandCard extends React.Component {
     } = this.props
 
     return (
-      <div className={big ? 'land-card big' : 'land-card'}>
+      <Link to='/maticcard' className={big ? 'land-card big' : 'land-card'}>
         <div className='land-card-preview'>
           {normal && (
             <img
@@ -81,7 +82,7 @@ class LandCard extends React.Component {
             )}
           </div>
         </div>
-      </div>
+      </Link>
     )
   }
 }
