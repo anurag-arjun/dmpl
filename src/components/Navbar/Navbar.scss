@@ -76,6 +76,9 @@ a.Navigation-item {
 }
 
 //navbar signin state icons
+.signedIn-extra{
+	display: flex;
+}
 
 .signedIn {
 	display: flex;
@@ -84,27 +87,32 @@ a.Navigation-item {
 	font-size: 13px;
 	line-height: 16px;
 
-	span {
+	.signedIn-bell-parent {
 		margin-right: 1.7rem;
-		width: 30px;
-		height: 30px;
+		position: relative;
+		width: 30px ;
+		height: 30px ;
 		text-align: center;
 		border-radius: 50%;
 
 		.signedIn-bell {
 			color: $gray;
 			cursor: pointer;
-			padding-top: 0.5rem;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			
 		}
 	}
 
-	span:hover {
+	.signedIn-bell-parent:hover {
 		background-color: #f04;
 		color: #fff !important;
-		// border:1px solid transparent;
+	   // border:1px solid transparent;
 		.signedIn-bell {
 			color: #fff;
-			padding-top: 0.5rem;
+			
 		}
 	}
 

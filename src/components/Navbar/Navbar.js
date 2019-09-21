@@ -100,10 +100,10 @@ class NavBar extends React.Component {
                 <a href="/" className="signedIn-link">
                   SWITCH TO MATIC
                 </a>
-                <span>
-                  <FaBell className="signedIn-bell" />
-                </span>
               </div>
+              <span className="signedIn-bell-parent">
+                <FaBell className="signedIn-bell" />
+              </span>
 
               <p className="signedIn-p">⏣ &nbsp; 500</p>
               <Link to="/wallet">
