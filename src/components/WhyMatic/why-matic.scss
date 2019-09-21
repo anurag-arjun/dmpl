@@ -42,6 +42,9 @@
 		.why-row {
 			flex-direction: column;
 		}
+		.why{
+			position: relative !important;
+		}
 	}
 
 	.why-row-2 {
@@ -49,7 +52,6 @@
 		height: 100px;
 		margin-bottom: 15px;
 		background-color: black;
-		margin-left: -15px;
 		border-bottom-left-radius: 1rem;
 		border-bottom-right-radius: 1rem;
 
@@ -194,9 +196,8 @@
 		}
 	}
 	.appendix-1 {
-		background-color:gray;
-		padding-top: 25px;
-		padding-left: 15px;
+		background-color:rgb(22, 22, 22);
+		padding-top: 1rem;
 		border-radius: 1rem;
 	}
 }

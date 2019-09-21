@@ -5,12 +5,15 @@
 	
 
 	&-wallet{
-		border:1px solid black;
-		padding: 2rem;
-		border-radius: 2rem;
-		width: 880px;
-		height: 574px;
-		text-align: center;
+		
+		border: 1px solid black;
+   		padding: 0rem !important;
+   		margin-top: 1rem;
+   		border-radius: 2rem;
+   		width: 700px !important ;
+    	height: 400px !important;
+   		text-align: center;
+   		background: rgb(22, 22, 22);
 		.wallet-edge{
 
 			display: flex;
@@ -19,6 +22,7 @@
 			.edge{
 				width:8rem;
 				height:8rem;
+				margin-top:1rem;
 				border-radius:50%;
 				background-color: #2A232D;
 				display: flex;
@@ -70,9 +74,9 @@
 			display: flex;
 			.wallet-btn{
 				margin-top:1rem;
-				width:65%;
+				width:100% !important;
 				display: flex;
-				justify-content: space-between;
+				justify-content: space-evenly !important;
 				div{
 					background: #18141A;
 					border: 1px solid #FF0044;
