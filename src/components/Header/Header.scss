@@ -57,6 +57,23 @@
 	-ms-flex-pack: center;
 	justify-content: center;
 	margin-bottom: 3rem;
+	position: relative;
+	div{
+		width: 100%;
+		@media screen and (max-width: 720px){
+			.logo{
+				display: none;
+			}	
+		}
+		.logo{
+			position: absolute;
+			top: 10%;
+			left: 2%;
+			img{
+				width: 60px;
+			}
+		}
+	}
 
 	&-light {
 		text-align: center;
