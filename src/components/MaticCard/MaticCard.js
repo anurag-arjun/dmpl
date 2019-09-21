@@ -2,13 +2,28 @@ import React from 'react';
 import "./MaticCard.scss";
 import img from "../common/assets/images/img.png"
 import Icons from '../../services/icon-service';
+import { Link } from 'react-router-dom';
 const Map = Icons['fa-map-marker'];
+import wallet1 from "../common/assets/images/wallet.svg"
+import walletConnect from "../common/assets/images/walcon.svg"
+import metamask from "../common/assets/images/metamask.svg"
+import portis from "../common/assets/images/portis.svg"
 import wallet from '../common/assets/images/square.png'
 import balance from '../common/assets/images/balance-icon.svg'
 import location from "../common/assets/images/location.svg"
 import road from "../common/assets/images/road.svg"
 
 class MaticCard extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+          button : false
+        };
+      }
+      onButtonHandler =()=>{
+          this.setState({...this.state, button:!this.state.button});
+      };
+    
 
     render() { 
         return ( <div className="card">
@@ -52,8 +67,8 @@ class MaticCard extends React.Component {
                             <p className="para-grey">Expire in 29 Days</p>
                         </div>
                         <div className='line-2-btn'>
-                            <div className="btn-bid"><a  href="#">BID</a></div>
-                            <div className="btn-buy"><a  href="#">BUY</a></div>
+                            <div onClick={this.onButtonHandler} className="btn-bid"><a  href="#">BID</a></div>
+                            <div onClick={this.onButtonHandler} className="btn-buy"><a  href="#">BUY</a></div>
                         </div>
                     </div>
                    
@@ -117,6 +132,35 @@ class MaticCard extends React.Component {
                     </div>
                     </div>
                 </div>
+                {
+                    this.state.button &&
+                    <div className="connect">
+                    <div className="connect-wallet">
+                      <div className="wallet-edge">
+                        <div className="edge"><img src={wallet1}></img>
+                        </div>
+                      </div>
+                      <div className="wallet-text">
+                        <h1>Connect your Wallet</h1>
+                        <p>First of all, you need a safe placero keep your land. Choose to <br></br> connect wallet by following connection</p>
+                      </div>
+                      <span>CONNECT WITH</span>
+                      <div className="wallet-btn-parrent">
+                      <div className="wallet-btn">
+                        <div>
+                          <a href ="#"><img src={metamask}></img><p>Meta Mask</p></a>
+                        </div>
+                        <div>
+                          <a href ="#"><img src={walletConnect}></img><p>Connect Wallet</p></a>
+                        </div>
+                        <div>
+                          <a href ="#"><img className="portis-svg" src={portis}></img><p>Portis</p></a>
+                        </div>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                  }
         </div> );
     }
 }
