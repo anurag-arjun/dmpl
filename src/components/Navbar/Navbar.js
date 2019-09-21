@@ -39,17 +39,16 @@ class NavBar extends React.Component {
   }
 
   render() {
-    const { market, atlas, isLanding } = this.props;
+    const { market, Address, isLanding } = this.props;
 
-    if(isLanding) return <div></div>
+    if (isLanding) return <div></div>;
 
     const isSignIn = false;
     return (
       <div id="nav-bar">
         <nav
-          className={
-            this.state.topNav ? 'Navigation' : 'Navigation Responsive'
-          }>
+          className={this.state.topNav ? 'Navigation' : 'Navigation Responsive'}
+        >
           <div className="sidebar">
             <FaWindowClose
               onClick={this.navBarClickHandler}
@@ -57,9 +56,9 @@ class NavBar extends React.Component {
               style={{ color: '#fff' }}
             />
             <div className="sidebar-menu">
-              {atlas && (
-                <a href="/atlas" className="sidebar-item">
-                  Atlas
+              {Address && (
+                <a href="/Address" className="sidebar-item">
+                  Address
                 </a>
               )}
               {market && (
@@ -74,14 +73,22 @@ class NavBar extends React.Component {
             <img src={logo} alt="logo" className="Navigation-logo" />
           </a>
           <div className="Navigation-menu">
-            {atlas && (
-              <a href="/atlas" className="sidebar-item">
-                Atlas
-              </a>
-            )}
-            {market && (
+            {market ? (
               <a href="/marketplace" className="Navigation-item enabled">
                 Marketplace
+              </a>
+            ) : (
+              <a href="/marketplace" className="Navigation-item">
+                Marketplace
+              </a>
+            )}
+            {Address ? (
+              <a href="/Address" className="Navigation-item enabled">
+                Address
+              </a>
+            ) : (
+              <a href="/Address" className="Navigation-item ">
+                Address
               </a>
             )}
           </div>
@@ -101,10 +108,10 @@ class NavBar extends React.Component {
                 <a href="/" className="signedIn-link">
                   SWITCH TO MATIC
                 </a>
-                <span>
-                  <FaBell className="signedIn-bell" />
-                </span>
               </div>
+              <span className="signedIn-bell-parent">
+                <FaBell className="signedIn-bell" />
+              </span>
 
               <p className="signedIn-p">⏣ &nbsp; 500</p>
               <Link to="/wallet">
@@ -156,12 +163,12 @@ NavBar.propTypes = {};
 
 const mapStateToProps = (state) => {
   const market = state.router.location.pathname === '/marketplace';
-  const atlas = state.router.location.pathname === '/atlas';
-  const isLanding = state.router.location.pathname === '/'; 
+  const Address = state.router.location.pathname === '/address';
+  const isLanding = state.router.location.pathname === '/';
   return {
     market,
-    atlas,
-    isLanding
+    Address,
+    isLanding,
   };
 };
 
