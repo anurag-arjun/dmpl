@@ -1,5 +1,10 @@
 import React from 'react'
+<<<<<<< HEAD
 import logo from '../common/assets/images/nav-logo.svg';
+=======
+import { Link } from 'react-router-dom';
+
+>>>>>>> 7c33c00db0b60ec15d982007e1d4e7e8ac7d9fad
 import './Header.scss'
 
 class Header extends React.Component {
@@ -14,7 +19,7 @@ class Header extends React.Component {
           </h1>
           </div>
           <p className='Header-Heading-dark'>Decentralized market for LAND</p>
-          <button className='Header-button button-primary'><a href="#">GET STARTED</a></button>
+          <button className='Header-button button-primary'><Link to='/marketplace'>GET STARTED</Link></button>
           <a
             href='https://youtu.be/uyuaN1OdOh4'
             className='Header-Heading-link'
