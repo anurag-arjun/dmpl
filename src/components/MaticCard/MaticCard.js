@@ -1,5 +1,6 @@
 import React from 'react';
 import "./MaticCard.scss";
+import '../Navbar/Navbar.scss';
 import img from "../common/assets/images/img.png"
 import Icons from '../../services/icon-service';
 import { Link } from 'react-router-dom';
@@ -17,17 +18,47 @@ class MaticCard extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-          button : false
+          buy : false
         };
       }
-      onButtonHandler =()=>{
-          this.setState({...this.state, button:!this.state.button});
-      };
+      buyHandler = () => {
+        this.setState({...this.state, buy: !this.state.buy});
+      }
     
 
     render() { 
-        return ( <div className="card">
+        return ( <div>
+                <div className="card">
                     <div className="card-img-block">
+                    {
+                this.state.buy &&
+                    <div className="connect">
+                    <div className="connect-wallet">
+                      <div className="wallet-edge">
+                        <div className="edge"><img src={wallet1}></img>
+                        </div>
+                      </div>
+                      <div className="wallet-text">
+                        <h1>Connect your Wallet</h1>
+                        <p>First of all, you need a safe placero keep your land. Choose to <br></br> connect wallet by following connection</p>
+                      </div>
+                      <span>CONNECT WITH</span>
+                      <div className="wallet-btn-parrent">
+                      <div className="wallet-btn">
+                        <div>
+                          <a href ="#"><img src={metamask}></img><p>Meta Mask</p></a>
+                        </div>
+                        <div>
+                          <a href ="#"><img src={walletConnect}></img><p>Connect Wallet</p></a>
+                        </div>
+                        <div>
+                          <a href ="#"><img className="portis-svg" src={portis}></img><p>Portis</p></a>
+                        </div>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                  }
                         <div className="card-img">
                             <img src={img}></img>
                         </div>
@@ -67,8 +98,8 @@ class MaticCard extends React.Component {
                             <p className="para-grey">Expire in 29 Days</p>
                         </div>
                         <div className='line-2-btn'>
-                            <div onClick={this.onButtonHandler} className="btn-bid"><a  href="#">BID</a></div>
-                            <div onClick={this.onButtonHandler} className="btn-buy"><a  href="#">BUY</a></div>
+                            <div onClick={this.buyHandler} className="btn-bid"><a  href="#">BID</a></div>
+                            <div onClick={this.buyHandler} className="btn-buy"><a  href="#">BUY</a></div>
                         </div>
                     </div>
                    
@@ -130,38 +161,12 @@ class MaticCard extends React.Component {
                             <div><img src={wallet}></img><p>0xa0e7d....969c4a2</p></div>
                         </div>
                     </div>
+                    
                     </div>
                 </div>
-                {
-                    this.state.button &&
-                    <div className="connect">
-                    <div className="connect-wallet">
-                      <div className="wallet-edge">
-                        <div className="edge"><img src={wallet1}></img>
-                        </div>
-                      </div>
-                      <div className="wallet-text">
-                        <h1>Connect your Wallet</h1>
-                        <p>First of all, you need a safe placero keep your land. Choose to <br></br> connect wallet by following connection</p>
-                      </div>
-                      <span>CONNECT WITH</span>
-                      <div className="wallet-btn-parrent">
-                      <div className="wallet-btn">
-                        <div>
-                          <a href ="#"><img src={metamask}></img><p>Meta Mask</p></a>
-                        </div>
-                        <div>
-                          <a href ="#"><img src={walletConnect}></img><p>Connect Wallet</p></a>
-                        </div>
-                        <div>
-                          <a href ="#"><img className="portis-svg" src={portis}></img><p>Portis</p></a>
-                        </div>
-                      </div>
-                      </div>
-                    </div>
+                
                   </div>
-                  }
-        </div> );
+        </div>);
     }
 }
  
