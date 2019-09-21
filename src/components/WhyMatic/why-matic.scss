@@ -1,11 +1,11 @@
 @import '../common/styles/variables';
 
 .why {
-	padding-top: 4%;
+	position: fixed;
 	padding-bottom: 8%;
 	padding-left: 15%;
 	padding-right: 15%;
-	background-color: $background;
+	background-color: transparent;
 
 	.why-matic {
 		margin-bottom: 20px;
@@ -193,11 +193,12 @@
 			}
 		}
 	}
+	.appendix-1 {
+		background-color:gray;
+		padding-top: 25px;
+		padding-left: 15px;
+		border-radius: 1rem;
+	}
 }
 
-.appendix-1 {
-	background-color: rgba($color: #000000, $alpha: 0.28);
-	padding-top: 25px;
-	padding-left: 15px;
-	border-radius: 1rem;
-}
+
