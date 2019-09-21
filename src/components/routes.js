@@ -15,7 +15,6 @@ import Wallet from '../components/Wallet/Wallet.js';
 import Activity from '../components/Activity/Activity.js';
 import MaticCard from '../components/MaticCard/MaticCard.js';
 import AddFund from '../components/AddFund/AddFund.js';
-import connectWallet from '../components/connectWallet/connectWallet.js';
 import MaticNetwork from '../components/MaticNetwork/MaticNetwork.js';
 import Address from '../components/Address/Address.js';
 
@@ -40,7 +39,6 @@ class Routes extends Component {
               <Route exact path="/activity" component={Activity} />
               <Route exact path="/addfund" component={AddFund} />
               <Route exact path="/maticcard" component={MaticCard} />
-              <Route exact path="/connectwallet" component={connectWallet} />
               <Route exact path="/maticnetwork" component={MaticNetwork} />
               <Route exact path="/address" component={Address} />
             </Switch>
