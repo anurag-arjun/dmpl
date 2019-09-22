@@ -1,0 +1,61 @@
+.NotPartOfDesign{
+    #NotDesign{
+        text-align: center;
+        .NPOD{
+            margin-top: 5rem;
+            margin-bottom: 1rem;
+            font-family: Lato;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 13px;
+            line-height: 16px;
+            /* identical to box height */
+
+            text-transform: uppercase;
+
+            color: #3E3943;
+
+        }
+        .para{
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 34px;
+            line-height: 40px;
+            text-align: center;
+            margin-bottom: 10rem;
+            color: #FFFFFF;
+
+            opacity: 0.4;
+        }
+        .btn{
+            position: relative;
+            
+            .button{  
+                display: flex;
+                justify-content: center;
+                margin:auto;  
+                background: #181319;
+                border: 1px solid #FF0044;
+                box-sizing: border-box;
+                border-radius: 10px;
+                width: 116px;
+                span{
+    
+                    font-family: Lato;
+                    font-style: normal;
+                    font-weight: normal;
+                    width:auto;
+                    font-size: 13px;
+                    line-height: 50px;
+                    /* identical to box height */
+    
+                    text-transform: uppercase;
+    
+                    color: #FF0044;
+                }
+            }
+        }
+        
+    }
+}

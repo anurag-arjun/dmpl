@@ -17,6 +17,7 @@ import MaticCard from '../components/MaticCard/MaticCard.js';
 import AddFund from '../components/AddFund/AddFund.js';
 import MaticNetwork from '../components/MaticNetwork/MaticNetwork.js';
 import Address from '../components/Address/Address.js';
+import NotPartOfDesign from '../components/NotPartOfDesign/NotPartOfDesign.js'
 
 class Routes extends Component {
   render() {
@@ -41,6 +42,7 @@ class Routes extends Component {
               <Route exact path="/maticcard" component={MaticCard} />
               <Route exact path="/maticnetwork" component={MaticNetwork} />
               <Route exact path="/address" component={Address} />
+              <Route exact path="/notpartofdesign" component={NotPartOfDesign}/>
             </Switch>
             <Footer />
           </div>
