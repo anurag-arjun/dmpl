@@ -3,12 +3,15 @@ import logo from '../common/assets/images/nav-logo.svg';
 import icons from '../../services/icon-service';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import Web3 from 'web3';
+//Images
 import MaticIcon from '../common/assets/images/blue_dark.svg';
 import ProfileIcon from '../common/assets/images/square.png';
-import wallet from "../common/assets/images/wallet.svg"
-import walletConnect from "../common/assets/images/walcon.svg"
-import metamask from "../common/assets/images/metamask.svg"
-import portis from "../common/assets/images/portis.svg"
+import wallet from '../common/assets/images/wallet.svg';
+import walletConnect from '../common/assets/images/walcon.svg';
+import metamask from '../common/assets/images/metamask.svg';
+import portis from '../common/assets/images/portis.svg';
+//css
 import './Navbar.scss';
 
 //React Icons Start
@@ -24,9 +27,39 @@ class NavBar extends React.Component {
     this.state = {
       topNav: true,
       navSmall: false,
-      siginOverlay : false
+      siginOverlay: false,
+      loading: false,
     };
   }
+
+  handleLogin = async () => {
+    //check if metamask is installed
+    let ethereum = window.ethereum; 
+    if (typeof window.ethereum === undefined) {
+      window.alert('Please install metamask first');
+      return;
+    }
+    const accounts = await ethereum.enable()
+    console.log(accounts);
+    
+    if (!web3) {
+      try {
+        await typeof window.ethereum;
+      } catch (error) {
+        window.alert('You need to allow Metmask Idiot.');
+        return;
+      }
+    }
+
+    // const coinbase = await web3.eth.getCoinbase();
+    // if (!coinbase) {
+    //   window.alert('Please activate metamask first.');
+    //   return;
+    // }
+
+    // const publicAddress = coinbase.toLowerCase();
+    // this.setState({ loading: true });
+  };
 
   navBarClickHandler = () => {
     const newState = { ...this.state, topNav: !this.state.topNav };
@@ -35,8 +68,8 @@ class NavBar extends React.Component {
   };
 
   siginHandler = () => {
-    this.setState({...this.state, siginOverlay: !this.state.siginOverlay});
-  }
+    this.setState({ ...this.state, siginOverlay: !this.state.siginOverlay });
+  };
 
   render() {
     const { market, Address, isLanding } = this.props;
@@ -47,8 +80,9 @@ class NavBar extends React.Component {
     return (
       <div id="nav-bar">
         <nav
-          className={this.state.topNav ? 'Navigation' : 'Navigation Responsive'}
-        >
+          className={
+            this.state.topNav ? 'Navigation' : 'Navigation Responsive'
+          }>
           <div className="sidebar">
             <FaWindowClose
               onClick={this.navBarClickHandler}
@@ -125,35 +159,47 @@ class NavBar extends React.Component {
             </div>
           )}
         </nav>{' '}
-        {
-          this.state.siginOverlay &&
-            <div className="connect">
+        {this.state.siginOverlay && (
+          <div className="connect">
             <div className="connect-wallet">
               <div className="wallet-edge">
-                <div className="edge"><img src={wallet}></img>
+                <div className="edge">
+                  <img src={wallet}></img>
                 </div>
               </div>
               <div className="wallet-text">
                 <h1>Connect your Wallet</h1>
-                <p>First of all, you need a safe placero keep your land. Choose to <br></br> connect wallet by following connection</p>
+                <p>
+                  First of all, you need a safe placero keep your land. Choose
+                  to <br></br> connect wallet by following connection
+                </p>
               </div>
               <span>CONNECT WITH</span>
               <div className="wallet-btn-parrent">
-              <div className="wallet-btn">
-                <div>
-                  <a href ="#"><img src={metamask}></img><p>Meta Mask</p></a>
+                <div className="wallet-btn">
+                  <div className="metamask-btn">
+                    <a href="#" onClick={this.handleLogin}>
+                      <img src={metamask}></img>
+                      <p>Meta Mask</p>
+                    </a>
+                  </div>
+                  <div className="connectWallet-btn">
+                    <a href="#">
+                      <img src={walletConnect}></img>
+                      <p>Connect Wallet</p>
+                    </a>
+                  </div>
+                  <div className="portis-btn">
+                    <a href="#">
+                      <img className="portis-svg" src={portis}></img>
+                      <p>Portis</p>
+                    </a>
+                  </div>
                 </div>
-                <div>
-                  <a href ="#"><img src={walletConnect}></img><p>Connect Wallet</p></a>
-                </div>
-                <div>
-                  <a href ="#"><img className="portis-svg" src={portis}></img><p>Portis</p></a>
-                </div>
-              </div>
               </div>
             </div>
           </div>
-        }
+        )}
       </div>
     );
   }
