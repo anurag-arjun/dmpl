@@ -44,6 +44,7 @@ class Footer extends React.Component {
                   options={options}
                   onChange={this._onSelect}
                   // value={defaultOption}
+                  className="footer-dropdown"
                   placeholder="Cheapest"
                 />
         </div>

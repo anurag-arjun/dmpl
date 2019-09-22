@@ -121,3 +121,16 @@
 	}
 
 }
+.Dropdown-menu{
+	padding: 0.78571429em 2.1em 0.78571429em 1em;
+    margin-top: -150px !important;
+    max-height: -27px;
+    overflow-y: 0;
+    position: absolute;
+    /* top: 100%; */
+    width: 14rem;
+    min-width: 14rem;
+    min-height: 2.714286em;
+    z-index: 1000;
+    -webkit-overflow-scrolling: touch;
+}
