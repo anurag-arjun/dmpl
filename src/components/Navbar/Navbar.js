@@ -34,12 +34,14 @@ class NavBar extends React.Component {
 
   handleLogin = async () => {
     //check if metamask is installed
-
-    if (typeof window.ethereum !== 'undefined') {
+    let ethereum = window.ethereum; 
+    if (typeof window.ethereum === undefined) {
       window.alert('Please install metamask first');
       return;
     }
-
+    const accounts = await ethereum.enable()
+    console.log(accounts);
+    
     if (!web3) {
       try {
         await typeof window.ethereum;
