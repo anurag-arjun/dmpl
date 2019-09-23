@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import './Popup.js';
 
 class Popup extends React.Component {
@@ -43,4 +44,17 @@ class Popup extends React.Component {
   }
 }
 
-export default Popup;
+Popup.propTypes = {};
+
+const mapStateToProps = (state) => {
+  const loginPopup =
+    state.router.location.pathname === ('/marketplace' || '/maticcard');
+  const buyPopup =
+    state.router.location.pathname === ('/whymatic' || '/addfund');
+  return {
+    loginPopup,
+    buyPopup,
+  };
+};
+
+export default connect(mapStateToProps)(Popup);
