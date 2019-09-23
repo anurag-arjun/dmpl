@@ -144,8 +144,33 @@
 	margin-left: auto !important;
 	margin-right: auto !important;
 
+	.react-tabs__tab--selected
+		{ 
+			span{
+				width:15px;
+				padding-left: 9px;
+				padding-right: 9px;
+				margin-left: 4px;
+				font-size: 13px;
+				color:#fff;
+				background: #ff0044;
+				border-radius: 1rem;
+			}
+			
+		}
+
 	&-item {
 		display: flex;
+		
+		span{
+			padding-left: 9px;
+    		padding-right: 9px;
+    		margin-left: 4px;
+    		font-size: 13px;
+			color:#fff;
+			background: #272329;
+			border-radius: 1rem;
+		}
 	}
 }
 
