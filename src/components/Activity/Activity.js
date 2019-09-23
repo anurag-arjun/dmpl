@@ -2,6 +2,7 @@ import React from 'react';
 import './Activity.scss';
 import blue_dark from '../common/assets/images/balance-icon.svg';
 import loading from '../common/assets/images/Loader.svg';
+import unknown from "../common/assets/images/unknown.svg"
 
 class Activity extends React.Component {
   render() {
@@ -39,6 +40,24 @@ class Activity extends React.Component {
                     You Authorized the{' '}
                     <span className="red-para">Matic Plasma Contact</span> to
                     Operate MANA on your behalf
+                  </p>
+                </div>
+                <span className="content-line-time">
+                  <p>1 minute ago</p>
+                </span>
+              </div>
+              <div className="status">
+                <p>Success </p>
+              </div>
+            </div>
+            <div className="activity-content-1">
+              <div className="content-line">
+                <div className="content-line-para">
+                  <img src={unknown} />
+                  <p className="para">
+                    You Moved Your Land
+                    <span className="red-para"> -123 ,-140 </span> to
+                    to Matic Network
                   </p>
                 </div>
                 <span className="content-line-time">

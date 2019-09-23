@@ -5,6 +5,7 @@ import Bitmap1 from '../common/assets/images/Bitmap1.png';
 import Bitmap2 from '../common/assets/images/Bitmap2.png';
 import Bitmap3 from '../common/assets/images/Bitmap3.png';
 import Bitmap4 from '../common/assets/images/Bitmap4.png';
+
 class MaticNetwork extends React.Component {
 
   constructor(props) {
