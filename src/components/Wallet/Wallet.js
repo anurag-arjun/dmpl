@@ -45,7 +45,7 @@ class Wallet extends React.Component {
               </span>
               <p>Wallet Address</p>
               <span>
-                <p>0xR4WqHT9ek75iNalRbgiP2r00fsd0gf2sg1d5gd0gfd200531331</p>
+                <p>0xR4WqHT9ek75iNalRbgiP2r00fsd0gf2sg1d5</p>
               </span>
               <p>Balance</p>
               <span className="row1-btn">
@@ -63,10 +63,12 @@ class Wallet extends React.Component {
                     </a>
                   </button>
                   <button className="button3">
-                    <img src={blue_dark} />
-                    <span>
-                      <a onClick={this.whymaticHandler}>ADD FUND TO MATIC</a>
-                    </span>
+                   <div>
+                      <img src={blue_dark} />
+                      <span>
+                         <a onClick={this.whymaticHandler}>ADD FUND TO MATIC</a>
+                      </span>
+                     </div> 
                   </button>
                 </div>
               </span>
