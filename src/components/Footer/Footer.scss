@@ -12,13 +12,15 @@
 		.footer-right {
 			position: relative;
 			width: auto;
+			margin: auto;
 			justify-content: center;
+		}
+		.all-rights-reserved {
+			display: none !important;
 		}
 	}
 
-	.all-rights-reserved {
-		display: none !important;
-	}
+	
 }
 
 .footer {
@@ -37,7 +39,6 @@
 	background-color: $black;
 	color: #8f919a;
 	display: flex;
-	flex-wrap: wrap;
 	justify-content: space-between;
 	font-family:  Lato,Helvetica Neue,Arial,Helvetica,sans-serif;
 	height: $footer-height;
@@ -53,7 +54,7 @@
 		align-items: flex-start;
 		-ms-flex: 1 0 auto;
 		flex: 1 0 auto;
-		padding: 0 20px 0 85px;
+		margin-left:2rem;
 
 		&-links {
 			display: flex;
@@ -81,7 +82,6 @@
 		color: $gray;
 		-ms-flex-align: flex-end;
 		align-items: flex-start;
-		padding: 0 20px 0 85px;
 		flex-direction: row;
 		flex-flow: row nowrap;
 		align-items: center;
@@ -126,7 +126,7 @@
 
 		.Dropdown-menu{
 			padding: 0.78571429em 2.1em 0.78571429em 1em;
-			margin-top: -150px !important;
+			margin-top: -155px !important;
 			max-height: -27px;
 			overflow-y: 0;
 			position: absolute;
