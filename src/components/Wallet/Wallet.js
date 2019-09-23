@@ -300,7 +300,7 @@ class Wallet extends React.Component {
                   </div>
                 </div>
                 <div className="addfund-sub">
-                  <a href="#" className="sub-cancel">
+                  <a  onClick={this.cautionHandler} href="#" className="sub-cancel">
                     CANCEL
                   </a>
                   <a href="#" className="sub-submit">
