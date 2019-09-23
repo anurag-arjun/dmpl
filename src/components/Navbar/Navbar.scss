@@ -131,6 +131,10 @@ $nav: TopNav;
 		& a {
 			color: $gray !important;
 		}
+
+		.signedIn-extra {
+			display: flex;
+		}
 	}
 
 	//Navbar Responsive Part
@@ -285,7 +289,7 @@ $nav: TopNav;
 		}
 
 		.signedIn-extra {
-			display: none;
+			display: none !important;
 		}
 
 		.Navigation-logo-link {
