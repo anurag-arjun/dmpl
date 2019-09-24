@@ -1,6 +1,6 @@
 @media screen and (max-width:992px){
 	.wallet{
-		flex-direction: column;
+		flex-wrap: wrap;
 		justify-content: center;
 	}
 	.row1-btn{
@@ -11,7 +11,7 @@
 	justify-content: center;
 	padding-top:1rem;
 	display: flex;
-	background-color: rgb(29, 28, 28);
+	background-color: #262328;
 	//margin-bottom: 80px;
 
 	&-img {
@@ -195,7 +195,7 @@
 						margin-left: 0rem !important;
 					}
 					.button3{
-						position: relative;
+						
 						margin-left: 0 !important;
 
 						div{

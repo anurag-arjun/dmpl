@@ -91,7 +91,7 @@ class NavBar extends React.Component {
 
     if (isLanding) return <div></div>;
 
-    const isSignIn = false;
+    const isSignIn = true;
     return (
       <div id="nav-bar">
         <nav
