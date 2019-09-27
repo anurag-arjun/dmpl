@@ -3,23 +3,26 @@
     
     position: fixed;
     display: flex;
-
+    margin: auto;
+    justify-content: center;
+    z-index: 2;
+    overflow-y: scroll;
+    background: #18141A;
+    height: auto;
+    border-radius: 1rem;
+    border: 1px solid black;
     
     .addfund{
-        webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
-    width: 669px;
-    height: 32rem;;
+    max-width: 669px;
+    max-height: 34rem;;
     margin-top: 0%;
     margin-bottom: 0rem;
-    background: #666;
     padding-left: 52px;
     left: 0%;
     padding-right: 44px;
-    background: #18141A;
     border-radius: 1rem;
-    border: 1px solid black;
+    
         .caution{
             cursor: pointer;
             display: flex;
@@ -30,7 +33,7 @@
             border-radius: .5rem;
             .caution-img{
                 img{
-                    width:75px;
+                    max-width:75px;
                     margin-right: 1rem;
                     margin-left:1rem;
 
@@ -75,8 +78,10 @@
         &-balance{
             &-1{
                 display: flex;
+                flex-wrap: wrap;
                 span{
                     display:flex;
+                    margin-bottom: 1rem;
                     font-family: Roboto;
                     font-style: normal;
                     font-weight: 500;
@@ -143,7 +148,7 @@
                         border: none;
                         border:transparent;
                         outline: none;
-                        width:550px;
+                        max-width:550px;
                         box-shadow: none
                     }
                     padding-left: .5rem;
@@ -189,10 +194,12 @@
             margin-top: 1rem;
             margin-bottom: 2rem;
             display: flex;
+            flex-wrap: wrap;
             margin-left:-17px;
             .btn-button{
                 background: #262328;
                 border: 1px solid #262328;
+                margin-bottom: 2rem;
                 box-sizing: border-box;
                 border-radius: 10px;
                 margin-left:1rem;
@@ -218,6 +225,7 @@
             }
         }
         &-sub{
+            padding-bottom: 2rem;
             cursor: pointer;
             .sub-cancel{
                 cursor: pointer;
@@ -225,7 +233,7 @@
                 border: 1px solid #FF0044;
                 box-sizing: border-box;
                 border-radius: 10px;
-                width:82px !important;
+                max-width:82px !important;
                 height:44px !important;
                 padding:13px;
                 font-family: Lato;
@@ -252,7 +260,7 @@
                 font-weight: normal;
                 font-size: 13px;
                 line-height: 16px;
-                width:81px;
+                max-width:81px;
                 margin-left: 1rem;
                 height: 44px;
                 /* identical to box height */

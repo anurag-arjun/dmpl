@@ -1,6 +1,6 @@
 @media screen and (max-width:992px){
 	.wallet{
-		flex-direction: column;
+		flex-wrap: wrap;
 		justify-content: center;
 	}
 	.row1-btn{
@@ -11,7 +11,7 @@
 	justify-content: center;
 	padding-top:1rem;
 	display: flex;
-	background-color: rgb(29, 28, 28);
+	background-color: #262328;
 	//margin-bottom: 80px;
 
 	&-img {
@@ -51,6 +51,7 @@
 							color:#ff0044;
 						}
 						margin-left: 1.6rem;
+						outline: none;
 						padding-left: 1rem;
 						padding-right: 1rem;
 						margin-top: 1rem;
@@ -103,6 +104,7 @@
 
 			.row2-divider {
 				display: flex;
+				flex-wrap: wrap;
 
 				.wallet-content-row2-buy {
 					.row2-buy {
@@ -179,7 +181,7 @@
 	}
 }
 
-@media screen and (max-width:720px){
+@media screen and (max-width:992px){
 	.wallet{
 		.wallet-img{
 			text-align: center;
@@ -193,16 +195,34 @@
 						margin-left: 0rem !important;
 					}
 					.button3{
-						display: none;
+						
+						margin-left: 0 !important;
+
+						div{
+							display: flex;
+							justify-content: center;
+							margin-top: 1rem;
+							width:100%;
+							margin-left: 0 !important;
+							margin-bottom: 1rem;
+							margin-right: 1rem;
+							a{
+								padding: .8rem;
+								margin: auto;
+							}
+
+						}
+						
 					}
 					.button2{
 						margin-top: 1rem;
 						width:100%;
+						margin-bottom: 1rem;
 						margin-left: 0 !important;
 						margin-right: 1rem;
 						a{
 							padding: .8rem;
-							padding-left:10rem; 
+							margin: auto;
 						}
 					}
 

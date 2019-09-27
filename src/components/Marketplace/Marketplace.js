@@ -27,8 +27,8 @@ class Marketplace extends React.Component {
             <div className="marketplace-container-menu">
               <div className="menu-container">
                 <TabList className="menu-container-item">
-                  <Tab className="menu-item">Parcels</Tab>
-                  <Tab className="menu-item">Estates</Tab>
+                  <Tab className="menu-item">Parcels <span className="parcel">976</span></Tab>
+                  <Tab className="menu-item">Estates <span className="dead">345</span></Tab>
                 </TabList>
                 {/* <div className="menu-list">
                 <input type="text" list="lang" placeholder="English"></input>

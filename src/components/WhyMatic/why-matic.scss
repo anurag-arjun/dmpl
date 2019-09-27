@@ -5,16 +5,19 @@
 	padding-bottom: 8%;
 	padding-left: 15%;
 	padding-right: 15%;
-	background-color: transparent;
+	max-height: 450px;
+	overflow-y: scroll;
 
 	.why-matic {
 		margin-bottom: 20px;
 		margin-left: 20px;
 		display: flex;
+		flex-wrap: wrap;
+		position: relative;
+		justify-content: space-between;
 
 		span {
-			width: 50%;
-			text-align: end;
+			justify-content: end;
 			margin-top: 30px;
 			padding: 10px;
 			color: #666;
@@ -30,7 +33,6 @@
 		}
 
 		h1 {
-			width: 50%;
 			font-size: 32px;
 			color: #ffffff;
 			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
