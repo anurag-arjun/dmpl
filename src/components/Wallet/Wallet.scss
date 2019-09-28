@@ -1,15 +1,17 @@
-@media screen and (max-width:992px){
-	.wallet{
+@media screen and (max-width: 992px) {
+	.wallet {
 		flex-wrap: wrap;
 		justify-content: center;
 	}
-	.row1-btn{
+
+	.row1-btn {
 		flex-direction: column;
 	}
 }
+
 .wallet {
 	justify-content: center;
-	padding-top:1rem;
+	padding-top: 1rem;
 	display: flex;
 	background-color: #262328;
 	//margin-bottom: 80px;
@@ -47,8 +49,9 @@
 
 				.row1-btn-btn {
 					& .button1 {
-						a,a:hover{
-							color:#ff0044;
+						a,
+						a:hover {
+							color: #ff0044;
 						}
 						margin-left: 1.6rem;
 						outline: none;
@@ -64,8 +67,9 @@
 					}
 
 					& button {
-						a, a:hover{
-							color:#ff0044;
+						a,
+						a:hover {
+							color: #ff0044;
 						}
 						margin-left: 1.6rem;
 						outline: none;
@@ -181,54 +185,56 @@
 	}
 }
 
-@media screen and (max-width:992px){
-	.wallet{
-		.wallet-img{
+@media screen and (max-width: 992px) {
+	.wallet {
+		.wallet-img {
 			text-align: center;
 		}
-		.wallet-content{
+
+		.wallet-content {
 			padding-left: 1rem !important;
-			.row1-btn{
-				.row1-btn-btn{
+
+			.row1-btn {
+				.row1-btn-btn {
 					flex-flow: column;
-					.button1{
+
+					.button1 {
 						margin-left: 0rem !important;
 					}
-					.button3{
-						
+
+					.button3 {
 						margin-left: 0 !important;
 
-						div{
+						div {
 							display: flex;
 							justify-content: center;
 							margin-top: 1rem;
-							width:100%;
+							width: 100%;
 							margin-left: 0 !important;
 							margin-bottom: 1rem;
 							margin-right: 1rem;
-							a{
-								padding: .8rem;
+
+							a {
+								padding: 0.8rem;
 								margin: auto;
 							}
-
 						}
-						
 					}
-					.button2{
+
+					.button2 {
 						margin-top: 1rem;
-						width:100%;
+						width: 100%;
 						margin-bottom: 1rem;
 						margin-left: 0 !important;
 						margin-right: 1rem;
-						a{
-							padding: .8rem;
+
+						a {
+							padding: 0.8rem;
 							margin: auto;
 						}
 					}
-
 				}
 			}
-			
 		}
 	}
 }
