@@ -26,64 +26,67 @@ class LandCard extends React.Component {
       mana,
       manaSymbol,
       big,
+      index,
       normal
     } = this.props
-
+    
     return (
-      <Link to='/maticcard' className={big ? 'land-card big' : 'land-card'}>
-        <div className='land-card-preview'>
-          {normal && (
-            <img
-              src={cardImg}
-              alt='cardImg'
-              className='land-card-preview-image'
-            />
-          )}
-          {big && (
-            <img
-              src={cardImgBig}
-              alt='cardImgBig'
-              className='land-card-preview-image'
-            />
-          )}
-        </div>
-        <div className='land-card-content'>
-          <div className='land-card-content-text'>
-            <div className='land-card-content-heading'>
-              <div className='land-card-content-title'>{name}</div>
-              {big && manaSymbol && (
-                <div className='land-card-content-mana'>⏣ &nbsp; {mana}</div>
-              )}
-            </div>
-            <div className='land-card-content-date'>{months} MonthsAgo</div>
-          </div>
-          <div className='land-card-content-info'>
-            <div className='land-card-content-xy'>
-              {/* <img
-                src={placeIcon}
-                alt="placeIcon"
-                className="land-card-place-icon"
-              /> */}
-              <MapMarker />
-              <p className='land-card-content-x'>{x},</p>
-              <p className='land-card-content-x'>{y}</p>
-            </div>
-            {green && (
-              <img src={plazaGreen} className='land-card-content-image green' />
-            )}
-            {blue && (
+      <div key={index}>
+        <Link key={index} to='/maticcard' className={big ? 'land-card big' : 'land-card'}>
+          <div className='land-card-preview'>
+            {normal && (
               <img
-                src={districtBlue}
-                className='land-card-content-image blue'
+                src={cardImg}
+                alt='cardImg'
+                className='land-card-preview-image'
               />
             )}
-            {gray && (
-              <img src={roadGray} className='land-card-content-image gray' />
+            {big && (
+              <img
+                src={cardImgBig}
+                alt='cardImgBig'
+                className='land-card-preview-image'
+              />
             )}
           </div>
-        </div>
-      </Link>
-    )
+          <div className='land-card-content'>
+            <div className='land-card-content-text'>
+              <div className='land-card-content-heading'>
+                <div className='land-card-content-title'>{name}</div>
+                {big && manaSymbol && (
+                  <div className='land-card-content-mana'>⏣ &nbsp; {mana}</div>
+                )}
+              </div>
+              <div className='land-card-content-date'>{months} MonthsAgo</div>
+            </div>
+            <div className='land-card-content-info'>
+              <div className='land-card-content-xy'>
+                {/* <img
+                  src={placeIcon}
+                  alt="placeIcon"
+                  className="land-card-place-icon"
+                /> */}
+                <MapMarker />
+                <p className='land-card-content-x'>{x},</p>
+                <p className='land-card-content-x'>{y}</p>
+              </div>
+              {green && (
+                <img src={plazaGreen} className='land-card-content-image green' />
+              )}
+              {blue && (
+                <img
+                  src={districtBlue}
+                  className='land-card-content-image blue'
+                />
+              )}
+              {gray && (
+                <img src={roadGray} className='land-card-content-image gray' />
+              )}
+            </div>
+          </div>
+        </Link>
+      </div>
+      )
   }
 }
 

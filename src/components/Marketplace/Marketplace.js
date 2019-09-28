@@ -1,6 +1,7 @@
 import React from 'react';
 import './marketplace.scss';
 import LandCard from '../common/landCard/landCard';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -15,10 +16,22 @@ class Marketplace extends React.Component {
   };
 
   render() {
-    const { cards } = this.props;
+    const { cards, match } = this.props;
+    console.log(match && match.params && match.params.page, 'match');
+
+    const page = match && match.params && match.params.page ? match.params.page : 1;
+    const max = 12;
+    const sz = cards.length;
+    let pages = [];
+    for(let i=0; i<=sz/max; i++) {
+      pages = [...pages, i+1];
+    }
+
+    const currentCards = cards.slice((page-1)*max, (page-1)*max+max);
+    
     // const defaultOption = options['Cheapest'];
     const options = ['Cheapest', 'Newest', 'Closest to Expire'];
-    const { cardsReversed } = this.props;
+    const cardsReversed = currentCards.reverse();
     return (
       <div>
         {/* <NavBar Marketplace="true" /> */}
@@ -27,8 +40,8 @@ class Marketplace extends React.Component {
             <div className="marketplace-container-menu">
               <div className="menu-container">
                 <TabList className="menu-container-item">
-                  <Tab className="menu-item">Parcels <span className="parcel">976</span></Tab>
-                  <Tab className="menu-item">Estates <span className="dead">345</span></Tab>
+                  <Tab className="menu-item">Parcels <span className="parcel">{sz}</span></Tab>
+                  <Tab className="menu-item">Estates <span className="dead">{sz}</span></Tab>
                 </TabList>
                 {/* <div className="menu-list">
                 <input type="text" list="lang" placeholder="English"></input>
@@ -54,7 +67,7 @@ class Marketplace extends React.Component {
                   {this.props.isFetching ? (
                     <img src={Loader} alt="Loading" className="Loader" />
                   ) : (
-                    cards.map((e, i) => <LandCard {...e} index={i} normal />)
+                    currentCards.map((e, i) => <LandCard {...e} key={i} index={i} normal />)
                   )}
                 </div>
               </div>
@@ -66,7 +79,7 @@ class Marketplace extends React.Component {
                     <img src={Loader} alt="Loading" className="Loader" />
                   ) : (
                     cardsReversed.map((e, i) => (
-                      <LandCard {...e} index={i} normal />
+                      <LandCard {...e} key={i} index={i} normal />
                     ))
                   )}
                   {/* {cardsReversed.map((e, i) => (
@@ -77,13 +90,14 @@ class Marketplace extends React.Component {
             </TabPanel>
             <div className="marketplace-container-button">
               <div className="marketplace-container-pagination">
-                <a className="item active">1</a>
+                {pages.map((e) => <Link to={`/marketplace/${e}`} className={e==page ? "item active" : "item"} key={e}>{e}</Link>)}
+                {/* <a className="item active">1</a>
                 <a className="item ">2</a>
                 <a className="item ">4</a>
                 <a className="item ">3</a>
                 <a className="item ">5</a>
                 <a className="item ">...</a>
-                <a className="item ">72</a>
+                <a className="item ">72</a> */}
               </div>
             </div>
           </Tabs>
@@ -100,7 +114,7 @@ const mapStateToProps = (state) => {
   const last12 = state.cards.cards.slice(5, 17);
   const isFetching = state.cards.isFetching;
   return {
-    cards: top12,
+    cards: state.cards.cards,
     isFetching,
     cardsReversed: last12.reverse(),
   };

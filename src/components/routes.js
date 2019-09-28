@@ -35,6 +35,7 @@ class Routes extends Component {
               <Route exact path="/signin" component={signIn} />
               <Route exact path="/colorKey" component={colorKey} />
               <Route exact path="/whymatic" component={WhyMatic} />
+              <Route exact path="/marketplace/:page" component={Marketplace} />
               <Route exact path="/marketplace" component={Marketplace} />
               <Route exact path="/wallet" component={Wallet} />
               <Route exact path="/activity" component={Activity} />
