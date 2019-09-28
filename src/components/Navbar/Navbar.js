@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Web3 from 'web3';
 import Popup from '../common/popup/Popup.js';
+import LoginPopup from '../common/popup/loginPopup.js';
 //Images
 import MaticIcon from '../common/assets/images/blue_dark.svg';
 import ProfileIcon from '../common/assets/images/square.png';
@@ -91,7 +92,7 @@ class NavBar extends React.Component {
 
     if (isLanding) return <div></div>;
 
-    const isSignIn = true;
+    const isSignIn = false;
     return (
       <div id="nav-bar">
         <nav
@@ -175,47 +176,9 @@ class NavBar extends React.Component {
           )}
         </nav>{' '}
         {this.state.siginOverlay && (
-          <div className="connect">
-            <div className="connect-wallet">
-              <div className="div" ref={this.setWrapperRef}>
-                <div className="wallet-edge">
-                  <div className="edge">
-                    <img src={wallet}></img>
-                  </div>
-                </div>
-                <div className="wallet-text">
-                  <h1>Connect your Wallet</h1>
-                  <p>
-                    First of all, you need a safe place to keep your land.
-                    Choose to <br></br> connect wallet by following connection
-                  </p>
-                </div>
-                <span>CONNECT WITH</span>
-                <div className="wallet-btn-parrent">
-                  <div className="wallet-btn">
-                    <div className="metamask-btn">
-                      <a href="#" onClick={this.handleLogin}>
-                        <img src={metamask}></img>
-                        <p>Meta Mask</p>
-                      </a>
-                    </div>
-                    <div className="connectWallet-btn">
-                      <a href="#">
-                        <img src={walletConnect}></img>
-                        <p>Connect Wallet</p>
-                      </a>
-                    </div>
-                    <div className="portis-btn">
-                      <a href="#">
-                        <img className="portis-svg" src={portis}></img>
-                        <p>Portis</p>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <Popup>
+            <LoginPopup />
+          </Popup>
         )}
       </div>
     );
