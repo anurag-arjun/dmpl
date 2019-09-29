@@ -15,17 +15,60 @@ class Marketplace extends React.Component {
     this.props.actions.initCards();
   };
 
-  render() {
+  pagination = () => {
     const { cards, match } = this.props;
-    console.log(match && match.params && match.params.page, 'match');
-
-    const page = match && match.params && match.params.page ? match.params.page : 1;
+    const page = match && match.params && match.params.page ? Number(match.params.page) : 1;
     const max = 12;
     const sz = cards.length;
+    const t_pages = sz%max == 0 ? sz/max : Math.ceil(sz/max);
     let pages = [];
-    for(let i=0; i<=sz/max; i++) {
-      pages = [...pages, i+1];
+    if(t_pages > 8) {
+      if(page <=4) {
+        pages.push(1);
+        pages.push(2);
+        pages.push(3);
+        pages.push(4);
+        pages.push(5);
+        pages.push('...');
+        pages.push(t_pages);
+      }
+      else if(page > t_pages-4) {
+        pages.push(1);
+        pages.push('...');
+        pages.push(t_pages-4);
+        pages.push(t_pages-3);
+        pages.push(t_pages-2);
+        pages.push(t_pages-1);
+        pages.push(t_pages);
+      }
+      else {
+        pages.push(1);
+        pages.push('...');
+        pages.push(page-1);
+        pages.push(page);
+        pages.push(page+1);
+        pages.push('...');
+        pages.push(t_pages);
+      }
     }
+    else {
+      for(let i=0; i<=t_pages; i++) {
+        pages = [...pages, i+1];
+      }
+    }
+    return pages.map((e, i) => 
+      e!= '...' 
+        ? <Link to={`/marketplace/${e}`} className={e===page ? "item active" : "item"} key={i}>{e}</Link>
+        : <a className={e==page ? "item active" : "item"} key={i}>{e}</a>
+    )
+  };
+
+  render() {
+    const { cards, match } = this.props;
+
+    const page = match && match.params && match.params.page ? Number(match.params.page) : 1;
+    const max = 12;
+    const sz = cards.length;
 
     const currentCards = cards.slice((page-1)*max, (page-1)*max+max);
     
@@ -82,22 +125,14 @@ class Marketplace extends React.Component {
                       <LandCard {...e} key={i} index={i} normal />
                     ))
                   )}
-                  {/* {cardsReversed.map((e, i) => (
-                    <LandCard big {...e} index={i} />
-                  ))} */}
                 </div>
               </div>
             </TabPanel>
             <div className="marketplace-container-button">
               <div className="marketplace-container-pagination">
-                {pages.map((e) => <Link to={`/marketplace/${e}`} className={e==page ? "item active" : "item"} key={e}>{e}</Link>)}
-                {/* <a className="item active">1</a>
-                <a className="item ">2</a>
-                <a className="item ">4</a>
-                <a className="item ">3</a>
-                <a className="item ">5</a>
-                <a className="item ">...</a>
-                <a className="item ">72</a> */}
+                {
+                  this.pagination()
+                }
               </div>
             </div>
           </Tabs>
