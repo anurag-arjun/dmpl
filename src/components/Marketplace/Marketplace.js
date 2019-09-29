@@ -145,13 +145,10 @@ class Marketplace extends React.Component {
 Marketplace.propTypes = {};
 
 const mapStateToProps = (state) => {
-  const top12 = state.cards.cards.slice(0, 12);
-  const last12 = state.cards.cards.slice(5, 17);
   const isFetching = state.cards.isFetching;
   return {
     cards: state.cards.cards,
     isFetching,
-    cardsReversed: last12.reverse(),
   };
 };
 
