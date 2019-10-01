@@ -16,6 +16,10 @@ class Wallet extends React.Component {
       addfund: false,
       caution: false,
     };
+    this.goBack = this.goBack.bind(this);
+  }
+  goBack() {
+    this.props.history.goBack();
   }
   whymaticHandler = () => {
     this.setState({ ...this.state, whymatic: !this.state.whymatic });
@@ -35,7 +39,7 @@ class Wallet extends React.Component {
     return (
       <div>
         <span className="back-btn">
-          <BackButton className="back-btn-main" onClick={history.goBack} />
+          <BackButton className="back-btn-main" onClick={this.goBack} />
         </span>
         {/* <NavBar /> */}
         <div className="wallet">
