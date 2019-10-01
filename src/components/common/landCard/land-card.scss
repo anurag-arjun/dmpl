@@ -8,7 +8,7 @@
 	border-radius: 0.28571429rem !important;
 	margin: 5px;
 	//margin-right: 25px !important;
-	height: fit-content;
+	height: 250px;
 	color: $text;
 
 	&-preview {
@@ -68,6 +68,7 @@
 			//font-size: 14px;
 			font-weight: 400;
 			font-size: 12px;
+			height: 28px;
 
 			& img {
 				width: 24px;
