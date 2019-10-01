@@ -1,3 +1,5 @@
+@import '../common/styles/main.scss';
+
 @media screen and (max-width: 992px) {
 	.wallet {
 		flex-wrap: wrap;
@@ -9,11 +11,37 @@
 	}
 }
 
+.back-btn {
+	color: #fff;
+	background-color: $dark-gray;
+	//padding: 18px 14px;
+	margin: 18px 14px;
+	//border-radius: 36px;
+	width: 56px;
+	height: 56px;
+	display: block;
+	cursor: pointer;
+	border-radius: 50%;
+
+	&-main {
+		line-height: 1;
+		vertical-align: middle;
+		font-size: 1.5em;
+	}
+
+	svg {
+		position: relative;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+
 .wallet {
 	justify-content: center;
 	padding-top: 1rem;
 	display: flex;
-	background-color: #262328;
+	//background-color: #262328;
 	//margin-bottom: 80px;
 
 	&-img {
