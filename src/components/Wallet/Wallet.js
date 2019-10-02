@@ -46,23 +46,6 @@ outHandler = () =>{
           <BackButton className="back-btn-main" onClick={this.goBack} />
         </span>
         {/* <NavBar /> */}
-<<<<<<< HEAD
-        <div  className="wallet">
-        {this.state.whymatic && (
-            <div className="why">
-              <div className="appendix-1">
-                <div className="why-matic">
-                  <h1>Why Matic ?</h1>
-                  <span>LEARN MORE</span>
-                </div>
-                <div className="why-row">
-                  <div className="why-row-col-1">
-                    <h2>Advantage over Mainnet</h2>
-                    <div>
-                      <span>
-                        <StartIcons size={40} className="col-1-icon" />
-                      </span>
-=======
         <div className="wallet">
           {this.state.whymatic && (
             <div>
@@ -75,7 +58,6 @@ outHandler = () =>{
                   <div className="why-row">
                     <div className="why-row-col-1">
                       <h2>Advantage over Mainnet</h2>
->>>>>>> d717c7725642c5b6bbdba75e3adfb71b41256c1e
                       <div>
                         <span>
                           <StartIcons size={40} className="col-1-icon" />

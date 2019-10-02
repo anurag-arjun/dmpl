@@ -9,6 +9,7 @@ import LoginPopup from '../common/popup/loginPopup.js';
 //Images
 import MaticIcon from '../common/assets/images/blue_dark.svg';
 import ProfileIcon from '../common/assets/images/square.png';
+import Point from "../common/assets/images/Oval.svg"
 import wallet from '../common/assets/images/wallet.svg';
 import walletConnect from '../common/assets/images/walcon.svg';
 import metamask from '../common/assets/images/metamask.svg';
@@ -83,6 +84,7 @@ class NavBar extends React.Component {
     if (isLanding || isWallet) return <div></div>;
 
     const isSignIn = true;
+    const isMaticNetwork= true;
     return (
       <div id="nav-bar">
         <nav
@@ -139,16 +141,23 @@ class NavBar extends React.Component {
             </a>
           ) : (
             <div className="signedIn">
+              {!isMaticNetwork ? 
               <div className="signedIn-extra">
-                <img
-                  src={MaticIcon}
-                  alt="MaticIcon"
-                  className="signedIn-icon"
-                />
-                <a href="/" className="signedIn-link">
-                  SWITCH TO MATIC
-                </a>
-              </div>
+              <img
+                src={MaticIcon}
+                alt="MaticIcon"
+                className="signedIn-icon"
+              />
+              <a href="/" className="signedIn-link">
+                SWITCH TO MATIC
+              </a>
+            </div> :
+            <div className="signedIn-extra">
+                <img src={Point} className="signedIn-icon"></img>
+                <p>Matic Network </p>
+            </div>
+
+              }
               <span className="signedIn-bell-parent">
                 <FaBell className="signedIn-bell" />
               </span>
