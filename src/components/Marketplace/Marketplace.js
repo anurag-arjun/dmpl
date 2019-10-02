@@ -17,13 +17,16 @@ class Marketplace extends React.Component {
 
   pagination = () => {
     const { cards, match } = this.props;
-    const page = match && match.params && match.params.page ? Number(match.params.page) : 1;
+    const page =
+      match && match.params && match.params.page
+        ? Number(match.params.page)
+        : 1;
     const max = 12;
     const sz = cards.length;
-    const t_pages = sz%max == 0 ? sz/max : Math.ceil(sz/max);
+    const t_pages = sz % max == 0 ? sz / max : Math.ceil(sz / max);
     let pages = [];
-    if(t_pages > 8) {
-      if(page <=4) {
+    if (t_pages > 8) {
+      if (page <= 4) {
         pages.push(1);
         pages.push(2);
         pages.push(3);
@@ -31,47 +34,56 @@ class Marketplace extends React.Component {
         pages.push(5);
         pages.push('...');
         pages.push(t_pages);
-      }
-      else if(page > t_pages-4) {
+      } else if (page > t_pages - 4) {
         pages.push(1);
         pages.push('...');
-        pages.push(t_pages-4);
-        pages.push(t_pages-3);
-        pages.push(t_pages-2);
-        pages.push(t_pages-1);
+        pages.push(t_pages - 4);
+        pages.push(t_pages - 3);
+        pages.push(t_pages - 2);
+        pages.push(t_pages - 1);
         pages.push(t_pages);
-      }
-      else {
+      } else {
         pages.push(1);
         pages.push('...');
-        pages.push(page-1);
+        pages.push(page - 1);
         pages.push(page);
-        pages.push(page+1);
+        pages.push(page + 1);
         pages.push('...');
         pages.push(t_pages);
       }
-    }
-    else {
-      for(let i=0; i<=t_pages; i++) {
-        pages = [...pages, i+1];
+    } else {
+      for (let i = 0; i <= t_pages; i++) {
+        pages = [...pages, i + 1];
       }
     }
-    return pages.map((e, i) => 
-      e!= '...' 
-        ? <Link to={`/marketplace/${e}`} className={e===page ? "item active" : "item"} key={i}>{e}</Link>
-        : <a className={e==page ? "item active" : "item"} key={i}>{e}</a>
-    )
+    return pages.map((e, i) =>
+      e != '...' ? (
+        <Link
+          to={`/marketplace/${e}`}
+          className={e === page ? 'item active' : 'item'}
+          key={i}>
+          {e}
+        </Link>
+      ) : (
+        <a className={e == page ? 'item active' : 'item'} key={i}>
+          {e}
+        </a>
+      ),
+    );
   };
 
   render() {
     const { cards, match } = this.props;
 
-    const page = match && match.params && match.params.page ? Number(match.params.page) : 1;
+    const page =
+      match && match.params && match.params.page
+        ? Number(match.params.page)
+        : 1;
     const max = 12;
     const sz = cards.length;
 
-    const currentCards = cards.slice((page-1)*max, (page-1)*max+max);
-    
+    const currentCards = cards.slice((page - 1) * max, (page - 1) * max + max);
+
     // const defaultOption = options['Cheapest'];
     const options = ['Cheapest', 'Newest', 'Closest to Expire'];
     const cardsReversed = currentCards.reverse();
@@ -83,8 +95,12 @@ class Marketplace extends React.Component {
             <div className="marketplace-container-menu">
               <div className="menu-container">
                 <TabList className="menu-container-item">
-                  <Tab className="menu-item">Parcels <span className="parcel">{sz}</span></Tab>
-                  <Tab className="menu-item">Estates <span className="dead">{sz}</span></Tab>
+                  <Tab className="menu-item">
+                    Parcels <span className="parcel">{sz}</span>
+                  </Tab>
+                  <Tab className="menu-item">
+                    Estates <span className="dead">{sz}</span>
+                  </Tab>
                 </TabList>
                 {/* <div className="menu-list">
                 <input type="text" list="lang" placeholder="English"></input>
@@ -110,7 +126,9 @@ class Marketplace extends React.Component {
                   {this.props.isFetching ? (
                     <img src={Loader} alt="Loading" className="Loader" />
                   ) : (
-                    currentCards.map((e, i) => <LandCard {...e} key={i} index={i} normal />)
+                    currentCards.map((e, i) => (
+                      <LandCard {...e} key={i} index={i} normal />
+                    ))
                   )}
                 </div>
               </div>
@@ -130,9 +148,7 @@ class Marketplace extends React.Component {
             </TabPanel>
             <div className="marketplace-container-button">
               <div className="marketplace-container-pagination">
-                {
-                  this.pagination()
-                }
+                {this.pagination()}
               </div>
             </div>
           </Tabs>
