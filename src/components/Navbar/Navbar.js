@@ -53,15 +53,6 @@ class NavBar extends React.Component {
         return;
       }
     }
-
-    // const coinbase = await web3.eth.getCoinbase();
-    // if (!coinbase) {
-    //   window.alert('Please activate metamask first.');
-    //   return;
-    // }
-
-    // const publicAddress = coinbase.toLowerCase();
-    // this.setState({ loading: true });
   };
 
   setWrapperRef = (node) => {
@@ -83,14 +74,13 @@ class NavBar extends React.Component {
 
   siginHandler = () => {
     document.addEventListener('click', this.handleClickOutside);
-
     this.setState({ ...this.state, siginOverlay: true });
   };
 
   render() {
-    const { market, Address, isLanding } = this.props;
+    const { market, Address, isLanding, isWallet } = this.props;
 
-    if (isLanding) return <div></div>;
+    if (isLanding || isWallet) return <div></div>;
 
     const isSignIn = true;
     return (
@@ -189,12 +179,14 @@ NavBar.propTypes = {};
 
 const mapStateToProps = (state) => {
   const market = state.router.location.pathname === '/marketplace';
-  const Address = state.router.location.pathname === '/address';
+  const Address = state.router.location.pathname === '/Address';
   const isLanding = state.router.location.pathname === '/';
+  const isWallet = state.router.location.pathname === '/wallet';
   return {
     market,
     Address,
     isLanding,
+    isWallet,
   };
 };
 
