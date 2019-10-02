@@ -71,7 +71,9 @@
 	}
 	.Loader{
 		position: absolute;
-		left: 45%;
+		padding: 0 !important;
+		right:50%;
+		top:50%;
 		transform: translate(50%,50%);
 	}
 
