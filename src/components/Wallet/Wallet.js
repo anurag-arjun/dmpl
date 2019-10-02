@@ -1,5 +1,10 @@
 import React from 'react';
 import './Wallet.scss';
+
+import Popup from '../common/popup/Popup.js';
+import WalletWhy from '../common/popup/whyWallet.js';
+import AddFund from '../common/popup/addFund.js';
+
 import wallet from '../common/assets/images/square.png';
 import blue_dark from '../common/assets/images/blue_dark.svg';
 import balance from '../common/assets/images/balance-icon.svg';
@@ -35,10 +40,10 @@ class Wallet extends React.Component {
     this.setState({ ...this.state, addfund: !this.state.addfund });
   };
 
-outHandler = () =>{
-  if(whymatic===true || addfund ===true)
-  this.setState({...this.state,whymatic:false,addfund:false})
-}
+  outHandler = () => {
+    if (whymatic === true || addfund === true)
+      this.setState({ ...this.state, whymatic: false, addfund: false });
+  };
   render() {
     return (
       <div>
@@ -48,161 +53,14 @@ outHandler = () =>{
         {/* <NavBar /> */}
         <div className="wallet">
           {this.state.whymatic && (
-            <div>
-              <div className="why">
-                <div className="appendix-1">
-                  <div className="why-matic">
-                    <h1>Why Matic ?</h1>
-                    <span>LEARN MORE</span>
-                  </div>
-                  <div className="why-row">
-                    <div className="why-row-col-1">
-                      <h2>Advantage over Mainnet</h2>
-                      <div>
-                        <span>
-                          <StartIcons size={40} className="col-1-icon" />
-                        </span>
-                        <div>
-                          <h2>Faster transactions</h2>
-                          <p>Make near-instant transactions on Matic Network</p>
-                        </div>
-                      </div>
-
-                      <div>
-                        <span>
-                          <StartIcons size={40} className="col-1-icon" />
-                        </span>
-                        <div>
-                          <h2>Fees</h2>
-                          <p>Negligible gas fees</p>
-                        </div>
-                      </div>
-
-                      <div>
-                        <span>
-                          <StartIcons size={40} className="col-1-icon" />
-                        </span>
-                        <div>
-                          <h2>Bulk Deposits</h2>
-                          <p>Deposit multiple assests in one-go</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="why-row-col-2">
-                      <h2>How it works ?</h2>
-
-                      <div>
-                        <div>
-                          <div>
-                            <div>
-                              <span>1</span>
-                            </div>
-                            <div className="line"></div>
-                          </div>
-                          <p>Move to Matic</p>
-                        </div>
-                      </div>
-
-                      <div>
-                        <div>
-                          <div>
-                            <span>2</span>
-                          </div>
-                          <p>Sell and Trade on Matic</p>
-                        </div>
-                      </div>
-                      <div>
-                        <div>
-                          <div>
-                            <span>3</span>
-                          </div>
-                          <p>Move Back to Mainnet</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="why-row-2">
-                    <button className="why-row-2-btn">
-                      {' '}
-                      <a onClick={this.addfundHandler}> NEXT</a>{' '}
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <Popup>
+              <WalletWhy />
+            </Popup>
           )}
           {this.state.addfund && (
-            <div className="main">
-              <div className="addfund">
-                <div onClick={this.cautionHandler} className="caution">
-                  <div className="caution-img">
-                    <img src={caution}></img>
-                  </div>
-                  <div className="caution-content">
-                    <p className="unauthorised">Unauthorised </p>
-                    <p className="para">
-                      You Need to got <span>Setting</span> and authorised the
-                      Matic Plasma contact to operate LAND on your behalf before
-                      you can list it on sale{' '}
-                    </p>
-                    <p className="para"></p>
-                  </div>
-                </div>
-                <h1 className="addfund-heading">Add fund to matic</h1>
-                <div className="addfund-balance">
-                  <p className="addfund-balance-1">
-                    Your current balance is{' '}
-                    <span>
-                      <img src={blue_dark} /> <p>1000</p>{' '}
-                    </span>{' '}
-                    in Ethereum mainnet
-                  </p>
-                </div>
-                <p className="addfund-amt">Amount</p>
-                <div className="addfund-amtval">
-                  <div className="addfund-amtval-div">
-                    <img className="amtval-div-img" src={balance} />
-                    <p className="amt-div-p">
-                      <input type="text" Value="500"></input>
-                    </p>
-                  </div>
-                  <div className="addfund-amtval-max">
-                    <a href="#">MAX</a>
-                  </div>
-                </div>
-                <div className="addfund-hr" />
-                <p className="addfund-gas">Gas Option</p>
-                <div className="addfund-btn">
-                  <div className="btn-button">
-                    <p>
-                      Fast <span>.</span> 0.001 ETH
-                    </p>
-                  </div>
-                  <div className="btn-button">
-                    <p>
-                      Medium <span>.</span> 0.001 ETH
-                    </p>
-                  </div>
-                  <div className="btn-button">
-                    <p>
-                      Slow <span>.</span> 0.001 ETH
-                    </p>
-                  </div>
-                </div>
-                <div className="addfund-sub">
-                  <a
-                    onClick={this.cautionHandler}
-                    href="#"
-                    className="sub-cancel">
-                    CANCEL
-                  </a>
-                  <a href="#" className="sub-submit">
-                    SUBMIT
-                  </a>
-                </div>
-              </div>
-            </div>
+            <Popup>
+              <AddFund />
+            </Popup>
           )}
 
           <div className="wallet-img">
