@@ -134,7 +134,8 @@
 	-ms-flex-item-align: end;
 	align-self: flex-end;
 	margin: 0 0 -2px;
-	padding: 0.85714286em 1.14285714em;
+	font-size: 14px;
+	padding: 0.85714286em 0.75rem;
 	border-bottom-width: 2px;
 	-webkit-transition: color 0.1s ease;
 	-o-transition: color 0.1s ease;
@@ -203,10 +204,11 @@
 	border-bottom-color: $red;
 	border-bottom-style: solid;
 	border-radius: 0;
+	font-size: 14px;
 	-ms-flex-item-align: end;
 	align-self: flex-end;
 	margin: 0 0 -2px;
-	padding: 0.85714286em 1.14285714em;
+	padding: 0.85714286em 0.75rem;
 	border-bottom-width: 2px;
 	-webkit-transition: color 0.1s ease;
 	-o-transition: color 0.1s ease;
