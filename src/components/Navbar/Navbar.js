@@ -9,7 +9,6 @@ import LoginPopup from '../common/popup/loginPopup.js';
 //Images
 import MaticIcon from '../common/assets/images/blue_dark.svg';
 import ProfileIcon from '../common/assets/images/square.png';
-
 //css
 import './Navbar.scss';
 
@@ -87,6 +86,7 @@ class NavBar extends React.Component {
     if (isLanding || isWallet) return <div></div>;
 
     const isSignIn = true;
+    const isMaticNetwork = true;
     return (
       <div id="nav-bar">
         <nav
@@ -175,16 +175,23 @@ class NavBar extends React.Component {
             </a>
           ) : (
             <div className="signedIn">
-              <div className="signedIn-extra">
-                <img
-                  src={MaticIcon}
-                  alt="MaticIcon"
-                  className="signedIn-icon"
-                />
-                <a href="/" className="signedIn-link">
-                  SWITCH TO MATIC
-                </a>
-              </div>
+              {!isMaticNetwork ? (
+                <div className="signedIn-extra">
+                  <img
+                    src={MaticIcon}
+                    alt="MaticIcon"
+                    className="signedIn-icon"
+                  />
+                  <a href="/" className="signedIn-link">
+                    SWITCH TO MATIC
+                  </a>
+                </div>
+              ) : (
+                <div className="signedIn-extra">
+                  <img src={Point} className="signedIn-icon"></img>
+                  <p>Matic Network </p>
+                </div>
+              )}
               <span className="signedIn-bell-parent">
                 <FaBell className="signedIn-bell" />
               </span>

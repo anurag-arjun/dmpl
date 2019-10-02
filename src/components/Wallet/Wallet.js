@@ -35,6 +35,10 @@ class Wallet extends React.Component {
     this.setState({ ...this.state, addfund: !this.state.addfund });
   };
 
+outHandler = () =>{
+  if(whymatic===true || addfund ===true)
+  this.setState({...this.state,whymatic:false,addfund:false})
+}
   render() {
     return (
       <div>
