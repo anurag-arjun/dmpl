@@ -9,6 +9,7 @@ import LoginPopup from '../common/popup/loginPopup.js';
 //Images
 import MaticIcon from '../common/assets/images/blue_dark.svg';
 import ProfileIcon from '../common/assets/images/square.png';
+import Point from '../common/assets/images/Oval.svg';
 //css
 import './Navbar.scss';
 
