@@ -28,10 +28,14 @@ class MaticCard extends React.Component {
     this.setState({ ...this.state, buy: !this.state.buy });
   };
 
+  outHandler= () => {
+    this.setState({...this.state, buy: false})
+  }
+
   render() {
     return (
       <div>
-        <div className="card">
+        <div onClick={this.outHandler} className="card">
           <div className="card-img-block">
             {this.state.buy && (
               <div className="connect">
