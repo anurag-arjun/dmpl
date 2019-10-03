@@ -28,6 +28,7 @@ class NavBar extends React.Component {
       navSmall: false,
       siginOverlay: false,
       loading: false,
+      closePopup: true,
     };
     this.setWrapperRef = this.setWrapperRef.bind(this);
   }
@@ -56,6 +57,10 @@ class NavBar extends React.Component {
     this.wrapperRef = node;
   };
 
+  closePopup = () => {
+    this.setState({ closePopup: !closePopup });
+  };
+
   handleClickOutside = (event) => {
     if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
       this.setState({ ...this.state, siginOverlay: false });
@@ -82,11 +87,12 @@ class NavBar extends React.Component {
       isWallet,
       isActivity,
       isMaticCard,
+      closePopup,
     } = this.props;
 
     if (isLanding || isWallet) return <div></div>;
 
-    const isSignIn = true;
+    const isSignIn = false;
     const isMaticNetwork = true;
     return (
       <div id="nav-bar">
