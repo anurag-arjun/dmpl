@@ -28,7 +28,7 @@ class NavBar extends React.Component {
       navSmall: false,
       siginOverlay: false,
       loading: false,
-      closePopup: true,
+      closePopup: false,
     };
     this.setWrapperRef = this.setWrapperRef.bind(this);
   }
@@ -58,7 +58,7 @@ class NavBar extends React.Component {
   };
 
   closePopup = () => {
-    this.setState({ closePopup: !closePopup });
+    this.setState({ ...this.state, closePopup: false });
   };
 
   handleClickOutside = (event) => {
@@ -75,8 +75,7 @@ class NavBar extends React.Component {
   };
 
   siginHandler = () => {
-    document.addEventListener('click', this.handleClickOutside);
-    this.setState({ ...this.state, siginOverlay: true });
+    this.setState({ ...this.state, closePopup: true });
   };
 
   render() {
@@ -215,8 +214,8 @@ class NavBar extends React.Component {
             </div>
           )}
         </nav>{' '}
-        {this.state.siginOverlay && (
-          <Popup>
+        {this.state.closePopup && (
+          <Popup closePopup={this.closePopup}>
             <LoginPopup />
           </Popup>
         )}

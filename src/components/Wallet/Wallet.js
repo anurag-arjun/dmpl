@@ -20,15 +20,27 @@ class Wallet extends React.Component {
       whymatic: false,
       addfund: false,
       caution: false,
+      closePopup: false,
     };
     this.goBack = this.goBack.bind(this);
   }
+
   goBack() {
     this.props.history.goBack();
   }
+
   whymaticHandler = () => {
-    this.setState({ ...this.state, whymatic: !this.state.whymatic });
+    this.setState({ ...this.state, closePopup: true });
   };
+
+  closePopup = () => {
+    this.setState({ ...this.state, closePopup: false });
+  };
+
+  siginHandler = () => {
+    this.setState({ ...this.state, closePopup: true });
+  };
+
   addfundHandler = () => {
     this.setState({
       ...this.state,
@@ -36,6 +48,7 @@ class Wallet extends React.Component {
       addfund: !this.state.addfund,
     });
   };
+
   cautionHandler = () => {
     this.setState({ ...this.state, addfund: !this.state.addfund });
   };
@@ -44,6 +57,7 @@ class Wallet extends React.Component {
     if (whymatic === true || addfund === true)
       this.setState({ ...this.state, whymatic: false, addfund: false });
   };
+
   render() {
     return (
       <div>
@@ -52,8 +66,8 @@ class Wallet extends React.Component {
         </span>
         {/* <NavBar /> */}
         <div className="wallet">
-          {this.state.whymatic && (
-            <Popup>
+          {this.state.closePopup && (
+            <Popup closePopup={this.closePopup}>
               <WalletWhy />
             </Popup>
           )}
@@ -94,7 +108,7 @@ class Wallet extends React.Component {
                     <div>
                       <img src={blue_dark} />
                       <span>
-                        <a onClick={this.whymaticHandler}>ADD FUND TO MATIC</a>
+                        <a onClick={this.siginHandler}>ADD FUND TO MATIC</a>
                       </span>
                     </div>
                   </button>
