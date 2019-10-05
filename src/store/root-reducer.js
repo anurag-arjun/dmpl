@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux'
 import { reducer as internet } from 'react-redux-internet-connection'
-import login_form from '../reducers/login-form-reducer'
+import  user from '../reducers/user-reducer'
 import cards from '../reducers/cards-reducer'
 
 const rootReducer = combineReducers({
-  login_form,
+  user,
   internet,
   cards
 })

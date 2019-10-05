@@ -3,7 +3,7 @@ import logo from '../common/assets/images/nav-logo.svg';
 import icons from '../../services/icon-service';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import Web3 from 'web3';
+import * as actions from '../../actions/user-actions';
 import Popup from '../common/popup/Popup.js';
 import LoginPopup from '../common/popup/loginPopup.js';
 //Images
@@ -12,6 +12,7 @@ import ProfileIcon from '../common/assets/images/square.png';
 import Point from '../common/assets/images/Oval.svg';
 //css
 import './Navbar.scss';
+import { bindActionCreators } from 'redux';
 
 //React Icons Start
 
@@ -26,46 +27,13 @@ class NavBar extends React.Component {
     this.state = {
       topNav: true,
       navSmall: false,
-      siginOverlay: false,
       loading: false,
       closePopup: false,
     };
-    this.setWrapperRef = this.setWrapperRef.bind(this);
   }
 
-  handleLogin = async () => {
-    //check if metamask is installed
-    let ethereum = window.ethereum;
-    if (typeof window.ethereum === undefined) {
-      window.alert('Please install metamask first');
-      return;
-    }
-    const accounts = await ethereum.enable();
-    console.log(accounts);
-
-    if (!web3) {
-      try {
-        await typeof window.ethereum;
-      } catch (error) {
-        window.alert('You need to allow Metmask Idiot.');
-        return;
-      }
-    }
-  };
-
-  setWrapperRef = (node) => {
-    this.wrapperRef = node;
-  };
-
   closePopup = () => {
-    this.setState({ ...this.state, closePopup: false });
-  };
-
-  handleClickOutside = (event) => {
-    if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
-      this.setState({ ...this.state, siginOverlay: false });
-      //this.siginHandler();
-    }
+    this.props.actions.hideLoginPopup();
   };
 
   navBarClickHandler = () => {
@@ -74,8 +42,8 @@ class NavBar extends React.Component {
     this.setState(newState);
   };
 
-  siginHandler = () => {
-    this.setState({ ...this.state, closePopup: true });
+  showPopup = () => {
+    this.props.actions.showLoginPopup()
   };
 
   render() {
@@ -85,13 +53,12 @@ class NavBar extends React.Component {
       isLanding,
       isWallet,
       isActivity,
-      isMaticCard,
-      closePopup,
+      showLoginPopup,
+      isSignIn
     } = this.props;
 
     if (isLanding || isWallet) return <div></div>;
 
-    const isSignIn = false;
     const isMaticNetwork = true;
     return (
       <div id="nav-bar">
@@ -176,7 +143,7 @@ class NavBar extends React.Component {
             )}
           </div>
           {!isSignIn ? (
-            <a onClick={this.siginHandler} className="Navigation-item">
+            <a onClick={this.showPopup} className="Navigation-item">
               SignIn
             </a>
           ) : (
@@ -214,7 +181,7 @@ class NavBar extends React.Component {
             </div>
           )}
         </nav>{' '}
-        {this.state.closePopup && (
+        {showLoginPopup && (
           <Popup closePopup={this.closePopup}>
             <LoginPopup />
           </Popup>
@@ -232,6 +199,8 @@ const mapStateToProps = (state) => {
   const isLanding = state.router.location.pathname === '/';
   const isWallet = state.router.location.pathname === '/wallet';
   const isActivity = state.router.location.pathname === '/activity';
+  const showLoginPopup = state.user.show_login_popup
+  const isSignIn = state.user.is_sign_in;
 
   return {
     market,
@@ -239,7 +208,13 @@ const mapStateToProps = (state) => {
     isLanding,
     isWallet,
     isActivity,
+    showLoginPopup,
+    isSignIn
   };
 };
+const mapDispatchToProps = (dispatch) => ({
+  actions : bindActionCreators(actions, dispatch)
+})
 
-export default connect(mapStateToProps)(NavBar);
+
+export default connect(mapStateToProps, mapDispatchToProps)(NavBar);
