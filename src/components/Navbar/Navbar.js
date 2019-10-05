@@ -9,11 +9,7 @@ import LoginPopup from '../common/popup/loginPopup.js';
 //Images
 import MaticIcon from '../common/assets/images/blue_dark.svg';
 import ProfileIcon from '../common/assets/images/square.png';
-import Point from "../common/assets/images/Oval.svg"
-import wallet from '../common/assets/images/wallet.svg';
-import walletConnect from '../common/assets/images/walcon.svg';
-import metamask from '../common/assets/images/metamask.svg';
-import portis from '../common/assets/images/portis.svg';
+import Point from '../common/assets/images/Oval.svg';
 //css
 import './Navbar.scss';
 
@@ -32,6 +28,7 @@ class NavBar extends React.Component {
       navSmall: false,
       siginOverlay: false,
       loading: false,
+      closePopup: false,
     };
     this.setWrapperRef = this.setWrapperRef.bind(this);
   }
@@ -60,6 +57,10 @@ class NavBar extends React.Component {
     this.wrapperRef = node;
   };
 
+  closePopup = () => {
+    this.setState({ ...this.state, closePopup: false });
+  };
+
   handleClickOutside = (event) => {
     if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
       this.setState({ ...this.state, siginOverlay: false });
@@ -74,17 +75,24 @@ class NavBar extends React.Component {
   };
 
   siginHandler = () => {
-    document.addEventListener('click', this.handleClickOutside);
-    this.setState({ ...this.state, siginOverlay: true });
+    this.setState({ ...this.state, closePopup: true });
   };
 
   render() {
-    const { market, Address, isLanding, isWallet } = this.props;
+    const {
+      market,
+      address,
+      isLanding,
+      isWallet,
+      isActivity,
+      isMaticCard,
+      closePopup,
+    } = this.props;
 
     if (isLanding || isWallet) return <div></div>;
 
-    const isSignIn = true;
-    const isMaticNetwork= true;
+    const isSignIn = false;
+    const isMaticNetwork = true;
     return (
       <div id="nav-bar">
         <nav
@@ -98,15 +106,48 @@ class NavBar extends React.Component {
               style={{ color: '#fff' }}
             />
             <div className="sidebar-menu">
-              {Address && (
-                <a href="/Address" className="sidebar-item">
-                  Address
-                </a>
+              {address && (
+                <div className="sidebar-content">
+                  <a href="/address" className="sidebar-item enabled">
+                    Address
+                  </a>
+                  <a href="/marketplace" className="sidebar-item">
+                    Marketplace
+                  </a>
+                </div>
               )}
               {market && (
-                <a href="/marketplace" className="sidebar-item enabled">
-                  Marketplace
-                </a>
+                <div className="sidebar-content">
+                  <a href="/address" className="sidebar-item">
+                    Address
+                  </a>
+                  <a href="/marketplace" className="sidebar-item enabled">
+                    Marketplace
+                  </a>
+                </div>
+              )}
+              {isActivity && (
+                <div className="sidebar-content">
+                  <a href="/address" className="sidebar-item">
+                    Address
+                  </a>
+                  <a href="/marketplace" className="sidebar-item ">
+                    Marketplace
+                  </a>
+                  <a href="/activity" className="sidebar-item enabled">
+                    Activity
+                  </a>
+                </div>
+              )}
+              {!isActivity && (
+                <div className="sidebar-content">
+                  <a href="/address" className="sidebar-item">
+                    Address
+                  </a>
+                  <a href="/marketplace" className="sidebar-item ">
+                    Marketplace
+                  </a>
+                </div>
               )}
             </div>
           </div>
@@ -124,40 +165,39 @@ class NavBar extends React.Component {
                 Marketplace
               </a>
             )}
-            {Address ? (
-              <a href="/Address" className="Navigation-item enabled">
-                Address
+            {address ? (
+              <a href="/address" className="Navigation-item enabled">
+                address
               </a>
             ) : (
-              <a href="/Address" className="Navigation-item ">
-                Address
+              <a href="/address" className="Navigation-item ">
+                address
               </a>
             )}
           </div>
-
           {!isSignIn ? (
             <a onClick={this.siginHandler} className="Navigation-item">
               SignIn
             </a>
           ) : (
             <div className="signedIn">
-              {!isMaticNetwork ? 
-              <div className="signedIn-extra">
-              <img
-                src={MaticIcon}
-                alt="MaticIcon"
-                className="signedIn-icon"
-              />
-              <a href="/" className="signedIn-link">
-                SWITCH TO MATIC
-              </a>
-            </div> :
-            <div className="signedIn-extra">
-                <img src={Point} className="signedIn-icon"></img>
-                <p>Matic Network </p>
-            </div>
-
-              }
+              {!isMaticNetwork ? (
+                <div className="signedIn-extra">
+                  <img
+                    src={MaticIcon}
+                    alt="MaticIcon"
+                    className="signedIn-icon"
+                  />
+                  <a href="/" className="signedIn-link">
+                    SWITCH TO MATIC
+                  </a>
+                </div>
+              ) : (
+                <div className="signedIn-extra">
+                  <img src={Point} className="signedIn-icon"></img>
+                  <p>Matic Network </p>
+                </div>
+              )}
               <span className="signedIn-bell-parent">
                 <FaBell className="signedIn-bell" />
               </span>
@@ -174,8 +214,8 @@ class NavBar extends React.Component {
             </div>
           )}
         </nav>{' '}
-        {this.state.siginOverlay && (
-          <Popup>
+        {this.state.closePopup && (
+          <Popup closePopup={this.closePopup}>
             <LoginPopup />
           </Popup>
         )}
@@ -188,14 +228,17 @@ NavBar.propTypes = {};
 
 const mapStateToProps = (state) => {
   const market = state.router.location.pathname === '/marketplace';
-  const Address = state.router.location.pathname === '/Address';
+  const address = state.router.location.pathname === '/address';
   const isLanding = state.router.location.pathname === '/';
   const isWallet = state.router.location.pathname === '/wallet';
+  const isActivity = state.router.location.pathname === '/activity';
+
   return {
     market,
-    Address,
+    address,
     isLanding,
     isWallet,
+    isActivity,
   };
 };
 

@@ -19,42 +19,39 @@
 		margin: 1px !important;
 		min-width: 12rem !important;
 	}
-	
+
 	.Dropdown-option {
 		color: #ffffff !important;
 	}
-	
+
 	.is-selected {
-		border-radius: 0.2rem !important;
 		color: #ffffff !important;
-		padding: 1px;
 		background-color: #272329 !important;
 	}
-	
+
 	.is-selected:hover {
-		border-radius: 1rem !important;
 		color: #ffffff !important;
-		background-color: #666 !important;
 	}
-	
+
 	.Dropdown-option:hover {
 		background-color: #666 !important;
 		color: #ffffff;
 		border-radius: 0.2rem;
 	}
-	
-	.Dropdown-option{
-		.is-selected{
-			margin-left:10px;
-		}
-	} 
 
-	.Dropdown-menu{
+	.Dropdown-option {
+		.is-selected {
+			margin-left: 10px;
+		}
+	}
+
+	.Dropdown-menu {
 		padding: 0.78571429em 2.1em 0.78571429em 1em;
 		margin-top: -10px !important;
 		max-height: -27px;
 		overflow-y: 0;
 		position: absolute;
+
 		/* top: 100%; */
 		width: 14rem;
 		min-width: 14rem;
@@ -67,9 +64,9 @@
 		display: flex;
 		justify-content: space-between;
 		width: 100%;
-
 	}
-	.Loader{
+
+	.Loader {
 		position: absolute;
 		padding: 0 !important;
 		right:50%;
@@ -82,11 +79,12 @@
 		grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
 		font-size: 1rem;
 		border-radius: 0.28571429rem;
-		justify-content:space-evenly;
-		.land-card{
+		justify-content: space-evenly;
+
+		.land-card {
 			min-width: 224px;
 			max-width: 224px;
-			margin:auto;
+			margin: auto;
 			margin-bottom: 1rem;
 		}
 	}
@@ -100,7 +98,6 @@
 		margin-left: auto !important;
 		margin-right: auto !important;
 		margin-bottom: 2rem !important;
-		
 	}
 
 	&-button {
@@ -152,30 +149,28 @@
 	margin-left: auto !important;
 	margin-right: auto !important;
 
-	.react-tabs__tab--selected
-		{ 
-			span{
-				width:15px;
-				padding-left: 9px;
-				padding-right: 9px;
-				margin-left: 4px;
-				font-size: 13px;
-				color:#fff;
-				background: #ff0044;
-				border-radius: 1rem;
-			}
-			
+	.react-tabs__tab--selected {
+		span {
+			width: 15px;
+			padding-left: 9px;
+			padding-right: 9px;
+			margin-left: 4px;
+			font-size: 13px;
+			color: #fff;
+			background: #ff0044;
+			border-radius: 1rem;
 		}
+	}
 
 	&-item {
 		display: flex;
-		
-		span{
+
+		span {
 			padding-left: 9px;
-    		padding-right: 9px;
-    		margin-left: 4px;
-    		font-size: 13px;
-			color:#fff;
+			padding-right: 9px;
+			margin-left: 4px;
+			font-size: 13px;
+			color: #fff;
 			background: #272329;
 			border-radius: 1rem;
 		}
@@ -271,6 +266,7 @@
 		display: flex;
 		flex-wrap: initial;
 	}
+
 	/*.menu-container {
 		display: flex;
 		flex-direction: column !important;
