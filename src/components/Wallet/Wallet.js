@@ -8,9 +8,7 @@ import AddFund from '../common/popup/addFund.js';
 import wallet from '../common/assets/images/square.png';
 import blue_dark from '../common/assets/images/blue_dark.svg';
 import balance from '../common/assets/images/balance-icon.svg';
-import caution from '../common/assets/images/caution.svg';
 import icons from '../../services/icon-service';
-const StartIcons = icons['md-start-circle'];
 const BackButton = icons['fa-angle-left'];
 
 class Wallet extends React.Component {
@@ -28,10 +26,6 @@ class Wallet extends React.Component {
   goBack() {
     this.props.history.goBack();
   }
-
-  whymaticHandler = () => {
-    this.setState({ ...this.state, closePopup: true });
-  };
 
   closePopup = () => {
     this.setState({ ...this.state, closePopup: false });
