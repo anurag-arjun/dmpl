@@ -19,13 +19,13 @@ export const matamask_login = () => async (dispatch, getState) => {
     }
     const accounts = await ethereum.enable();
     dispatch({type: types.METAMASK_LOGIN, payload : accounts});
-    dispatch(hideLoginPoput());
+    dispatch(hideLoginPopup());
 }
 
 export const showLoginPopup = () => ({
   type: types.SHOW_LOGIN_POPUP,
 })
 
-export const hideLoginPoput = () => ({
+export const hideLoginPopup = () => ({
   type: types.HIDE_LOGIN_POPUP,
 })
