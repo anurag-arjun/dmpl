@@ -95,6 +95,7 @@
 					}
 
 					& button {
+						cursor: pointer;
 						a,
 						a:hover {
 							color: #ff0044;
@@ -232,8 +233,10 @@
 
 					.button3 {
 						margin-left: 0 !important;
+						cursor: pointer;
 
 						div {
+							cursor: pointer;
 							display: flex;
 							justify-content: center;
 							margin-top: 1rem;
