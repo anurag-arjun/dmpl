@@ -98,11 +98,11 @@ class Wallet extends React.Component {
                       <div>TRANSFER</div>
                     </a>
                   </button>
-                  <button className="button3">
-                    <div>
+                  <button  onClick={this.siginHandler} className="button3">
+                    <div  >
                       <img src={blue_dark} />
                       <span>
-                        <a onClick={this.siginHandler}>ADD FUND TO MATIC</a>
+                        <a >ADD FUND TO MATIC</a>
                       </span>
                     </div>
                   </button>
