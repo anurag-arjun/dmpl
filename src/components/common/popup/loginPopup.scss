@@ -4,10 +4,11 @@
 	display: flex;
 	justify-content: center;
 	//position: fixed;
+	margin:auto;
 	flex-direction: column;
 	height: inherit;
-	width: inherit;
-	height: 100%;
+	max-width: 100%;
+	max-height: 100%;
 }
 
 .circle-icon {
@@ -76,8 +77,12 @@ span {
 		margin-top: 1rem;
 		width: 100% !important;
 		display: flex;
+		flex-wrap: wrap;
 		justify-content: space-evenly !important;
 
+		.connectWallet{
+			margin: 0 1rem 0 1rem;
+		}
 		.btn-login {
 			background: #18141a;
 			border: 1px solid #ff0044;
@@ -85,6 +90,7 @@ span {
 			border-radius: 10px;
 			width: 11rem;
 			height: 3rem;
+			margin-bottom: 1rem;
 			display: flex;
 			justify-content: center;
 

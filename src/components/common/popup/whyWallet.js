@@ -1,6 +1,5 @@
 import React from 'react';
 import './whyWallet.scss';
-import AddFund from './addFund.js';
 import icons from '../../../services/icon-service';
 const StartIcons = icons['md-start-circle'];
 
@@ -95,15 +94,22 @@ class WalletWhy extends React.Component {
             </div>
             <div className="why-row-2">
               <button className="why-row-2-btn">
+<<<<<<< HEAD
                 <a onClick={this.state.addfundHandler}> NEXT</a>
+=======
+                <a> NEXT</a>
+>>>>>>> 9b1bab3345af3094fa4a0193449ef6f165d44e33
               </button>
             </div>
           </div>
         </div>
+<<<<<<< HEAD
         {/* {this.state.whymatic && (
 
         )}
         {this.state.addfund && <AddFund />} */}
+=======
+>>>>>>> 9b1bab3345af3094fa4a0193449ef6f165d44e33
       </div>
     );
   }
