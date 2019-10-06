@@ -66,11 +66,6 @@ class Wallet extends React.Component {
         </span>
         {/* <NavBar /> */}
         <div className="wallet">
-          {this.state.closePopup && (
-            <Popup closePopup={this.closePopup}>
-              <WalletWhy />
-            </Popup>
-          )}
           {this.state.addfund && (
             <Popup>
               <AddFund />
@@ -201,6 +196,11 @@ class Wallet extends React.Component {
             </div>
           </div>
         </div>
+        {this.state.closePopup && (
+          <Popup closePopup={this.closePopup}>
+            <WalletWhy />
+          </Popup>
+        )}
       </div>
     );
   }

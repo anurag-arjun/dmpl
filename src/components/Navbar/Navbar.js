@@ -30,7 +30,6 @@ class NavBar extends React.Component {
       loading: false,
       closePopup: false,
     };
-    this.setWrapperRef = this.setWrapperRef.bind(this);
   }
 
   handleLogin = async () => {
@@ -53,19 +52,8 @@ class NavBar extends React.Component {
     }
   };
 
-  setWrapperRef = (node) => {
-    this.wrapperRef = node;
-  };
-
   closePopup = () => {
     this.setState({ ...this.state, closePopup: false });
-  };
-
-  handleClickOutside = (event) => {
-    if (this.wrapperRef && !this.wrapperRef.contains(event.target)) {
-      this.setState({ ...this.state, siginOverlay: false });
-      //this.siginHandler();
-    }
   };
 
   navBarClickHandler = () => {
