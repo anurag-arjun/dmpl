@@ -26,7 +26,6 @@ class WalletWhy extends React.Component {
                     <p>Make near-instant transactions on Matic Network</p>
                   </div>
                 </div>
-
                 <div>
                   <span>
                     <StartIcons size={40} className="col-1-icon" />
