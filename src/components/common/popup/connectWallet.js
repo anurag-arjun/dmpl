@@ -1,5 +1,5 @@
 import React from 'react'
-import './connectWallet.scss'
+import "../popup/connectWallet.scss"
 import wallet from "../common/assets/images/wallet.svg"
 import walletConnect from "../common/assets/images/walcon.svg"
 import metamask from "../common/assets/images/metamask.svg"
@@ -20,17 +20,19 @@ class ConnectWallet extends React.Component {
             <h1>Connect your Wallet</h1>
             <p>First of all, you need a safe placero keep your land. Choose to <br></br> connect wallet by following connection</p>
           </div>
-          <span>CONNECT WITH</span>
+          <div className="connect-with">
+            <p className="connect-with-p">CONNECT-WITH</p>
+          </div>
           <div className="wallet-btn-parrent">
           <div className="wallet-btn">
             <div>
-              <a href ="#"><img src={metamask}></img><p>Meta Mask</p></a>
+              <a href ="#"><img src={metamask}></img><p className="p">Meta Mask</p></a>
             </div>
             <div>
-              <a href ="#"><img src={walletConnect}></img><p>Connect Wallet</p></a>
+              <a href ="#"><img src={walletConnect}></img><p className="p">Connect Wallet</p></a>
             </div>
             <div>
-              <a href ="#"><img className="portis-svg" src={portis}></img><p>Portis</p></a>
+              <a href ="#"><img className="portis-svg" src={portis}></img><p className='p'>Portis</p></a>
             </div>
           </div>
           </div>
