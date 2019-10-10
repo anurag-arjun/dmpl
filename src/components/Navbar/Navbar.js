@@ -3,7 +3,7 @@ import logo from '../common/assets/images/nav-logo.svg';
 import icons from '../../services/icon-service';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import * as actions from '../../actions/user-actions';
+import * as actions from '../../actions/popup_actions';
 import Popup from '../common/popup/Popup.js';
 import LoginPopup from '../common/popup/loginPopup.js';
 //Images
@@ -27,13 +27,12 @@ class NavBar extends React.Component {
     this.state = {
       topNav: true,
       navSmall: false,
-      loading: false,
-      closePopup: false,
+      loading: false
     };
   }
 
   closePopup = () => {
-    this.props.actions.hideLoginPopup();
+    this.props.actions.login_popup_c();
   };
 
   navBarClickHandler = () => {
@@ -43,7 +42,7 @@ class NavBar extends React.Component {
   };
 
   showPopup = () => {
-    this.props.actions.showLoginPopup()
+    this.props.actions.login_popup_o()
   };
 
   render() {
@@ -199,7 +198,7 @@ const mapStateToProps = (state) => {
   const isLanding = state.router.location.pathname === '/';
   const isWallet = state.router.location.pathname === '/wallet';
   const isActivity = state.router.location.pathname === '/activity';
-  const showLoginPopup = state.user.show_login_popup
+  const showLoginPopup = state.popups.login_popup
   const isSignIn = state.user.is_sign_in;
 
   return {

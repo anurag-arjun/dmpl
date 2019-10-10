@@ -1,10 +1,14 @@
 import React from 'react';
+import caution from '../assets/images/caution.svg';
+import blue_dark from '../assets/images/blue_dark.svg';
+import balance from '../assets/images/balance-icon.svg';
+import './addFund.scss';
 
 class AddFund extends React.Component {
   render() {
     return (
       <div className="addfund">
-        <div onClick={this.cautionHandler} className="caution">
+        <div className="caution">
           <div className="caution-img">
             <img src={caution}></img>
           </div>
@@ -60,7 +64,7 @@ class AddFund extends React.Component {
           </div>
         </div>
         <div className="addfund-sub">
-          <a onClick={this.cautionHandler} href="#" className="sub-cancel">
+          <a href="#" className="sub-cancel">
             CANCEL
           </a>
           <a href="#" className="sub-submit">

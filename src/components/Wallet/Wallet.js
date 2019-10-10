@@ -16,7 +16,7 @@ class Wallet extends React.Component {
     super(props);
     this.state = {
       whymatic: false,
-      addfund: false,
+      addfund: true,
       caution: false,
       closePopup: false,
     };
@@ -52,6 +52,10 @@ class Wallet extends React.Component {
       this.setState({ ...this.state, whymatic: false, addfund: false });
   };
 
+  closeAddFund = () => {
+    this.setState({ ...this.state, addfund: false });
+  }
+
   render() {
     return (
       <div>
@@ -66,7 +70,7 @@ class Wallet extends React.Component {
             </Popup>
           )}
           {this.state.addfund && (
-            <Popup>
+            <Popup closePopup={this.closeAddFund}>
               <AddFund />
             </Popup>
           )}
