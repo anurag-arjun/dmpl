@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Popup.scss';
 import "../popup/connectWallet.scss"
-import "./Whymatic.scss"
+import "./whyMatic.scss"
 
 class Popup extends React.Component {
   render() {

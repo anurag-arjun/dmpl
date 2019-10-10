@@ -1,4 +1,5 @@
 import * as types from "../types/user-action-types";
+import { login_popup_c } from './popup_actions'
 
 export const matamask_login = () => async (dispatch, getState) => {
 
@@ -19,13 +20,5 @@ export const matamask_login = () => async (dispatch, getState) => {
     }
     const accounts = await ethereum.enable();
     dispatch({type: types.METAMASK_LOGIN, payload : accounts});
-    dispatch(hideLoginPopup());
+    dispatch(login_popup_c());
 }
-
-export const showLoginPopup = () => ({
-  type: types.SHOW_LOGIN_POPUP,
-})
-
-export const hideLoginPopup = () => ({
-  type: types.HIDE_LOGIN_POPUP,
-})

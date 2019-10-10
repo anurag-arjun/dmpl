@@ -1,6 +1,10 @@
 import React from 'react';
 import './Wallet.scss';
 
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux';
+import * as popupActions from '../../actions/popup_actions'
+
 import Popup from '../common/popup/Popup.js';
 import WalletWhy from '../common/popup/whyWallet.js';
 import AddFund from '../common/popup/addFund.js';
@@ -57,6 +61,9 @@ class Wallet extends React.Component {
   }
 
   render() {
+    const is_add_fund = this.props.is_add_fund;
+    const is_why_wallet = this.props.is_why_wallet;
+
     return (
       <div>
         <span className="back-btn">
@@ -64,13 +71,13 @@ class Wallet extends React.Component {
         </span>
         {/* <NavBar /> */}
         <div className="wallet">
-          {this.state.closePopup && (
-            <Popup closePopup={this.closePopup}>
+          {is_why_wallet && (
+            <Popup closePopup={this.props.popupActions.why_wallet_c}>
               <WalletWhy />
             </Popup>
           )}
-          {this.state.addfund && (
-            <Popup closePopup={this.closeAddFund}>
+          {is_add_fund && (
+            <Popup closePopup={this.props.popupActions.add_fund_c}>
               <AddFund />
             </Popup>
           )}
@@ -102,8 +109,8 @@ class Wallet extends React.Component {
                       <div>TRANSFER</div>
                     </a>
                   </button>
-                  <button  onClick={this.siginHandler} className="button3">
-                    <div  >
+                  <button onClick={this.props.popupActions.why_wallet_o} className="button3">
+                    <div>
                       <img src={blue_dark} />
                       <span>
                         <a >ADD FUND TO MATIC</a>
@@ -204,4 +211,21 @@ class Wallet extends React.Component {
   }
 }
 
-export default Wallet;
+
+const mapStateToProps = (state) => {
+
+  const is_add_fund = state.popups.add_fund;
+  const is_why_wallet = state.popups.why_wallet;
+
+  return {
+    is_add_fund,
+    is_why_wallet
+  };
+};
+const mapDispatchToProps = (dispatch) => ({
+  popupActions : bindActionCreators(popupActions, dispatch)
+})
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Wallet);
+

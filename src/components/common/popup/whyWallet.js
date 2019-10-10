@@ -1,9 +1,18 @@
 import React from 'react';
 import './whyWallet.scss';
+import { connect } from 'react-redux'
+
+import * as popupActions from '../../../actions/popup_actions';
 import icons from '../../../services/icon-service';
+import { bindActionCreators } from 'redux';
 const StartIcons = icons['md-start-circle'];
 
 class WalletWhy extends React.Component {
+
+  next_btn = () => {
+    this.props.popupActions.why_wallet_c();
+    this.props.popupActions.add_fund_o();
+  }
 
   render() {
     return (
@@ -81,7 +90,7 @@ class WalletWhy extends React.Component {
               </div>
             </div>
             <div className="why-row-2">
-              <button className="why-row-2-btn">
+              <button onClick={this.next_btn} className="why-row-2-btn">
                 <a> NEXT</a>
               </button>
             </div>
@@ -92,4 +101,11 @@ class WalletWhy extends React.Component {
   }
 }
 
-export default WalletWhy;
+
+
+const mapDispatchToProps = (dispatch) => ({
+  popupActions : bindActionCreators(popupActions, dispatch)
+})
+
+
+export default connect(null, mapDispatchToProps)(WalletWhy);

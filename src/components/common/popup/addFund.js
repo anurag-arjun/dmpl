@@ -1,14 +1,18 @@
 import React from 'react';
 import caution from '../assets/images/caution.svg';
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux';
+import * as popupActions from '../../../actions/popup_actions';
 import blue_dark from '../assets/images/blue_dark.svg';
 import balance from '../assets/images/balance-icon.svg';
 import './addFund.scss';
+
 
 class AddFund extends React.Component {
   render() {
     return (
       <div className="addfund">
-        <div className="caution">
+        <div onClick={this.props.popupActions.add_fund_c} className="caution">
           <div className="caution-img">
             <img src={caution}></img>
           </div>
@@ -27,8 +31,11 @@ class AddFund extends React.Component {
           <p className="addfund-balance-1">
             Your current balance is{' '}
             <span>
-              <img src={blue_dark} /> <p>1000</p>{' '}
-            </span>{' '}
+              <img src={blue_dark} />
+              <p>1000</p>
+              {' '}
+            </span>
+            {' '}
             in Ethereum mainnet
           </p>
         </div>
@@ -64,7 +71,7 @@ class AddFund extends React.Component {
           </div>
         </div>
         <div className="addfund-sub">
-          <a href="#" className="sub-cancel">
+          <a onClick={this.props.popupActions.add_fund_c} href="#" className="sub-cancel">
             CANCEL
           </a>
           <a href="#" className="sub-submit">
@@ -76,4 +83,9 @@ class AddFund extends React.Component {
   }
 }
 
-export default AddFund;
+const mapDispatchToProps = (dispatch) => ({
+  popupActions : bindActionCreators(popupActions, dispatch)
+})
+
+export default connect(null, mapDispatchToProps)(AddFund);
+
