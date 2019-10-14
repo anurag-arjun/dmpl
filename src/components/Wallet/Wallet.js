@@ -4,6 +4,7 @@ import './Wallet.scss';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
 import * as popupActions from '../../actions/popup_actions'
+import * as userActions from '../../actions/user-actions';
 
 import Popup from '../common/popup/Popup.js';
 import WalletWhy from '../common/popup/whyWallet.js';
@@ -168,10 +169,10 @@ class Wallet extends React.Component {
                   <br />
                   <br />
                   <span className="buysell">For Matic</span>
-                  <div className="row2-buy">
+                  <div className="row2-buy" onClick={this.props.userActions.repsten_balence}>
                     <span className="row2-buy-sec">
                       <input type="checkbox" />
-                      <p className="outerP">ERC721 using MANA</p>
+                      <p className="outerP">ERC20 using MANA</p>
                     </span>
                     <p className="outerP">
                       Authorize the <span>marketplace</span> to operate MANA on
@@ -223,7 +224,8 @@ const mapStateToProps = (state) => {
   };
 };
 const mapDispatchToProps = (dispatch) => ({
-  popupActions : bindActionCreators(popupActions, dispatch)
+  popupActions : bindActionCreators(popupActions, dispatch),
+  userActions : bindActionCreators(userActions, dispatch)
 })
 
 
