@@ -12,10 +12,11 @@ const matic = new Matic({
     watcherUrl: config.WATCHER_URL,
 })
 
-matic.wallet = config.PRIVATE_KEY // prefix with `0x`
+matic.wallet = '0x' + config.PRIVATE_KEY // prefix with `0x`
 
 export const approveToken = () => {
-    const amount = '1000'; // amount in wei
+    const amount = '10'; // amount in wei
+    console.log('called');
 
     // Approve token
     matic
@@ -35,5 +36,6 @@ export const approveToken = () => {
                     console.log(hash); // eslint-disable-line
                 },
             });
-        });
+        })
+        .catch(console.error);
 };
