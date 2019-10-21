@@ -1,25 +1,37 @@
 import React from 'react'
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as userActions from '../../actions/user-actions';
 import blue_dark from '../common/assets/images/balance-icon.svg'
 import caution from '../common/assets/images/caution.svg';
 import './AddFund.scss'
 
 class AddFund extends React.Component {
   render () {
+
+    const {
+      mana, 
+      erc20_approve
+    } = this.props;
+
     return (<div className='main'>
       <div className='addfund'>
-        <div className="caution">
-          <div className="caution-img">
-            <img src={caution}></img>
+        {
+          !erc20_approve &&
+          <div className="caution">
+            <div className="caution-img">
+              <img src={caution}></img>
+            </div>
+            <div className='caution-content'>
+              <p className="unauthorised">Unauthorised </p>
+              <p className="para">You Need to got <span>Setting</span> and authorised the Matic Plasma contact to</p>
+              <p className="para">operate LAND on your behalf before you can list it on sale</p>
+            </div>
           </div>
-          <div className='caution-content'>
-            <p className="unauthorised">Unauthorised </p>
-            <p className="para">You Need to got <span>Setting</span> and authorised the Matic Plasma contact to</p>
-            <p className="para">operate LAND on your behalf before you can list it on sale</p>
-          </div>
-        </div>
+        }
         <h1 className='addfund-heading'>Add fund to matic</h1>
         <div className='addfund-balance'>
-          <p className='addfund-balance-1'>Your current balance is <span><img src={blue_dark} /> <p>1000</p> </span> in Ethereum mainnet</p>
+          <p className='addfund-balance-1'>Your current balance is <span><img src={blue_dark} /> <p>{mana}</p> </span> in Ethereum mainnet</p>
         </div>
         <p className='addfund-amt'>Amount</p>
         <div className='addfund-amtval'>
@@ -51,4 +63,19 @@ class AddFund extends React.Component {
   }
 }
 
-export default AddFund
+const mapStateToProps = (state) => {
+  const mana = state.user.mana;
+  const erc20_approve = state.user.erc20_approve;
+
+  return {
+    mana, 
+    erc20_approve
+  };
+};
+
+const mapDispatchToProps = (dispatch) => ({
+  userActions : bindActionCreators(userActions, dispatch)
+})
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddFund);

@@ -12,10 +12,10 @@ const matic = new Matic({
     watcherUrl: config.WATCHER_URL,
 })
 
-matic.wallet = '0x' + config.PRIVATE_KEY // prefix with `0x`
+// matic.wallet = `0x${config.PRIVATE_KEY}` // prefix with `0x`
 
 export const approveToken = () => {
-    const amount = '10'; // amount in wei
+    const amount = '1000000000000000000'; // amount in wei
     console.log('called');
 
     // Approve token
@@ -39,3 +39,18 @@ export const approveToken = () => {
         })
         .catch(console.error);
 };
+
+export const transferToken = (recipient) => {
+    const token = config.MATIC_TEST_TOKEN // test token address
+    const amount = '1000000000000000000' // amount in wei
+
+    // Send Tokens
+    matic.transferTokens(token, recipient, amount, {
+        from,
+        // parent: true, // For token transfer on Main network (false for Matic Network)
+        onTransactionHash: (hash) => {
+            // action on Transaction success
+            console.log(hash) // eslint-disable-line
+        },
+    })
+}

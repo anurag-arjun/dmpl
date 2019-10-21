@@ -75,6 +75,11 @@
 
 			.status {
 				display: flex;
+				div {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
 
 				p {
 					padding-top:1.5rem;

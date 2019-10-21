@@ -14,7 +14,7 @@ const FaChevron = Icons['fa-chevron-right'];
 
 class LandingPage extends React.Component {
   componentWillMount = () => {
-    this.props.actions.initCards();
+    // this.props.actions.initCards();
   };
   render() {
     const { cards } = this.props;

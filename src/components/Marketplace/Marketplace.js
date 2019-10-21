@@ -12,7 +12,7 @@ import Loader from '../common/assets/images/Loader.svg';
 
 class Marketplace extends React.Component {
   componentWillMount = () => {
-    this.props.actions.initCards();
+    // this.props.actions.initCards();
   };
 
   pagination = () => {

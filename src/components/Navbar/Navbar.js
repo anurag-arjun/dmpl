@@ -53,12 +53,14 @@ class NavBar extends React.Component {
       isWallet,
       isActivity,
       showLoginPopup,
-      isSignIn
+      isSignIn,
+      network,
+      mana
     } = this.props;
 
     if (isLanding || isWallet) return <div></div>;
 
-    const isMaticNetwork = true;
+    const isMaticNetwork = network != 3;
     return (
       <div id="nav-bar">
         <nav
@@ -168,7 +170,7 @@ class NavBar extends React.Component {
                 <FaBell className="signedIn-bell" />
               </span>
 
-              <p className="signedIn-p">⏣ &nbsp; 500</p>
+              <p className="signedIn-p">⏣ &nbsp; {mana}</p>
               <Link to="/wallet">
                 <img
                   src={ProfileIcon}
@@ -200,6 +202,8 @@ const mapStateToProps = (state) => {
   const isActivity = state.router.location.pathname === '/activity';
   const showLoginPopup = state.popups.login_popup
   const isSignIn = state.user.is_sign_in;
+  const network = state.user.network;
+  const mana = state.user.mana;
 
   return {
     market,
@@ -208,7 +212,9 @@ const mapStateToProps = (state) => {
     isWallet,
     isActivity,
     showLoginPopup,
-    isSignIn
+    isSignIn,
+    network,
+    mana
   };
 };
 const mapDispatchToProps = (dispatch) => ({

@@ -3,36 +3,53 @@ import caution from '../assets/images/caution.svg';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
 import * as popupActions from '../../../actions/popup_actions';
+import * as userActions from '../../../actions/user-actions';
 import blue_dark from '../assets/images/blue_dark.svg';
 import balance from '../assets/images/balance-icon.svg';
 import './addFund.scss';
 
 
 class AddFund extends React.Component {
+
+  addFundChange = (ele) => {  
+    const value = ele.target.value;
+    this.props.userActions.add_fund_change(value);
+  }
+
   render() {
+
+    const {
+      mana, 
+      erc20_approve,
+      add_fund
+    } = this.props;
+
     return (
       <div className="addfund">
-        <div onClick={this.props.popupActions.add_fund_c} className="caution">
-          <div className="caution-img">
-            <img src={caution}></img>
+        {
+          !erc20_approve &&
+          <div onClick={this.props.popupActions.add_fund_c} className="caution">
+            <div className="caution-img">
+              <img src={caution}></img>
+            </div>
+            <div className="caution-content">
+              <p className="unauthorised">Unauthorised </p>
+              <p className="para">
+                You Need to got <span>Setting</span> and authorised the Matic
+                Plasma contact to operate LAND on your behalf before you can list
+                it on sale{' '}
+              </p>
+              <p className="para"></p>
+            </div>
           </div>
-          <div className="caution-content">
-            <p className="unauthorised">Unauthorised </p>
-            <p className="para">
-              You Need to got <span>Setting</span> and authorised the Matic
-              Plasma contact to operate LAND on your behalf before you can list
-              it on sale{' '}
-            </p>
-            <p className="para"></p>
-          </div>
-        </div>
+        }
         <h1 className="addfund-heading">Add fund to matic</h1>
         <div className="addfund-balance">
           <p className="addfund-balance-1">
             Your current balance is{' '}
             <span>
               <img src={blue_dark} />
-              <p>1000</p>
+              <p>{mana}</p>
               {' '}
             </span>
             {' '}
@@ -44,7 +61,7 @@ class AddFund extends React.Component {
           <div className="addfund-amtval-div">
             <img className="amtval-div-img" src={balance} />
             <p className="amt-div-p">
-              <input type="text" Value="500"></input>
+              <input value={add_fund} onChange={this.addFundChange} type="text" />
             </p>
           </div>
           <div className="addfund-amtval-max">
@@ -74,18 +91,31 @@ class AddFund extends React.Component {
           <a onClick={this.props.popupActions.add_fund_c} href="#" className="sub-cancel">
             CANCEL
           </a>
-          <a href="#" className="sub-submit">
+          <button onClick={this.props.userActions.deposit_token} href="#" className="sub-submit">
             SUBMIT
-          </a>
+          </button>
         </div>
       </div>
     );
   }
 }
 
+const mapStateToProps = (state) => {
+  const mana = state.user.mana;
+  const erc20_approve = state.user.erc20_approve;
+  const add_fund = state.user.add_fund;
+
+  return {
+    mana, 
+    erc20_approve,
+    add_fund
+  };
+};
+
 const mapDispatchToProps = (dispatch) => ({
+  userActions : bindActionCreators(userActions, dispatch),
   popupActions : bindActionCreators(popupActions, dispatch)
 })
 
-export default connect(null, mapDispatchToProps)(AddFund);
+export default connect(mapStateToProps, mapDispatchToProps)(AddFund);
 

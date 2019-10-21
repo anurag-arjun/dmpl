@@ -28,6 +28,10 @@ class Wallet extends React.Component {
     this.goBack = this.goBack.bind(this);
   }
 
+  componentWillMount = () => {
+    if(!this.props.is_sign_in) this.props.userActions.matamask_login();
+  }
+
   goBack() {
     this.props.history.goBack();
   }
@@ -62,8 +66,13 @@ class Wallet extends React.Component {
   }
 
   render() {
-    const is_add_fund = this.props.is_add_fund;
-    const is_why_wallet = this.props.is_why_wallet;
+    const {
+      is_add_fund,
+      is_why_wallet,
+      account,
+      mana, 
+      erc20_approve
+    } = this.props;
 
     return (
       <div>
@@ -93,13 +102,13 @@ class Wallet extends React.Component {
               </span>
               <p>Wallet Address</p>
               <span>
-                <p>0xR4WqHT9ek75iNalRbgiP2r00fsd0gf2sg1d5</p>
+                <p>{account}</p>
               </span>
               <p>Balance</p>
               <span className="row1-btn">
                 <div>
                   <img src={balance} />
-                  <p>1000 MANA</p>
+                  <p>{mana} MANA</p>
                 </div>
                 <div className="row1-btn-btn">
                   <div className="button1">
@@ -169,9 +178,9 @@ class Wallet extends React.Component {
                   <br />
                   <br />
                   <span className="buysell">For Matic</span>
-                  <div className="row2-buy" onClick={this.props.userActions.repsten_balence}>
+                  <div className="row2-buy" onClick={this.props.userActions.approve_token}>
                     <span className="row2-buy-sec">
-                      <input type="checkbox" />
+                      <input checked={erc20_approve} type="checkbox" />
                       <p className="outerP">ERC20 using MANA</p>
                     </span>
                     <p className="outerP">
@@ -217,10 +226,18 @@ const mapStateToProps = (state) => {
 
   const is_add_fund = state.popups.add_fund;
   const is_why_wallet = state.popups.why_wallet;
+  const account = state.user.accounts[0];
+  const mana = state.user.mana;
+  const erc20_approve = state.user.erc20_approve;
+  const is_sign_in = state.user.is_sign_in;
 
   return {
     is_add_fund,
-    is_why_wallet
+    is_why_wallet,
+    account,
+    mana, 
+    erc20_approve,
+    is_sign_in
   };
 };
 const mapDispatchToProps = (dispatch) => ({
