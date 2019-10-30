@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import LandCard from '../common/landCard/landCard';
 import { bindActionCreators } from 'redux';
 import * as actions from '../../actions/initActions';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
@@ -38,7 +39,16 @@ class Address extends React.Component {
               <div className="Address-container-cards-container">
                 <div className="Address-container-cards"></div>
                 <div className="Address-container-empty">
-                  The user has no Parcels
+                  <LandCard {...{
+                    "name":"Tayra",
+                    "months":"9.8",
+                    "num":"0.3.1",
+                    "x":"9.17",
+                    "y":"0.86",
+                    "green":true,
+                    "blue":false,
+                    "manaSymbol":true,
+                    "mana":"72-559-2671"}} my={true} key={0} index={0} normal />
                 </div>
               </div>
             </TabPanel>

@@ -1,6 +1,6 @@
 import TokenABI from './contractABI'
 import Web3 from 'web3'
-import RootContractAbi from './RootContractABI';
+import RootContractABI from './RootContractABI';
 // let tokenAddress = '0x70459e550254b9d3520a56ee95b78ee4f2dbd846';
 // let rootChainAddress = '0x60e2b19b9a87a3f37827f2c8c8306be718a5f9b4'
 // let account = '0x699E2d28b6AdbEC6C3ee069a16D79ed7cB64083D';
@@ -36,7 +36,7 @@ export const depositToken = async (account, tokenAddress, amount, activity) => {
         new Web3(window.web3.currentProvider) :
         new Web3(new Web3("https://ropsten.infura.io/v3/70645f042c3a409599c60f96f6dd9fbc")); //TODO insert custom key
 
-    var rootChainContract = new web3.eth.Contract(RootContractAbi, rootChainAddress.toLowerCase())
+    var rootChainContract = new web3.eth.Contract(RootContractABI, rootChainAddress.toLowerCase())
     activity();
     const deposite = await rootChainContract.methods.deposit( tokenAddress.toLowerCase(), account.toLowerCase(), amount)
         .send({

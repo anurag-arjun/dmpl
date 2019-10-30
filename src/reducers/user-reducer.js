@@ -24,6 +24,14 @@ const loginFormReducer = (state = initialState, actions) => {
       return newState;
     }
 
+    case actionTypes.MINUS_MANA : {
+      const minus = actions.mana;
+      const newState = {...state};
+      newState.mana = newState.mana - minus;
+      return newState;
+
+    }
+
     case actionTypes.APPROVE_ERC20 : {
       const newState = {...state};
       newState.erc20_approve = true;
@@ -35,6 +43,7 @@ const loginFormReducer = (state = initialState, actions) => {
       newState.show_login_popup = true;
       return newState;
     }
+
     case actionTypes.HIDE_LOGIN_POPUP : {
       const newState = {...state};
       newState.show_login_popup = false;

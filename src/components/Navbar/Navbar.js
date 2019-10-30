@@ -6,6 +6,8 @@ import { connect } from 'react-redux';
 import * as actions from '../../actions/popup_actions';
 import Popup from '../common/popup/Popup.js';
 import LoginPopup from '../common/popup/loginPopup.js';
+import ConnectWallet from '../common/popup/connectWallet';
+import MaticNetworkPopup from '../common/popup/maticNetwork';
 //Images
 import MaticIcon from '../common/assets/images/blue_dark.svg';
 import ProfileIcon from '../common/assets/images/square.png';
@@ -35,6 +37,20 @@ class NavBar extends React.Component {
     this.props.actions.login_popup_c();
   };
 
+  closeCW = () => {
+    this.props.actions.connect_wallet_c();
+  }
+
+  closeMatNet = () => {
+    this.props.actions.matic_net_c();
+  }
+
+  openMatNet = () => {
+    console.log('called');
+    
+    this.props.actions.matic_net_o();
+  }
+
   navBarClickHandler = () => {
     const newState = { ...this.state, topNav: !this.state.topNav };
     console.log(newState);
@@ -53,6 +69,8 @@ class NavBar extends React.Component {
       isWallet,
       isActivity,
       showLoginPopup,
+      connectWallet,
+      maticNetworkPopup,
       isSignIn,
       network,
       mana
@@ -60,7 +78,7 @@ class NavBar extends React.Component {
 
     if (isLanding || isWallet) return <div></div>;
 
-    const isMaticNetwork = network != 3;
+    const isMaticNetwork = network != 3 && network >3;
     return (
       <div id="nav-bar">
         <nav
@@ -76,71 +94,71 @@ class NavBar extends React.Component {
             <div className="sidebar-menu">
               {address && (
                 <div className="sidebar-content">
-                  <a href="/address" className="sidebar-item enabled">
-                    Address
-                  </a>
-                  <a href="/marketplace" className="sidebar-item">
+                  <Link to="/myland" className="sidebar-item enabled">
+                    MYLAND
+                  </Link>
+                  <Link to="/marketplace" className="sidebar-item">
                     Marketplace
-                  </a>
+                  </Link>
                 </div>
               )}
               {market && (
                 <div className="sidebar-content">
-                  <a href="/address" className="sidebar-item">
-                    Address
-                  </a>
-                  <a href="/marketplace" className="sidebar-item enabled">
+                  <Link to="/myland" className="sidebar-item">
+                    MYLAND
+                  </Link>
+                  <Link to="/marketplace" className="sidebar-item enabled">
                     Marketplace
-                  </a>
+                  </Link>
                 </div>
               )}
               {isActivity && (
                 <div className="sidebar-content">
-                  <a href="/address" className="sidebar-item">
-                    Address
-                  </a>
-                  <a href="/marketplace" className="sidebar-item ">
+                  <Link to="/myland" className="sidebar-item">
+                    MYLAND
+                  </Link>
+                  <Link to="/marketplace" className="sidebar-item ">
                     Marketplace
-                  </a>
-                  <a href="/activity" className="sidebar-item enabled">
+                  </Link>
+                  <Link to="/activity" className="sidebar-item enabled">
                     Activity
-                  </a>
+                  </Link>
                 </div>
               )}
               {!isActivity && (
                 <div className="sidebar-content">
-                  <a href="/address" className="sidebar-item">
-                    Address
-                  </a>
-                  <a href="/marketplace" className="sidebar-item ">
+                  <Link to="/myland" className="sidebar-item">
+                    MYLAND
+                  </Link>
+                  <Link to="/marketplace" className="sidebar-item ">
                     Marketplace
-                  </a>
+                  </Link>
                 </div>
               )}
             </div>
           </div>
           <FaBars className="FaBars" onClick={this.navBarClickHandler} />
-          <a href="/" className="Navigation-logo-link">
+          <Link to="/" className="Navigation-logo-link">
             <img src={logo} alt="logo" className="Navigation-logo" />
-          </a>
+          </Link>
           <div className="Navigation-menu">
             {market ? (
-              <a href="/marketplace" className="Navigation-item enabled">
+              <Link to="/marketplace" className="Navigation-item enabled">
                 Marketplace
-              </a>
+              </Link>
             ) : (
-              <a href="/marketplace" className="Navigation-item">
+              <Link to="/marketplace" className="Navigation-item">
                 Marketplace
-              </a>
+              </Link>
             )}
             {address ? (
-              <a href="/address" className="Navigation-item enabled">
-                address
-              </a>
+              <Link to="/myland" className="Navigation-item enabled">
+                myland
+              </Link>
             ) : (
-              <a href="/address" className="Navigation-item ">
-                address
-              </a>
+              <Link to="/myland" className="Navigation-item ">
+                myland
+              </Link>
             )}
           </div>
           {!isSignIn ? (
@@ -150,15 +168,15 @@ class NavBar extends React.Component {
           ) : (
             <div className="signedIn">
               {!isMaticNetwork ? (
-                <div className="signedIn-extra">
+                <div onClick={this.openMatNet} className="signedIn-extra">
                   <img
                     src={MaticIcon}
                     alt="MaticIcon"
                     className="signedIn-icon"
                   />
-                  <a href="/" className="signedIn-link">
+                  <div className="signedIn-link">
                     SWITCH TO MATIC
-                  </a>
+                  </div>
                 </div>
               ) : (
                 <div className="signedIn-extra">
@@ -187,6 +205,18 @@ class NavBar extends React.Component {
             <LoginPopup />
           </Popup>
         )}
+        {connectWallet && (
+          <Popup closePopup={this.closeCW}>
+            <ConnectWallet/>
+          </Popup>
+        )}
+        {
+          maticNetworkPopup && (
+            <Popup closePopup={this.closeMatNet}>
+              <MaticNetworkPopup close={this.closeMatNet} />
+            </Popup>
+          )
+        }
       </div>
     );
   }
@@ -201,6 +231,8 @@ const mapStateToProps = (state) => {
   const isWallet = state.router.location.pathname === '/wallet';
   const isActivity = state.router.location.pathname === '/activity';
   const showLoginPopup = state.popups.login_popup
+  const connectWallet = state.popups.connect_wallet;
+  const maticNetworkPopup = state.popups.matic_network;
   const isSignIn = state.user.is_sign_in;
   const network = state.user.network;
   const mana = state.user.mana;
@@ -212,6 +244,8 @@ const mapStateToProps = (state) => {
     isWallet,
     isActivity,
     showLoginPopup,
+    connectWallet,
+    maticNetworkPopup,
     isSignIn,
     network,
     mana

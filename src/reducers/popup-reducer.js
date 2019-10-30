@@ -3,6 +3,7 @@ import * as actionTypes from '../types/popup-action-types'
 const initialState = {
   add_fund : false,
   connect_wallet : false,
+  matic_network : false,
   login_popup : false,
   not_prt_o_d : false,
   why_matic : false,
@@ -41,6 +42,11 @@ const loginFormReducer = (state = initialState, actions) => {
       newState.why_wallet = true;
       return newState;
     }
+    case actionTypes.MATIC_NET_O : {
+      const newState = {...state};
+      newState.matic_network = true;
+      return newState;
+    }
 
     case actionTypes.ADD_FUND_C : {
       const newState = {...state};
@@ -70,6 +76,11 @@ const loginFormReducer = (state = initialState, actions) => {
     case actionTypes.WHY_WALLET_C : {
       const newState = {...state};
       newState.why_wallet = false;
+      return newState;
+    }
+    case actionTypes.MATIC_NET_C : {
+      const newState = {...state};
+      newState.matic_network = false;
       return newState;
     }
     default:

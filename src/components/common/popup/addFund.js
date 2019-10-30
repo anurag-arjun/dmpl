@@ -68,7 +68,7 @@ class AddFund extends React.Component {
             <a href="#">MAX</a>
           </div>
         </div>
-        <div className="addfund-hr" />
+        {/* <div className="addfund-hr" />
         <p className="addfund-gas">Gas Option</p>
         <div className="addfund-btn">
           <div className="btn-button">
@@ -86,7 +86,7 @@ class AddFund extends React.Component {
               Slow <span>.</span> 0.001 ETH
             </p>
           </div>
-        </div>
+        </div> */}
         <div className="addfund-sub">
           <a onClick={this.props.popupActions.add_fund_c} href="#" className="sub-cancel">
             CANCEL

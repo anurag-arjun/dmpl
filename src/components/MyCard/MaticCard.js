@@ -1,8 +1,6 @@
 import React from 'react';
 import './MaticCard.scss';
 import '../Navbar/Navbar.scss';
-import { connect } from 'react-redux'
-import * as popupActions from '../../actions/popup_actions';
 
 import Popup from '../common/popup/Popup.js';
 import LoginPopup from '../common/popup/loginPopup.js';
@@ -19,6 +17,8 @@ import balance from '../common/assets/images/balance-icon.svg';
 import location from '../common/assets/images/location.svg';
 import road from '../common/assets/images/road.svg';
 import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux'
+import * as actions from '../../actions/user-actions'
 
 class MaticCard extends React.Component {
   constructor(props) {
@@ -31,13 +31,12 @@ class MaticCard extends React.Component {
     this.setState({ ...this.state, buy: !this.state.buy });
   };
 
-  outHandler= () => {
-    this.setState({...this.state, buy: false})
+  moveToMatic = () => {
+    this.props.actions.move_to_matic(2000);
   }
 
-  buyBid = () => {
-    if(!this.props.isSignIn)
-      this.props.popupActions.login_popup_o();
+  outHandler= () => {
+    this.setState({...this.state, buy: false})
   }
 
   render() {
@@ -67,15 +66,18 @@ class MaticCard extends React.Component {
                     <span className="map">
                       <Map size="30px" />
                     </span>
-                    <p>-73, -112</p>
+                    <p>64, -120</p>
                   </div>
                 </div>
+
                 <div className="own-by">
                   <div>
-                    <span>
+                    {/* <span>
                       <p>Owned by</p>
                     </span>
-                    <img src={wallet}></img>
+                    <img src={wallet}></img> */}
+                    <span>EDIT</span>
+                    <span>PERMISSIONS</span>
                   </div>
                 </div>
               </div>
@@ -94,7 +96,7 @@ class MaticCard extends React.Component {
                 </div>
                 <div className="val">
                   <img src={balance}></img>
-                  <span>1000</span>
+                  <span>2000</span>
                 </div>
               </div>
               <div className="line2-time">
@@ -102,11 +104,14 @@ class MaticCard extends React.Component {
                 <p className="para-grey">Expire in 29 Days</p>
               </div>
               <div className="line-2-btn">
+                <div onClick={this.moveToMatic} className="btn-bid">
+                  <a href="#">MOVE TO MATIC</a>
+                </div>
                 <div onClick={this.buyHandler} className="btn-bid">
-                  <a onClick={this.buyBid}>BID</a>
+                  <a href="#">TRANSFER</a>
                 </div>
                 <div onClick={this.buyHandler} className="btn-buy">
-                  <a onClick={this.buyBid}>BUY</a>
+                  <a href="#">SELL</a>
                 </div>
               </div>
             </div>
@@ -179,14 +184,11 @@ class MaticCard extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  const isSignIn = state.user.is_sign_in;
-  return {
-    isSignIn
-  };
+  return {};
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  popupActions: bindActionCreators(popupActions, dispatch),
+  actions: bindActionCreators(actions, dispatch),
 });
 
 export default connect(

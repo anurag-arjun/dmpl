@@ -1,9 +1,9 @@
 import React from 'react'
-import "../popup/connectWallet.scss"
-import wallet from "../common/assets/images/wallet.svg"
-import walletConnect from "../common/assets/images/walcon.svg"
-import metamask from "../common/assets/images/metamask.svg"
-import portis from "../common/assets/images/portis.svg"
+import "./connectWallet.scss"
+import wallet from "../assets/images/wallet.svg"
+import walletConnect from "../assets/images/walcon.svg"
+import metamask from "../assets/images/metamask.svg"
+import portis from "../assets/images/portis.svg"
 
 
 

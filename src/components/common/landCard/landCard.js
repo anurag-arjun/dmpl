@@ -8,7 +8,6 @@ import icons from '../../../services/icon-service.js'
 import plazaGreen from '../assets/images/icon-plaza-green.svg'
 import districtBlue from '../assets/images/icon-district-blue.svg'
 import roadGray from '../assets/images/icon-road-gray.svg'
-import placeIcon from '../assets/images/place.svg'
 
 const MapMarker = icons['fa-map-marker']
 
@@ -27,12 +26,13 @@ class LandCard extends React.Component {
       manaSymbol,
       big,
       index,
+      my,
       normal
     } = this.props
     
     return (
       <div key={index}>
-        <Link key={index} to='/maticcard' className={big ? 'land-card big' : 'land-card'}>
+        <Link key={index} to={my ? 'mycard' : '/maticcard'} className={big ? 'land-card big' : 'land-card'}>
           <div className='land-card-preview'>
             {normal && (
               <img

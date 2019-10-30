@@ -4,6 +4,7 @@ export const METAMASK_LOGIN = `${nsp}METAMASK_LOGIN`;
 export const APPROVE_ERC20 = `${nsp}APPROVE_ERC20`;
 export const ADD_FUND_CHANGE = `${nsp}ADD_FUND_CHANGE`;
 export const GET_CARDS = `${nsp}GET_CARDS`;
+export const MINUS_MANA = `${nsp}MINUS_MANA`;
 export const RESET = `${nsp}RESET`;
 
 //login popups

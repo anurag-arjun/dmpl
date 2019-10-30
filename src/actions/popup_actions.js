@@ -18,6 +18,9 @@ export const why_matic_o = () => ({
 export const why_wallet_o = () => ({
     type: actionType.WHY_WALLET_O,
 })
+export const matic_net_o = () => ({
+    type: actionType.MATIC_NET_O,
+})
 
 export const add_fund_c = () => ({
     type: actionType.ADD_FUND_C,
@@ -36,4 +39,7 @@ export const why_matic_c = () => ({
 })
 export const why_wallet_c = () => ({
     type: actionType.WHY_WALLET_C,
+})
+export const matic_net_c = () => ({
+    type: actionType.MATIC_NET_C,
 })

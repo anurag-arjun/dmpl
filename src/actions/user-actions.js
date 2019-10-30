@@ -37,20 +37,22 @@ export const matamask_login = () => async (dispatch, getState) => {
       dispatch({type: types.METAMASK_LOGIN, payload : accounts, network , balance: balance});
       dispatch(login_popup_c());
     }
-    else 
-      matic_actions.getBalanceMatic(accounts[0], getState().user.token_address_mat, (nu, cc) => {
-        const balance = cc;
+    else {
+      const balance = await matic_actions.getBalanceMatic(accounts[0], getState().user.token_address_mat);
         //c is 3 for repsten newtwork
         //c is more than 3 for other network
         //so if c is greater than 3 we assume that it is on matic network
-        console.log('balance', balance);
-        dispatch({type: types.METAMASK_LOGIN, payload : accounts, network , balance: balance});
-        dispatch(login_popup_c());
-      });
+      console.log('balance', balance);
+      dispatch({type: types.METAMASK_LOGIN, payload : accounts, network , balance: balance});
+      dispatch(login_popup_c());
+    }
     // console.log(rpc);
 }
 
-
+export const minus_mana = (mana) => ({
+  type: types.MINUS_MANA,
+  mana
+})
 
 export const approve_token = () => async (dispatch, getState) => {
   // matic_js.approveToken();
@@ -73,7 +75,20 @@ export const deposit_token = () => async (dispatch, getState) => {
     dispatch(push('/activity'));
   })
   console.log('allowance', allowance);
+  dispatch(minus_mana(userState.add_fund));
   dispatch(activity_actions.activity_succ('nothing2'));
+}
+
+export const move_to_matic = (amount) => async (dispatch, getState) => {
+  const userState = getState().user;
+  const allowance = await matic_actions.depositToken(userState.accounts[0] ,userState.token_address_rep, amount, (h) => {
+    console.log(h, 'h');
+    
+    dispatch(activity_actions.add_new_activity('nothing3', `You moved 60, -120 to Matic Network`))
+    dispatch(push('/activity'));
+  })
+  console.log('allowance', allowance);
+  dispatch(activity_actions.activity_succ('nothing3'));
 }
 
 export const add_fund_change = (value) => ({

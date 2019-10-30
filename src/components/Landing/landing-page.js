@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actions from '../../actions/initActions';
+import { Link } from 'react-router-dom';
 import './landing-page.scss';
 import Icons from '../../services/icon-service';
 import LandCard from '../common/landCard/landCard';
@@ -24,12 +25,12 @@ class LandingPage extends React.Component {
         <div className="landing-page-publications">
           <div className="landing-page-header">
             <h3 className="landing-page-p">Newest LAND</h3>
-            <a href="/marketplace" className="landing-page-a">
+            <Link to="/marketplace" className="landing-page-a">
               VIEW MORE
               <span>
                 <FaChevron />
               </span>
-            </a>
+            </Link>
           </div>
           <div className="landing-page-scroller">
             {this.props.isFetching ? (
