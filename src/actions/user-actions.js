@@ -6,6 +6,7 @@ import * as matic_actions from './blockchain_func.js';
 import * as matic_js from './matic_actions';
 import {push} from 'connected-react-router';
 import getTransitionReceipt from './receipt_confirmation';
+import getWeb3 from '../web3/getWeb3';
 
 export const matamask_login = () => async (dispatch, getState) => {
 
@@ -29,7 +30,7 @@ export const matamask_login = () => async (dispatch, getState) => {
     var network = await web3.eth.net.getId();
     
     if(network==3) {
-      const balance = await matic_actions.getBalanceRopsten(accounts[0], getState().user.token_address_rep);
+      const balance = await matic_js.getBalanceRopsten(accounts[0]);
       //c is 3 for repsten newtwork
       //c is more than 3 for other network
       //so if c is greater than 3 we assume that it is on matic network
@@ -38,7 +39,7 @@ export const matamask_login = () => async (dispatch, getState) => {
       dispatch(login_popup_c());
     }
     else {
-      const balance = await matic_actions.getBalanceMatic(accounts[0], getState().user.token_address_mat);
+      const balance = await matic_js.getBalanceMatic(accounts[0]);
         //c is 3 for repsten newtwork
         //c is more than 3 for other network
         //so if c is greater than 3 we assume that it is on matic network
@@ -54,41 +55,54 @@ export const minus_mana = (mana) => ({
   mana
 })
 
+export const getweb3 = (web3) => async (dispatch) => {
+  const web3 = await getWeb3();
+  window.WEB3 = web3;
+  // dispatch({ type: types.GET_WEB3, web3 })
+}
+
 export const approve_token = () => async (dispatch, getState) => {
   // matic_js.approveToken();
   const userState = getState().user;
   if(userState.erc20_approve) return;
-
-  const hash = await matic_actions.authorizeToken(userState.accounts[0], userState.token_address_rep, userState.mana, () => {
-    dispatch(activity_actions.add_new_activity('nothing1', 'You Authorized the Matic Plasma Contact to Operate MANA on your behalf'))
+  let h;
+  await matic_js.approveToken(userState.accounts[0], userState.mana, (hash) => {
+    dispatch(activity_actions.add_new_activity(hash, 'You Authorized the Matic Plasma Contact to Operate MANA on your behalf'))
     dispatch(push('/activity'));
-  })
+    h = hash;
+  });
+  // const hash = await matic_actions.authorizeToken(userState.accounts[0], userState.token_address_rep, userState.mana, () => {
+  //   dispatch(activity_actions.add_new_activity('nothing1', 'You Authorized the Matic Plasma Contact to Operate MANA on your behalf'))
+  //   dispatch(push('/activity'));
+  // })
   dispatch({type: types.APPROVE_ERC20 });
-  dispatch(activity_actions.activity_succ('nothing1'));
+  dispatch(activity_actions.activity_succ(h));
 }
 
 
 export const deposit_token = () => async (dispatch, getState) => {
   const userState = getState().user;
-  const allowance = await matic_actions.depositToken(userState.accounts[0] ,userState.token_address_rep, userState.add_fund, () => {
-    dispatch(activity_actions.add_new_activity('nothing2', `You added ${userState.add_fund} MANA to Matic Network`))
+  let h;
+  const allowance = await matic_js.depositeToken(userState.accounts[0], userState.add_fund, (hash) => {
+    dispatch(activity_actions.add_new_activity(hash, `You added ${userState.add_fund} MANA to Matic Network`))
     dispatch(push('/activity'));
+    h = hash;
   })
   console.log('allowance', allowance);
   dispatch(minus_mana(userState.add_fund));
-  dispatch(activity_actions.activity_succ('nothing2'));
+  dispatch(activity_actions.activity_succ(h));
 }
 
 export const move_to_matic = (amount) => async (dispatch, getState) => {
   const userState = getState().user;
-  const allowance = await matic_actions.depositToken(userState.accounts[0] ,userState.token_address_rep, amount, (h) => {
-    console.log(h, 'h');
-    
-    dispatch(activity_actions.add_new_activity('nothing3', `You moved 60, -120 to Matic Network`))
+  let hash;
+  const allowance = await matic_js.depositeToken(userState.accounts[0], amount, (h) => {
+    dispatch(activity_actions.add_new_activity(h, `You moved 60, -120 to Matic Network`))
     dispatch(push('/activity'));
+    hash = h;
   })
   console.log('allowance', allowance);
-  dispatch(activity_actions.activity_succ('nothing3'));
+  dispatch(activity_actions.activity_succ(hash));
 }
 
 export const add_fund_change = (value) => ({

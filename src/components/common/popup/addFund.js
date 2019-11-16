@@ -53,7 +53,7 @@ class AddFund extends React.Component {
               {' '}
             </span>
             {' '}
-            in Ethereum mainnet
+            in Ropsten Network
           </p>
         </div>
         <p className="addfund-amt">Amount</p>

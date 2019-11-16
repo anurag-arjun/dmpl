@@ -6,8 +6,10 @@ import { render } from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
 import configureStore, { history } from './store/config'
 import Root from './components/Root'
+import { getweb3 } from './actions/user-actions'
 
 export const store = configureStore()
+// store.dispatch(getweb3());
 
 render(
   <AppContainer>
