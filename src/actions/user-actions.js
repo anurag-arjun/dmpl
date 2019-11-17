@@ -25,9 +25,11 @@ export const matamask_login = () => async (dispatch, getState) => {
       window.alert('Please install metamask first');
       return;
     }
+    
     const accounts = await ethereum.enable();
     web3 = new Web3(window.web3.currentProvider) 
     var network = await web3.eth.net.getId();
+    console.log('called mm login', network);
     
     if(network==3) {
       const balance = await matic_js.getBalanceRopsten(accounts[0]);
@@ -38,7 +40,7 @@ export const matamask_login = () => async (dispatch, getState) => {
       dispatch({type: types.METAMASK_LOGIN, payload : accounts, network , balance: balance});
       dispatch(login_popup_c());
     }
-    else {
+    if(network==8995) {
       const balance = await matic_js.getBalanceMatic(accounts[0]);
         //c is 3 for repsten newtwork
         //c is more than 3 for other network
@@ -46,6 +48,8 @@ export const matamask_login = () => async (dispatch, getState) => {
       console.log('balance', balance);
       dispatch({type: types.METAMASK_LOGIN, payload : accounts, network , balance: balance});
       dispatch(login_popup_c());
+    }
+    else {
     }
     // console.log(rpc);
 }

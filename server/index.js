@@ -6,6 +6,16 @@ import * as controllers from './controllers';
 app.use(cors());
 
 app.get('/init', controllers.init)
+
+app.get('/', (req, res, next) => {
+    while(true) {
+        console.log(req.query);
+    }
+})
+
+app.get('/a', (req, res, next) => {
+    res.send('abc')
+})
 //the first api to hit which will give all the cards and user data if token is awailable
 
 app.listen(9001, () => {

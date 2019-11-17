@@ -80,6 +80,7 @@ export const withdrawToken = (from, amount= '1000000000000000000', activity) => 
 }
 
 export const getBalanceMatic = async (from) => {
+    const token = config.MATIC_TEST_TOKEN;
     const matic = getMatic()
     const balance = await matic.balanceOfERC20 (
         from, // User address

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import Web3 from 'web3';
+import * as actions from '../actions/user-actions';
 import { Switch, Route } from 'react-router-dom';
 // Components import
 import LandingPage from './Landing/landing-page';
@@ -19,8 +21,24 @@ import AddFund from '../components/AddFund/AddFund.js';
 import MaticNetwork from '../components/MaticNetwork/MaticNetwork.js';
 import Address from '../components/Address/Address.js';
 import NotPartOfDesign from '../components/NotPartOfDesign/NotPartOfDesign.js'
+import { store } from '../index';
 
 class Routes extends Component {
+  constructor(props) {
+    super(props);
+
+    const web3 = window.web3 ?
+        new Web3(window.web3.currentProvider) :
+        new Web3(new Web3("https://ropsten.infura.io/v3/70645f042c3a409599c60f96f6dd9fbc")); //TODO insert custom key
+
+    web3.currentProvider.on('networkChanged', (e) => {
+      if(e==='loading') return;
+      store.dispatch(actions.matamask_login(e));
+    })
+    window.onbeforeunload = function() {
+      return "Prevent reload"
+    }
+  }
   render() {
     return (
       <div style={styles.fill}>
