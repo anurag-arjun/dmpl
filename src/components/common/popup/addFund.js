@@ -21,7 +21,8 @@ class AddFund extends React.Component {
     const {
       mana, 
       erc20_approve,
-      add_fund
+      add_fund,
+      networkID
     } = this.props;
 
     return (
@@ -53,7 +54,11 @@ class AddFund extends React.Component {
               {' '}
             </span>
             {' '}
-            in Ropsten Network
+            {
+            networkID === 3 ?
+            "in Ropsten Network"
+            : "in Matic Network"
+            }
           </p>
         </div>
         <p className="addfund-amt">Amount</p>
@@ -104,11 +109,13 @@ const mapStateToProps = (state) => {
   const mana = state.user.mana;
   const erc20_approve = state.user.erc20_approve;
   const add_fund = state.user.add_fund;
+  const networkID = state.user.network;
 
   return {
     mana, 
     erc20_approve,
-    add_fund
+    add_fund,
+    networkID
   };
 };
 

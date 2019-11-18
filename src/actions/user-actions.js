@@ -8,7 +8,7 @@ import {push} from 'connected-react-router';
 import getTransitionReceipt from './receipt_confirmation';
 import getWeb3 from '../web3/getWeb3';
 
-export const matamask_login = () => async (dispatch, getState) => {
+export const matamask_login = (id) => async (dispatch, getState) => {
 
     if (!web3) {
       try {
@@ -28,7 +28,7 @@ export const matamask_login = () => async (dispatch, getState) => {
     
     const accounts = await ethereum.enable();
     web3 = new Web3(window.web3.currentProvider) 
-    var network = await web3.eth.net.getId();
+    var network = id || await web3.eth.net.getId();
     console.log('called mm login', network);
     
     if(network==3) {

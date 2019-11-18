@@ -41,6 +41,7 @@ class MaticCard extends React.Component {
   }
 
   render() {
+    const networkID = this.props.networkID;
     return (
       <div>
         <div onClick={this.outHandler} className="card">
@@ -102,6 +103,9 @@ class MaticCard extends React.Component {
                 <p className="para-grey">Expire in 29 Days</p>
               </div>
               <div className="line-2-btn">
+                {networkID==3 && <div onClick={this.moveToMatic} className="btn-bid">
+                  <a href="#">MOVE TO MATIC</a>
+                </div>}
                 <div onClick={this.buyHandler} className="btn-bid">
                   <a onClick={this.buyBid}>BID</a>
                 </div>
@@ -180,8 +184,10 @@ class MaticCard extends React.Component {
 
 const mapStateToProps = (state) => {
   const isSignIn = state.user.is_sign_in;
+  const networkID = state.user.network;
   return {
-    isSignIn
+    isSignIn,
+    networkID
   };
 };
 

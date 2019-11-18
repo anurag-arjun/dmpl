@@ -95,7 +95,7 @@ class NavBar extends React.Component {
               {address && (
                 <div className="sidebar-content">
                   <Link to="/myland" className="sidebar-item enabled">
-                    MYLAND
+                    Myassets
                   </Link>
                   <Link to="/marketplace" className="sidebar-item">
                     Marketplace
@@ -105,7 +105,7 @@ class NavBar extends React.Component {
               {market && (
                 <div className="sidebar-content">
                   <Link to="/myland" className="sidebar-item">
-                    MYLAND
+                    Myassets
                   </Link>
                   <Link to="/marketplace" className="sidebar-item enabled">
                     Marketplace
@@ -115,7 +115,7 @@ class NavBar extends React.Component {
               {isActivity && (
                 <div className="sidebar-content">
                   <Link to="/myland" className="sidebar-item">
-                    MYLAND
+                    Myassets
                   </Link>
                   <Link to="/marketplace" className="sidebar-item ">
                     Marketplace
@@ -128,7 +128,7 @@ class NavBar extends React.Component {
               {!isActivity && (
                 <div className="sidebar-content">
                   <Link to="/myland" className="sidebar-item">
-                    MYLAND
+                    Myassets
                   </Link>
                   <Link to="/marketplace" className="sidebar-item ">
                     Marketplace
@@ -153,11 +153,11 @@ class NavBar extends React.Component {
             )}
             {address ? (
               <Link to="/myland" className="Navigation-item enabled">
-                myland
+                myassets
               </Link>
             ) : (
               <Link to="/myland" className="Navigation-item ">
-                myland
+                myassets
               </Link>
             )}
           </div>

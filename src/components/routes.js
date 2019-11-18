@@ -32,12 +32,16 @@ class Routes extends Component {
         new Web3(new Web3("https://ropsten.infura.io/v3/70645f042c3a409599c60f96f6dd9fbc")); //TODO insert custom key
 
     web3.currentProvider.on('networkChanged', (e) => {
-      if(e==='loading') return;
       store.dispatch(actions.matamask_login(e));
+    })
+    window.ethereum.on('accountsChanged', function (accounts) {
+      console.log(accounts);      
+      store.dispatch(actions.matamask_login());
     })
     window.onbeforeunload = function() {
       return "Prevent reload"
     }
+    
   }
   render() {
     return (

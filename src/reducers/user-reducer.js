@@ -20,7 +20,7 @@ const loginFormReducer = (state = initialState, actions) => {
       const newState = {...state};
       newState.accounts = actions.payload;
       newState.network = actions.network;
-      newState.mana = actions.balance;
+      newState.mana = actions.balance/Math.pow(10, 18);
       newState.add_fund = actions.balance;
       newState.is_sign_in = true;
       return newState;
