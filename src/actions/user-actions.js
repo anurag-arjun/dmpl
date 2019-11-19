@@ -51,6 +51,8 @@ export const matamask_login = (id) => async (dispatch, getState) => {
       console.log('balance', balance);
       dispatch({type: types.METAMASK_LOGIN, payload : accounts, network , balance: balance});
       dispatch(login_popup_c());
+      const balanceERC721 = await matic_js.getBalance721Matic(accounts[0]);
+      dispatch({type : types.ADD_ERC721, erc721 : balanceERC721});
     }
     else {
     }

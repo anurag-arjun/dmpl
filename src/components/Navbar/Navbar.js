@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '../common/assets/images/nav-logo.svg';
 import icons from '../../services/icon-service';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../../actions/popup_actions';
 import Popup from '../common/popup/Popup.js';
@@ -64,7 +64,6 @@ class NavBar extends React.Component {
   render() {
     const {
       market,
-      address,
       isLanding,
       isWallet,
       isActivity,
@@ -97,47 +96,19 @@ class NavBar extends React.Component {
               style={{ color: '#fff' }}
             />
             <div className="sidebar-menu">
-              {address && (
-                <div className="sidebar-content">
-                  <Link to="/myland" className="sidebar-item enabled">
-                    Myassets
-                  </Link>
-                  <Link to="/marketplace" className="sidebar-item">
-                    Marketplace
-                  </Link>
-                </div>
-              )}
               {market && (
                 <div className="sidebar-content">
-                  <Link to="/myland" className="sidebar-item">
-                    Myassets
-                  </Link>
                   <Link to="/marketplace" className="sidebar-item enabled">
                     Marketplace
                   </Link>
-                </div>
-              )}
-              {isActivity && (
-                <div className="sidebar-content">
                   <Link to="/myland" className="sidebar-item">
                     Myassets
                   </Link>
-                  <Link to="/marketplace" className="sidebar-item ">
-                    Marketplace
-                  </Link>
-                  <Link to="/activity" className="sidebar-item enabled">
-                    Activity
-                  </Link>
-                </div>
-              )}
-              {!isActivity && (
-                <div className="sidebar-content">
-                  <Link to="/myland" className="sidebar-item">
-                    Myassets
-                  </Link>
-                  <Link to="/marketplace" className="sidebar-item ">
-                    Marketplace
-                  </Link>
+                  {isActivity && (
+                      <Link to="/activity" className="sidebar-item enabled">
+                        Activity
+                      </Link>
+                  )}
                 </div>
               )}
             </div>
@@ -147,23 +118,19 @@ class NavBar extends React.Component {
             <img src={logo} alt="logo" className="Navigation-logo" />
           </Link>
           <div className="Navigation-menu">
-            {market ? (
-              <Link to="/marketplace" className="Navigation-item enabled">
-                Marketplace
-              </Link>
-            ) : (
-              <Link to="/marketplace" className="Navigation-item">
-                Marketplace
-              </Link>
-            )}
-            {address ? (
-              <Link to="/myland" className="Navigation-item enabled">
-                myassets
-              </Link>
-            ) : (
-              <Link to="/myland" className="Navigation-item ">
-                myassets
-              </Link>
+            <NavLink to="/marketplace" activeClassName="enabled" className="Navigation-item">
+              Marketplace
+            </NavLink>
+            {
+              isSignIn && 
+              <NavLink to="/myland" activeClassName="enabled" className="Navigation-item">
+                Myassets
+              </NavLink>
+            }
+            {isActivity && (
+              <NavLink to="/activity" activeClassName="enabled" className="sidebar-item">
+                Activity
+              </NavLink>
             )}
           </div>
           {!isSignIn ? (
@@ -204,7 +171,7 @@ class NavBar extends React.Component {
               </Link>
             </div>
           )}
-        </nav>{' '}
+        </nav>
         {showLoginPopup && (
           <Popup closePopup={this.closePopup}>
             <LoginPopup />
@@ -231,10 +198,9 @@ NavBar.propTypes = {};
 
 const mapStateToProps = (state) => {
   const market = state.router.location.pathname === '/marketplace';
-  const address = state.router.location.pathname === '/address';
   const isLanding = state.router.location.pathname === '/';
   const isWallet = state.router.location.pathname === '/wallet';
-  const isActivity = state.router.location.pathname === '/activity';
+  const isActivity = state.activity.activity.length>0;
   const showLoginPopup = state.popups.login_popup
   const connectWallet = state.popups.connect_wallet;
   const maticNetworkPopup = state.popups.matic_network;
@@ -244,7 +210,6 @@ const mapStateToProps = (state) => {
 
   return {
     market,
-    address,
     isLanding,
     isWallet,
     isActivity,

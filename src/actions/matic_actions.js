@@ -128,3 +128,17 @@ export const getBalance721Ropsten = async (from) => {
     }
     return tokenIDs;
 }
+
+export const getBalance721Matic = async (from) => {
+    const token = config.MATIC_ERC721_TEST_TOKEN;
+    const matic = getMatic()
+    const balance = await matic.balanceOfERC721 (
+        from, // User address
+        token,  // Token address
+    )
+    const tokenIDs = [];
+    for(let i=0; i<balance; i++) {
+        tokenIDs.push(await matic.tokenOfOwnerByIndexERC721(from, token, i))        
+    }
+    return tokenIDs;
+}
