@@ -1,8 +1,10 @@
 import Matic from 'maticjs';
 import config from './matic-config';
 import Web3 from 'web3'
+import contractABI from './contractABI';
 const token = config.ROPSTEN_TEST_TOKEN // test token address
 const from = config.FROM_ADDRESS // from address
+const token721 = config.ROPSTEN_ERC721_TEST_TOKEN;
 
 // Create object of Matic
 const getMatic = () => {
@@ -35,6 +37,16 @@ export const approveToken = (from, amount= '1000000000000000000', activity) => {
             },
         })
 };
+
+export const checkApproval = async (tokenAddress, owner, spender) => {
+    const web3 = window.web3 ?
+        new Web3(window.web3.currentProvider) :
+        new Web3(new Web3("https://ropsten.infura.io/v3/70645f042c3a409599c60f96f6dd9fbc")); //TODO insert custom key
+    
+    const erc20Contract = new web3.eth.Contract(contractABI, tokenAddress);
+    const allowance = await erc20Contract.methods.allowance(owner, spender).call()
+    return allowance;
+}
 
 export const depositeToken = (from, amount= '1000000000000000000', activity) => {
     const matic = getMatic()
@@ -101,4 +113,18 @@ export const getBalanceRopsten = async (from) => {
     console.log('balance of matic', balance);
     
     return balance;
+}
+
+export const getBalance721Ropsten = async (from) => {
+    const token = config.ROPSTEN_ERC721_TEST_TOKEN;
+    const matic = getMatic()
+    const balance = await matic.balanceOfERC721 (
+        from, // User address
+        token,  // Token address
+    )
+    const tokenIDs = [];
+    for(let i=0; i<balance; i++) {
+        tokenIDs.push(await matic.tokenOfOwnerByIndexERC721(from, token, i))        
+    }
+    return tokenIDs;
 }

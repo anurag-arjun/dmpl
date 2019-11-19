@@ -29,8 +29,6 @@ export const authorizeToken = async (account, tokenAddress, amount, activity) =>
 }
 
 export const depositToken = async (account, tokenAddress, amount, activity) => {
-    console.log('called');
-    
     const rootChainAddress = '0x60e2b19b9a87a3f37827f2c8c8306be718a5f9b4'
     const web3 = window.web3 ?
         new Web3(window.web3.currentProvider) :

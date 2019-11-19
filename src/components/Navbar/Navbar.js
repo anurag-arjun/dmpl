@@ -78,6 +78,11 @@ class NavBar extends React.Component {
 
     if (isLanding || isWallet) return <div></div>;
 
+    function roundNumber(rnum, rlength) { 
+      var newnumber = Math.floor(rnum * Math.pow(10, rlength)) / Math.pow(10, rlength);
+      return newnumber;
+    }
+
     const isMaticNetwork = network != 3 && network >3;
     return (
       <div id="nav-bar">
@@ -188,7 +193,7 @@ class NavBar extends React.Component {
                 <FaBell className="signedIn-bell" />
               </span>
 
-              <p className="signedIn-p">⏣ &nbsp; {mana}</p>
+              <p className="signedIn-p">⏣ &nbsp; {roundNumber(mana/Math.pow(10, 18), 4)}</p>
               <Link to="/wallet">
                 <img
                   src={ProfileIcon}

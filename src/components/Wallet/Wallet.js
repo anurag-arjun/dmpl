@@ -74,6 +74,11 @@ class Wallet extends React.Component {
       erc20_approve
     } = this.props;
 
+    function roundNumber(rnum, rlength) { 
+      var newnumber = Math.floor(rnum * Math.pow(10, rlength)) / Math.pow(10, rlength);
+      return newnumber;
+    }
+    
     return (
       <div>
         <span className="back-btn">
@@ -108,7 +113,7 @@ class Wallet extends React.Component {
               <span className="row1-btn">
                 <div>
                   <img src={balance} />
-                  <p>{mana} MANA</p>
+                  <p>{roundNumber(mana/Math.pow(10, 18), 4)} MANA</p>
                 </div>
                 <div className="row1-btn-btn">
                   <div className="button1">

@@ -25,6 +25,11 @@ class AddFund extends React.Component {
       networkID
     } = this.props;
 
+    function roundNumber(rnum, rlength) { 
+        var newnumber = Math.floor(rnum * Math.pow(10, rlength)) / Math.pow(10, rlength);
+        return newnumber;
+    }
+
     return (
       <div className="addfund">
         {
@@ -50,7 +55,7 @@ class AddFund extends React.Component {
             Your current balance is{' '}
             <span>
               <img src={blue_dark} />
-              <p>{mana}</p>
+              <p>{roundNumber(mana/Math.pow(10, 18), 4)}</p>
               {' '}
             </span>
             {' '}

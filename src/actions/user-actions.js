@@ -36,9 +36,12 @@ export const matamask_login = (id) => async (dispatch, getState) => {
       //c is 3 for repsten newtwork
       //c is more than 3 for other network
       //so if c is greater than 3 we assume that it is on matic network
-      console.log('balance', balance);
+      console.log('balance 721', balanceERC721);
       dispatch({type: types.METAMASK_LOGIN, payload : accounts, network , balance: balance});
       dispatch(login_popup_c());
+      dispatch(check_allowance());
+      const balanceERC721 = await matic_js.getBalance721Ropsten(accounts[0]);
+      dispatch({type : types.ADD_ERC721, erc721 : balanceERC721});
     }
     if(network==8995) {
       const balance = await matic_js.getBalanceMatic(accounts[0]);
@@ -52,6 +55,17 @@ export const matamask_login = (id) => async (dispatch, getState) => {
     else {
     }
     // console.log(rpc);
+}
+
+export const check_allowance = () => async (dispatch, getState) => {
+  const userState = getState().user;
+  const tokenAddress = userState.token_address_rep;
+  const owner = userState.accounts[0];
+  const spender = '0x60e2b19b9a87a3f37827f2c8c8306be718a5f9b4' ;
+  const approved = await matic_js.checkApproval(tokenAddress, owner, spender)
+  if(approved === userState.mana) {
+    dispatch({type: types.APPROVE_ERC20})
+  }
 }
 
 export const minus_mana = (mana) => ({

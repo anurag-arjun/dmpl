@@ -9,6 +9,7 @@ const initialState = {
   token_address_rep: '0x70459e550254b9d3520a56ee95b78ee4f2dbd846',
   token_address_mat: '0xc82c13004c06E4c627cF2518612A55CE7a3Db699',
   mana: 0,
+  erc721: [],
   add_fund : 0,
   erc20_approve : false,
   web3: {}
@@ -20,9 +21,15 @@ const loginFormReducer = (state = initialState, actions) => {
       const newState = {...state};
       newState.accounts = actions.payload;
       newState.network = actions.network;
-      newState.mana = actions.balance/Math.pow(10, 18);
+      newState.mana = actions.balance;
       newState.add_fund = actions.balance;
       newState.is_sign_in = true;
+      return newState;
+    }
+
+    case actionTypes.ADD_ERC721 : {
+      const newState = {...state};
+      newState.erc721 = [...actions.erc721];
       return newState;
     }
 
@@ -31,7 +38,6 @@ const loginFormReducer = (state = initialState, actions) => {
       const newState = {...state};
       newState.mana = newState.mana - minus;
       return newState;
-
     }
 
     case actionTypes.GET_WEB3 : {
