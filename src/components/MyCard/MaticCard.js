@@ -32,7 +32,8 @@ class MaticCard extends React.Component {
   };
 
   moveToMatic = () => {
-    this.props.actions.move_to_matic(2000);
+    const id = this.props.match.params.id;
+    this.props.actions.depositERC721_token(id);
   }
 
   outHandler= () => {
@@ -40,6 +41,7 @@ class MaticCard extends React.Component {
   }
 
   render() {
+    const networkID = this.props.networkID;
     return (
       <div>
         <div onClick={this.outHandler} className="card">
@@ -104,9 +106,9 @@ class MaticCard extends React.Component {
                 <p className="para-grey">Expire in 29 Days</p>
               </div>
               <div className="line-2-btn">
-                <div onClick={this.moveToMatic} className="btn-bid">
+                {networkID==3 && <div onClick={this.moveToMatic} className="btn-bid">
                   <a href="#">MOVE TO MATIC</a>
-                </div>
+                </div>}
                 <div onClick={this.buyHandler} className="btn-bid">
                   <a href="#">TRANSFER</a>
                 </div>
@@ -184,7 +186,12 @@ class MaticCard extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  return {};
+  const isSignIn = state.user.is_sign_in;
+  const networkID = state.user.network;
+  return {
+    isSignIn,
+    networkID
+  };
 };
 
 const mapDispatchToProps = (dispatch) => ({

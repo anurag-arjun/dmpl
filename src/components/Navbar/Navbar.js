@@ -63,7 +63,6 @@ class NavBar extends React.Component {
 
   render() {
     const {
-      market,
       isLanding,
       isWallet,
       isActivity,
@@ -96,21 +95,19 @@ class NavBar extends React.Component {
               style={{ color: '#fff' }}
             />
             <div className="sidebar-menu">
-              {market && (
-                <div className="sidebar-content">
-                  <Link to="/marketplace" className="sidebar-item enabled">
-                    Marketplace
-                  </Link>
-                  <Link to="/myland" className="sidebar-item">
-                    Myassets
-                  </Link>
-                  {isActivity && (
-                      <Link to="/activity" className="sidebar-item enabled">
-                        Activity
-                      </Link>
-                  )}
-                </div>
-              )}
+              <div className="sidebar-content">
+                <Link to="/marketplace" className="sidebar-item enabled">
+                  Marketplace
+                </Link>
+                <Link to="/myland" className="sidebar-item enabled">
+                  Myassets
+                </Link>
+                {isActivity && (
+                    <Link to="/activity" className="sidebar-item enabled">
+                      Activity
+                    </Link>
+                )}
+              </div>
             </div>
           </div>
           <FaBars className="FaBars" onClick={this.navBarClickHandler} />
@@ -128,7 +125,7 @@ class NavBar extends React.Component {
               </NavLink>
             }
             {isActivity && (
-              <NavLink to="/activity" activeClassName="enabled" className="sidebar-item">
+              <NavLink to="/activity" activeClassName="enabled" className="Navigation-item">
                 Activity
               </NavLink>
             )}

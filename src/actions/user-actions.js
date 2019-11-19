@@ -75,6 +75,11 @@ export const minus_mana = (mana) => ({
   mana
 })
 
+export const remove_erc721 = (id) => ({
+  type: types.REMOVE_ERC721,
+  id
+})
+
 export const getweb3 = (web3) => async (dispatch) => {
   const web3 = await getWeb3();
   window.WEB3 = web3;
@@ -129,3 +134,21 @@ export const add_fund_change = (value) => ({
   type: types.ADD_FUND_CHANGE,
   value
 })
+
+export const depositERC721_token = (id) => async (dispatch, getState) => {
+  const userState = getState().user;
+  let h1, h2;
+  const allowance = await matic_js.depositeERC721Token(userState.accounts[0], id, (hash) => {
+    dispatch(activity_actions.add_new_activity(hash, `You approved tokenID: ${id} ERC721 token`))
+    dispatch(push('/activity'));
+    h1 = hash;
+  },
+  (hash) => {
+    dispatch(activity_actions.activity_succ(h1));
+    dispatch(activity_actions.add_new_activity(hash, `You added tokenID: ${id} ERC721 token to matic network`))
+    dispatch(push('/activity'));
+    h2 = hash;
+  })
+  dispatch(remove_erc721(id));
+  dispatch(activity_actions.activity_succ(h2));
+}

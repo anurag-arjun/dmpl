@@ -56,8 +56,8 @@ const loginFormReducer = (state = initialState, actions) => {
       const newState = { ...state };
       const activity = [...newState.activity];
       const ind = activity.findIndex((e) => e.hash === actions.hash);
-      if(ind===-1) return newState;
-      const content = activity[ind];
+      if(ind<0) return newState;
+      const content = {...activity[ind]};
       content.status = 1;
       activity[ind] = content;
       newState.activity = activity;

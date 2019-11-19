@@ -16,6 +16,7 @@
 
 	&-empty {
 		display: flex;
+		flex-wrap: wrap;
 		-ms-flex-pack: center;
 		justify-content: flex-start;
 		font-style: italic;

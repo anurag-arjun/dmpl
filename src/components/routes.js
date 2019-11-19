@@ -64,7 +64,7 @@ class Routes extends Component {
               <Route exact path="/activity" component={Activity} />
               <Route exact path="/addfund" component={AddFund} />
               <Route exact path="/maticcard" component={MaticCard} />
-              <Route exact path="/mycard" component={MyCard} />
+              <Route exact path="/mycard/:id" component={MyCard} />
               <Route exact path="/maticnetwork" component={MaticNetwork} />
               <Route exact path="/myland" component={Address} />
               <Route exact path="/notpartofdesign" component={NotPartOfDesign}/>

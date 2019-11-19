@@ -2,6 +2,7 @@ import Matic from 'maticjs';
 import config from './matic-config';
 import Web3 from 'web3'
 import contractABI from './contractABI';
+import { Hash } from 'crypto';
 const token = config.ROPSTEN_TEST_TOKEN // test token address
 const from = config.FROM_ADDRESS // from address
 const token721 = config.ROPSTEN_ERC721_TEST_TOKEN;
@@ -141,4 +142,26 @@ export const getBalance721Matic = async (from) => {
         tokenIDs.push(await matic.tokenOfOwnerByIndexERC721(from, token, i))        
     }
     return tokenIDs;
+}
+
+export const depositeERC721Token = async (from, tokenId, approve, deposite) => {
+    const token = config.ROPSTEN_ERC721_TEST_TOKEN;
+    const matic = getMatic()
+    await matic
+        .approveERC721TokenForDeposit(token, tokenId, {
+            from,
+            onTransactionHash: (hash) => {
+            // action on Transaction success
+            approve(hash);
+            },
+        })
+
+    await matic.depositERC721Tokens(token, from, tokenId, {
+        from,
+        onTransactionHash: (hash) => {
+            // action on Transaction success
+            deposite(hash);
+        },
+    })
+    return;
 }

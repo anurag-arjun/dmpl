@@ -165,11 +165,9 @@ $nav: TopNav;
 			overflow: hidden;
 			position: relative;
 			transition: transform 1s !important;
-
+			
 			.Navigation-menu {
-				a {
-					display: none;
-				}
+				display: none !important;
 			}
 
 			&-div {
@@ -194,10 +192,6 @@ $nav: TopNav;
 		.Navigation.Responsive {
 			.FaBars {
 				position: absolute;
-			}
-
-			.Navigation-menu {
-				display: none;
 			}
 
 			.sidebar {

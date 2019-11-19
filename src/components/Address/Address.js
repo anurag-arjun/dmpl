@@ -8,14 +8,23 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import './address.scss';
 
 class Address extends React.Component {
-  componentWillMount = () => {
-    this.props.actions.initCards();
-  };
+
+  cardsUI = (card) => (
+    <LandCard {...{
+      "name":"Tayra",
+      "id": card,
+      "months":"9.8",
+      "num":"0.3.1",
+      "x":"9.17",
+      "y":"0.86",
+      "green":true,
+      "blue":false,
+      "manaSymbol":true,
+      "mana":"72-559-2671"}} my={true} key={card} index={card} normal />
+  )
 
   render() {
     const { cards } = this.props;
-    // const defaultOption = options['Cheapest'];
-    const { cardsReversed } = this.props;
     return (
       <div>
         {/* <NavBar Address="true" /> */}
@@ -39,16 +48,7 @@ class Address extends React.Component {
               <div className="Address-container-cards-container">
                 <div className="Address-container-cards"></div>
                 <div className="Address-container-empty">
-                  <LandCard {...{
-                    "name":"Tayra",
-                    "months":"9.8",
-                    "num":"0.3.1",
-                    "x":"9.17",
-                    "y":"0.86",
-                    "green":true,
-                    "blue":false,
-                    "manaSymbol":true,
-                    "mana":"72-559-2671"}} my={true} key={0} index={0} normal />
+                  {cards && cards.map(this.cardsUI)}
                 </div>
               </div>
             </TabPanel>
@@ -102,11 +102,9 @@ class Address extends React.Component {
 Address.propTypes = {};
 
 const mapStateToProps = (state) => {
-  const top12 = state.cards.cards.slice(0, 12);
-  const last12 = state.cards.cards.slice(5, 17);
+  const top12 = state.user.erc721;
   return {
     cards: top12,
-    cardsReversed: last12.reverse(),
   };
 };
 

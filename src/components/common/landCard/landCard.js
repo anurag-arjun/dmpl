@@ -32,7 +32,7 @@ class LandCard extends React.Component {
     
     return (
       <div key={index}>
-        <Link key={index} to={my ? 'mycard' : '/maticcard'} className={big ? 'land-card big' : 'land-card'}>
+        <Link key={index} to={my ? '/mycard/'+this.props.id : '/maticcard'} className={big ? 'land-card big' : 'land-card'}>
           <div className='land-card-preview'>
             {normal && (
               <img
