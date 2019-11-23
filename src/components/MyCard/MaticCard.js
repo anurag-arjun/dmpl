@@ -110,7 +110,7 @@ class MaticCard extends React.Component {
                   <a href="#">MOVE TO MATIC</a>
                 </div>}
                 <div onClick={this.buyHandler} className="btn-bid">
-                  <a href="#">TRANSFER</a>
+                  <a onClick={this.props.actions.swap_action}>TRANSFER</a>
                 </div>
                 <div onClick={this.buyHandler} className="btn-buy">
                   <a href="#">SELL</a>

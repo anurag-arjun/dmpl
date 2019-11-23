@@ -2,13 +2,11 @@ import * as types from "../types/user-action-types";
 import { login_popup_c } from './popup_actions';
 import Web3 from 'web3'
 import * as activity_actions from './activty_actions';
-import * as matic_actions from './blockchain_func.js';
-import * as matic_js from './matic_actions';
+import * as matic_js from '../web3/matic_actions';
+import swap from '../web3/swap';
 import {push} from 'connected-react-router';
-import getTransitionReceipt from './receipt_confirmation';
-import getWeb3 from '../web3/getWeb3';
 
-export const matamask_login = (id) => async (dispatch, getState) => {
+export const matamask_login = (id) => async (dispatch) => {
 
     if (!web3) {
       try {
@@ -80,11 +78,11 @@ export const remove_erc721 = (id) => ({
   id
 })
 
-export const getweb3 = (web3) => async (dispatch) => {
-  const web3 = await getWeb3();
-  window.WEB3 = web3;
-  // dispatch({ type: types.GET_WEB3, web3 })
-}
+// export const getweb3 = (web3) => async (dispatch) => {
+//   const web3 = await getWeb3();
+//   window.WEB3 = web3;
+//   // dispatch({ type: types.GET_WEB3, web3 })
+// }
 
 export const approve_token = () => async (dispatch, getState) => {
   // matic_js.approveToken();
@@ -151,4 +149,10 @@ export const depositERC721_token = (id) => async (dispatch, getState) => {
   })
   dispatch(remove_erc721(id));
   dispatch(activity_actions.activity_succ(h2));
+}
+
+export const swap_action = () => async (dispatch, getState) => {
+  const userState = getState().user;
+  console.log('swap_action called');
+  const allowance = await swap(userState.accounts[0]);
 }

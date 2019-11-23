@@ -2,10 +2,7 @@ import Matic from 'maticjs';
 import config from './matic-config';
 import Web3 from 'web3'
 import contractABI from './contractABI';
-import { Hash } from 'crypto';
 const token = config.ROPSTEN_TEST_TOKEN // test token address
-const from = config.FROM_ADDRESS // from address
-const token721 = config.ROPSTEN_ERC721_TEST_TOKEN;
 
 // Create object of Matic
 const getMatic = () => {
