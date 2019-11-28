@@ -3,7 +3,7 @@ import { login_popup_c } from './popup_actions';
 import Web3 from 'web3'
 import * as activity_actions from './activty_actions';
 import * as matic_js from '../web3/matic_actions';
-import swap from '../web3/swap';
+import swapUtils from '../web3/marketplaceUtils';
 import {push} from 'connected-react-router';
 
 export const matamask_login = (id) => async (dispatch) => {
@@ -12,7 +12,7 @@ export const matamask_login = (id) => async (dispatch) => {
       try {
         await typeof window.ethereum;
       } catch (error) {
-        window.alert('You need to allow Metmask Idiot.');
+        window.alert('Please allow Metmask');
         return;
       }
     }
@@ -34,7 +34,6 @@ export const matamask_login = (id) => async (dispatch) => {
       //c is 3 for repsten newtwork
       //c is more than 3 for other network
       //so if c is greater than 3 we assume that it is on matic network
-      console.log('balance 721', balanceERC721);
       dispatch({type: types.METAMASK_LOGIN, payload : accounts, network , balance: balance});
       dispatch(login_popup_c());
       dispatch(check_allowance());
@@ -154,5 +153,61 @@ export const depositERC721_token = (id) => async (dispatch, getState) => {
 export const swap_action = () => async (dispatch, getState) => {
   const userState = getState().user;
   console.log('swap_action called');
-  const allowance = await swap(userState.accounts[0]);
+  console.log(userState);
+
+  console.log(userState.accounts[0]);
+
+  // 0x9f - nft id 1, create order for X amount of erc20s
+
+  const mappedErc20 = '0x75c2297b3a0157aB2815D40D17c1C8b45d5eAF3b';
+  const mappedErc721 = '0x4dDf4f09E98309B8Bd1DAdFDa175004eE0662d76';
+  const order = '0x468fc9c005382579139846222b7b0aebc9182ba073b2455938a86d9753bfb078';
+  const amount = 20;
+  const marketplace = '0xd21b65b72680dF167604dd55F7d7F16185AbEbF5';
+  const tokenId = 20;
+  let signature;
+
+  const data = swapUtils.getTypedData({
+    orderId: order,
+    token2: mappedErc20,
+    amount2: amount,
+    tokenAddress: mappedErc721,
+    spender: marketplace,
+    tokenIdOrAmount: tokenId,
+    expiration: 0
+  })
+
+  await web3.currentProvider.sendAsync({
+    method: "eth_signTypedData_v3",
+    params: [userState.accounts[0], JSON.stringify(data)],
+    from: userState.accounts[0]
+  },
+  function(err, result) {
+      if(err) {
+        return console.error(err);
+      }
+      console.log("result: ", result);
+      signature = result.result.substring(2);
+      const r = "0x" + signature.substring(0, 64);
+      const s = "0x" + signature.substring(64, 128);
+      const v = parseInt(signature.substring(128, 130), 16);
+
+      console.log("signature: ", signature);
+      console.log("r: ", r);
+      console.log("s: ", s);
+      console.log("v: ", v);
+
+      const data1 = encode(mappedErc20, result.result, tokenId);
+      console.log(data1);
+
+    }
+  )
+}
+
+
+function encode(token, sig, tokenIdOrAmount) {
+  return web3.eth.abi.encodeParameters(
+    ['address', 'bytes', 'uint256'],
+    [token, sig, '0x' + tokenIdOrAmount.toString(16)]
+  )
 }
