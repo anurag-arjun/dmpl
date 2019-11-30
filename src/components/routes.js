@@ -26,6 +26,14 @@ import { store } from '../index';
 class Routes extends Component {
   constructor(props) {
     super(props);
+    window.onbeforeunload = function() {
+      return "Prevent reload"
+    }
+  }
+
+  componentDidUpdate = () => {
+
+    if(!this.props.user.is_sign_in) return;
 
     const web3 = window.web3 ?
         new Web3(window.web3.currentProvider) :
@@ -38,11 +46,8 @@ class Routes extends Component {
       console.log(accounts);      
       store.dispatch(actions.matamask_login());
     })
-    window.onbeforeunload = function() {
-      return "Prevent reload"
-    }
-    
   }
+
   render() {
     return (
       <div style={styles.fill}>
@@ -93,6 +98,7 @@ Routes.propTypes = {
 const mapStateToProps = (state) => {
   return {
     location: state.router.location,
+    user: state.user
   };
 };
 export default connect(mapStateToProps)(Routes);
