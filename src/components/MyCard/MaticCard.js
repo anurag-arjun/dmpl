@@ -36,12 +36,23 @@ class MaticCard extends React.Component {
     this.props.actions.depositERC721_token(id);
   }
 
+  swapActions = () => {
+    const id = this.props.match.params.id;
+    this.props.actions.swap_action(id);
+  }
+
   outHandler= () => {
     this.setState({...this.state, buy: false})
   }
 
   render() {
     const networkID = this.props.networkID;
+    const id = this.props.match.params.id;
+    const sigs = this.props.sigs;
+    let buyBut = false;
+    if(sigs[id]) {
+      buyBut = true;
+    }
     return (
       <div>
         <div onClick={this.outHandler} className="card">
@@ -110,11 +121,19 @@ class MaticCard extends React.Component {
                   <a href="#">MOVE TO MATIC</a>
                 </div>}
                 <div onClick={this.buyHandler} className="btn-bid">
-                  <a onClick={this.props.actions.swap_action}>TRANSFER</a>
+                  <a onClick={this.swapActions}>TRANSFER</a>
                 </div>
-                <div onClick={this.buyHandler} className="btn-buy">
-                  <a href="#">SELL</a>
-                </div>
+                {
+                  buyBut ? 
+                  <div className="btn-buy">
+                    <a href="#">BUY</a>
+                  </div>
+                  :
+                  <div onClick={this.buyHandler} className="btn-buy">
+                    <a href="#">SELL</a>
+                  </div>
+
+                }
               </div>
             </div>
           </div>
@@ -188,9 +207,11 @@ class MaticCard extends React.Component {
 const mapStateToProps = (state) => {
   const isSignIn = state.user.is_sign_in;
   const networkID = state.user.network;
+  const sigs = state.user.sigs;
   return {
     isSignIn,
-    networkID
+    networkID,
+    sigs
   };
 };
 

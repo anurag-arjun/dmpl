@@ -8,6 +8,7 @@ export const REMOVE_ERC721 = `${nsp}REMOVE_ERC721`;
 export const GET_CARDS = `${nsp}GET_CARDS`;
 export const MINUS_MANA = `${nsp}MINUS_MANA`;
 export const ADD_ERC721 = `${nsp}ADD_ERC721`;
+export const ADD_SIG = `${nsp}ADD_SIG`;
 export const GET_WEB3 = `${nsp}GET_WEB3`;
 export const RESET = `${nsp}RESET`;
 

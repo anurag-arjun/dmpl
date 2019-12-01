@@ -1,5 +1,6 @@
 import * as types from "../types/user-action-types";
 import { login_popup_c } from './popup_actions';
+import { get, set } from '../services/ls-service';
 import Web3 from 'web3'
 import * as activity_actions from './activty_actions';
 import * as matic_js from '../web3/matic_actions';
@@ -49,7 +50,13 @@ export const matamask_login = (id) => async (dispatch) => {
       dispatch({type: types.METAMASK_LOGIN, payload : accounts, network , balance: balance});
       dispatch(login_popup_c());
       const balanceERC721 = await matic_js.getBalance721Matic(accounts[0]);
-      dispatch({type : types.ADD_ERC721, erc721 : balanceERC721});
+      const sigs = {};
+      balanceERC721.forEach((e) => {
+        if(get(e+'')) {
+          sigs[e] = get(e+'');
+        }
+      });
+      dispatch({type : types.ADD_ERC721, erc721 : balanceERC721, sigs});
     }
     else {
     }
@@ -150,7 +157,7 @@ export const depositERC721_token = (id) => async (dispatch, getState) => {
   dispatch(activity_actions.activity_succ(h2));
 }
 
-export const swap_action = () => async (dispatch, getState) => {
+export const swap_action = (token) => async (dispatch, getState) => {
   const userState = getState().user;
   console.log('swap_action called');
   console.log(userState);
@@ -164,7 +171,7 @@ export const swap_action = () => async (dispatch, getState) => {
   const order = '0x468fc9c005382579139846222b7b0aebc9182ba073b2455938a86d9753bfb078';
   const amount = 20;
   const marketplace = '0xd21b65b72680dF167604dd55F7d7F16185AbEbF5';
-  const tokenId = 20;
+  const tokenId = token;
   let signature;
 
   const data = swapUtils.getTypedData({
@@ -196,9 +203,11 @@ export const swap_action = () => async (dispatch, getState) => {
       console.log("r: ", r);
       console.log("s: ", s);
       console.log("v: ", v);
-
+      console.log(token, dispatch);
+      dispatch({type : types.ADD_SIG, token, sig: signature});
+      set(token+'', signature);
       const data1 = encode(mappedErc20, result.result, tokenId);
-      console.log(data1);
+      console.log('data1',data1);
 
     }
   )

@@ -10,6 +10,7 @@ const initialState = {
   token_address_mat: '0xc82c13004c06E4c627cF2518612A55CE7a3Db699',
   mana: 0,
   erc721: [],
+  sigs : {},
   add_fund : 0,
   erc20_approve : false,
   web3: {}
@@ -30,6 +31,13 @@ const loginFormReducer = (state = initialState, actions) => {
     case actionTypes.ADD_ERC721 : {
       const newState = {...state};
       newState.erc721 = [...actions.erc721];
+      if(actions.sigs) newState.sigs = {...actions.sigs};
+      return newState;
+    }
+
+    case actionTypes.ADD_SIG : {
+      const newState = {...state};
+      if(actions.sig) newState.sigs = {...actions.sigs, [actions.token] : actions.sig};
       return newState;
     }
 

@@ -24,16 +24,17 @@ import NotPartOfDesign from '../components/NotPartOfDesign/NotPartOfDesign.js'
 import { store } from '../index';
 
 class Routes extends Component {
-  constructor(props) {
-    super(props);
+
+  componentDidMount = () => {
+
     window.onbeforeunload = function() {
       return "Prevent reload"
     }
-  }
-
-  componentDidUpdate = () => {
-
-    if(!this.props.user.is_sign_in) return;
+    
+    if (!window.web3) {
+      window.alert('Please allow Metmask');
+      return;
+    }
 
     const web3 = window.web3 ?
         new Web3(window.web3.currentProvider) :
@@ -47,6 +48,11 @@ class Routes extends Component {
       store.dispatch(actions.matamask_login());
     })
   }
+
+  // componentDidUpdate = () => {
+
+  //   if(!this.props.user.is_sign_in) return;
+  // }
 
   render() {
     return (
