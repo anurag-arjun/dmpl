@@ -6,6 +6,7 @@ import * as activity_actions from './activty_actions';
 import * as matic_js from '../web3/matic_actions';
 import swapUtils from '../web3/marketplaceUtils';
 import {push} from 'connected-react-router';
+import maticConfig from "../web3/matic-config";
 
 export const matamask_login = (id) => async (dispatch) => {
 
@@ -65,9 +66,9 @@ export const matamask_login = (id) => async (dispatch) => {
 
 export const check_allowance = () => async (dispatch, getState) => {
   const userState = getState().user;
-  const tokenAddress = userState.token_address_rep;
+  const tokenAddress = maticConfig.ROPSTEN_TEST_TOKEN;
   const owner = userState.accounts[0];
-  const spender = '0x60e2b19b9a87a3f37827f2c8c8306be718a5f9b4' ;
+  const spender = maticConfig.ROOTCHAIN_ADDRESS ;
   const approved = await matic_js.checkApproval(tokenAddress, owner, spender)
   if(approved === userState.mana) {
     dispatch({type: types.APPROVE_ERC20})
@@ -84,12 +85,6 @@ export const remove_erc721 = (id) => ({
   id
 })
 
-// export const getweb3 = (web3) => async (dispatch) => {
-//   const web3 = await getWeb3();
-//   window.WEB3 = web3;
-//   // dispatch({ type: types.GET_WEB3, web3 })
-// }
-
 export const approve_token = () => async (dispatch, getState) => {
   // matic_js.approveToken();
   const userState = getState().user;
@@ -100,10 +95,6 @@ export const approve_token = () => async (dispatch, getState) => {
     dispatch(push('/activity'));
     h = hash;
   });
-  // const hash = await matic_actions.authorizeToken(userState.accounts[0], userState.token_address_rep, userState.mana, () => {
-  //   dispatch(activity_actions.add_new_activity('nothing1', 'You Authorized the Matic Plasma Contact to Operate MANA on your behalf'))
-  //   dispatch(push('/activity'));
-  // })
   dispatch({type: types.APPROVE_ERC20 });
   dispatch(activity_actions.activity_succ(h));
 }

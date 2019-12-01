@@ -6,8 +6,6 @@ const initialState = {
   network: 1,
   show_login_popup : false,
   is_sign_in: false,
-  token_address_rep: '0x70459e550254b9d3520a56ee95b78ee4f2dbd846',
-  token_address_mat: '0xc82c13004c06E4c627cF2518612A55CE7a3Db699',
   mana: 0,
   erc721: [],
   sigs : {},
